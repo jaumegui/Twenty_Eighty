@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_141600) do
+ActiveRecord::Schema.define(version: 2019_02_25_143410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,44 @@ ActiveRecord::Schema.define(version: 2019_02_25_141600) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "participant_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.time "start_time"
+    t.time "end_time"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_sessions_on_project_id"
+  end
+
+  create_table "sessions_contents", force: :cascade do |t|
+    t.bigint "content_id"
+    t.bigint "session_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content_id"], name: "index_sessions_contents_on_content_id"
+    t.index ["session_id"], name: "index_sessions_contents_on_session_id"
+  end
+
+  create_table "user_projects", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_user_projects_on_project_id"
+    t.index ["user_id"], name: "index_user_projects_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -54,4 +92,9 @@ ActiveRecord::Schema.define(version: 2019_02_25_141600) do
 
   add_foreign_key "intelligence_contents", "contents"
   add_foreign_key "intelligence_contents", "intelligences"
+  add_foreign_key "sessions", "projects"
+  add_foreign_key "sessions_contents", "contents"
+  add_foreign_key "sessions_contents", "sessions"
+  add_foreign_key "user_projects", "projects"
+  add_foreign_key "user_projects", "users"
 end

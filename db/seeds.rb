@@ -30,7 +30,7 @@ puts "Done!"
 
 puts "Generating Contents..."
 
-Content.create(title: 'Prise de parole en public', chapter: 'Communication', format: 'Top-down', duration: 45, decription: "Monter sur scène pour prendre la parole en public est un exercice difficile qui demande de la préparation. Les conférences TED (Technology, Entertainment & Design) sont devenues des standards de prise de parole. Il s’agit d’un cycle de conférences crée à Monterey (Californie) en 1984 qui rassemble des esprits brillants dans leur domaine pour partager des idées avec le monde. C’est un événement annuel où les plus grands talents internationaux sont invités à partager leur passion.")
+Content.create(title: 'Prise de parole en public', chapter: 'Communication', format: 'Top-down', duration: 45, description: "Monter sur scène pour prendre la parole en public est un exercice difficile qui demande de la préparation. Les conférences TED (Technology, Entertainment & Design) sont devenues des standards de prise de parole. Il s’agit d’un cycle de conférences crée à Monterey (Californie) en 1984 qui rassemble des esprits brillants dans leur domaine pour partager des idées avec le monde. C’est un événement annuel où les plus grands talents internationaux sont invités à partager leur passion.")
 
 Content.create(title: "Les 5 types d'écoute", chapter: 'Communication', format: 'Mise en situation', duration: 45, description: "« L’écoute est notre arme », devise du groupe de négociation du RAID.
 La qualité première des négociateurs est l’écoute. Savoir déceler le type d’écoute chez son interlocuteur permet de s’assurer que le message que l’on envoie sera bien reçu. Le type d’écoute que vous utilisez en dit beaucoup sur vous.
@@ -68,7 +68,7 @@ Loi de la réciprocité
 On doit rendre d’une manière ou d’une autre ce qui nous a été donné. Sentiment induit : Obligation. Technique : offrir quelque chose avant de demander une faveur en retour.
 
 Loi sur l’engagement
-Chacun désire être considéré comme cohérent dans ses paroles, attitudes et actes​ . Sentiment induit : Cohérence. Technique : obtenir l’engagement de l’autre pour lui demander une faveur.
+Chacun désire être considéré comme cohérent dans ses paroles, attitudes et actes​. Sentiment induit : Cohérence. Technique : obtenir l’engagement de l’autre pour lui demander une faveur.
 
 Loi de conformité sociale
 Nous tendons à suivre le plus grand nombre et à nous conformer au groupe. Expérience de Asch.
@@ -80,4 +80,6 @@ Loi sur l’autorité
 Nous nous soumettons naturellement à l’autorité à partir du moment où nous la reconnaissons légitime. Technique : Expérience de Milgram.
 
 Loi sur la rareté
-Plus une chose semble rare plus nous désirons la posséder. ​ Technique : Il n’y en aura pas pour tout le monde.")
+Plus une chose semble rare plus nous désirons la posséder. Technique : Il n’y en aura pas pour tout le monde.")
+
+puts "Done!"

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :contents
   resources :projects do
-    resources :sessions
+    resources :sessions  do
+      resources :sessions_contents, only: [:new, :create, :edit, :update, :destroy]
+    end
   end
 end

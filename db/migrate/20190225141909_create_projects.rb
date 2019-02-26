@@ -5,6 +5,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.date :start_date
       t.date :end_date
       t.integer :participant_number
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

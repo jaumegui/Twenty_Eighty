@@ -45,9 +45,11 @@ ActiveRecord::Schema.define(version: 2019_02_25_155208) do
     t.string "title"
     t.date "start_date"
     t.date "end_date"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "participant_number", default: 0
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -95,6 +97,7 @@ ActiveRecord::Schema.define(version: 2019_02_25_155208) do
 
   add_foreign_key "intelligence_contents", "contents"
   add_foreign_key "intelligence_contents", "intelligences"
+  add_foreign_key "projects", "users"
   add_foreign_key "sessions", "projects"
   add_foreign_key "sessions_contents", "contents"
   add_foreign_key "sessions_contents", "sessions"

@@ -1,0 +1,13 @@
+<h1><%= @project.title %></h1>
+
+<div class="project-info">
+  <%= @project.start_date %>
+  <%= @project.end_date %>
+  <%= @project.participant_number %>
+</div>
+
+<%= link_to 'Edit a project', edit_project_path(@project) %>
+<%= link_to 'Delete a project', project_path(@project), method: :delete, data: { confirm: 'Are you sure ?'} %>
+
+
+<%= link_to 'Add a session', '' %>

@@ -1,0 +1,6 @@
+<h1>Add content to session</h1>
+
+<%= simple_form_for [@session.project, @session, @sessionscontent] do |f| %>
+  <%= f.input :content, :collection => @contents, :label_method => :title, :value_method => :id, :label => 'Content', :include_blank => false %>
+  <%= f.submit %>
+<% end %>

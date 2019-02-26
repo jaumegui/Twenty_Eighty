@@ -10,3 +10,6 @@ $gray: #CBCBCB;
 $rose: #FCACA4;
 $pale-rose: #EA8192;
 $light-gray: #F4F4F4;
+$black: #000;
+$gray-base: #000 !default;
+$gray-dark: lighten($gray-base, 20%) !default;

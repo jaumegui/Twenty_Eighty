@@ -6,8 +6,8 @@
   <%= @project.participant_number %>
 </div>
 
-<%= link_to 'Edit a project', edit_project_path(@project) %>
-<%= link_to 'Delete a project', project_path(@project), method: :delete, data: { confirm: 'Are you sure ?'} %>
+<%= link_to 'Edit a project', edit_project_path(@project), class: 'btn btn-warning' %>
+<%= link_to 'Delete a project', project_path(@project), method: :delete, data: { confirm: 'Are you sure ?'}, class: 'btn btn-danger' %>
 
 
-<%= link_to 'Add a session', new_project_session_path(@project) %>
+<%= link_to 'Add a session', new_project_session_path(@project), class: 'btn btn-primary' %>

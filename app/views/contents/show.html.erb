@@ -1,8 +1,11 @@
 <h1><%= @content.title %></h1>
 
+<%= @content.chapter %>
 <%= @content.format %>
 <%= @content.duration %>
 <%= @content.description %>
 
 <%= link_to 'Edit content', edit_content_path(@content), class: 'btn btn-warning' %>
 <%= link_to 'Delete content', content_path(@content), method: :delete, data: { confirm: "Are you sure ?" }, class: 'btn btn-danger' %>
+<br>
+<%= link_to 'Add an intelligence', new_content_intelligence_content_path(@content) %>

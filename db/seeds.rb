@@ -83,3 +83,11 @@ Loi sur la rareté
 Plus une chose semble rare plus nous désirons la posséder. Technique : Il n’y en aura pas pour tout le monde.")
 
 puts "Done!"
+puts "Generating Users..."
+
+User.create(name: "Yayah", email: "yayah@2080.co", password: "tititoto", access_level: "admin", expertise: "Stratégie")
+User.create(name: "Guillaume", email: "guillaume@2080.co", password: "tititoto", access_level: "admin", expertise: "Stratégie")
+User.create(name: "Benoit", email: "benoit@2080.co", password: "tititoto", access_level: "admin", expertise: "Stratégie")
+User.create(name: "Yayah", email: "yayah@2080.co", password: "tititoto", access_level: "admin", expertise: "Stratégie")
+User.create(name: "User", email: "user@2080.co", password: "tititoto", access_level: "project_manager", expertise: "Stratégie")
+User.create(name: "Sevener", email: "sevener@2080.co", password: "tititoto", access_level: "sevener", expertise: "Stratégie")

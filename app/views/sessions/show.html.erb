@@ -1,0 +1,8 @@
+<h1><%= @session.title %></h1>
+
+<%= @session.date %>
+<%= @session.start_time %>
+<%= @session.end_time %>
+
+<%= link_to 'Edit session', edit_project_session_path(@session.project, @session) %>
+<%= link_to 'Delete session', project_session_path(@session.project, @session), method: :delete, data: { confirm: "Are you sure?"} %>

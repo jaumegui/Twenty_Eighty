@@ -28,8 +28,9 @@
 			<%= @session.start_time %>
 			<%= @session.end_time %>
 
-			<ul>	
-			  <% @session.sessions_contents.each do |content| %>
+			<ul>
+        <% result_arr = @session.sessions_contents.sort_by { |content| content[:order]} %>
+			  <% result_arr.each do |content| %>
 			    <li>
 			    <%= content.title %>
 			    <%= link_to 'Edit content', edit_project_session_sessions_content_path(@session.project, @session, content), class: 'btn btn-warning' %>

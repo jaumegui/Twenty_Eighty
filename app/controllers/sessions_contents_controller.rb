@@ -35,11 +35,12 @@ class SessionsContentsController < ApplicationController
   def destroy
     @sessionscontent = SessionsContent.find(params[:id])
     @sessionscontent.destroy
+    redirect_to project_session_path(@sessionscontent.session.project, @sessionscontent.session)
   end
 
   private
 
   def sessionscontent_params
-    params.require(:sessions_content).permit(:session_id, :content_id)
+    params.require(:sessions_content).permit(:session_id, :content_id, :title, :duration, :format, :description)
   end
 end

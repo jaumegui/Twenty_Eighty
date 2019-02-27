@@ -5,9 +5,10 @@ class CreateMods < ActiveRecord::Migration[5.2]
      	t.string :format
      	t.integer :duration
      	t.string :chapter
-     	t.text :desciption
+     	t.text :description
      	t.string :intel1
      	t.string :intel2
+      t.references :session
 
       t.timestamps
     end

@@ -50,7 +50,7 @@ class SessionsController < ApplicationController
     @project = Project.find(params[:project_id])
     @session = Session.find(params[:id])
     @session.destroy
-    redirect_to project_sessions_path(@project)
+    redirect_to project_path(@project)
   end
 
   private

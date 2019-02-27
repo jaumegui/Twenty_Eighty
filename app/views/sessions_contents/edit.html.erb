@@ -1,9 +1,0 @@
-<h1>Edit content for session</h1>
-
-<%= simple_form_for [@sessionscontent.session.project, @sessionscontent.session, @sessionscontent] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :duration %>
-  <%= f.input :format %>
-  <%= f.input :description %>
-  <%= f.submit %>
-<% end %>

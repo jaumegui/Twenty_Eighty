@@ -1,0 +1,9 @@
+<h1>Edit module for session</h1>
+
+<%= simple_form_for [@mod.session.project, @mod.session, @mod] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :duration %>
+  <%= f.input :format %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>

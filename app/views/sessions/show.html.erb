@@ -12,7 +12,7 @@
 		                </li>
 			                <ul class="sub-menu collapse" id="<%= chapter %>">
 			                	<% @contents.where(chapter: chapter).each do |content| %>
-			                    	<li><%= link_to "#{content.title}", project_session_sessions_contents_path(@session.project, @session, content_id: content.id), method: :post %></li>
+			                    	<li><%= link_to "#{content.title}", project_session_mods_path(@session.project, @session, content_id: content.id), method: :post %></li>
 			                    <% end %>
 			               	</ul>
 	                <% end %>
@@ -29,12 +29,16 @@
 			<%= @session.end_time %>
 
 			<ul>
-        <% result_arr = @session.sessions_contents.sort_by { |content| content[:order]} %>
-			  <% result_arr.each do |content| %>
+        <%# result_arr = @session.mods.sort_by { |content| content[:order]} %>
+			  <% @session.mods.each do |content| %>
 			    <li>
 			    <%= content.title %>
-			    <%= link_to 'Edit content', edit_project_session_sessions_content_path(@session.project, @session, content), class: 'btn btn-warning' %>
-			    <%= link_to 'Delete content', project_session_sessions_content_path(@session.project, @session, content), method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-danger" %>
+			    <%= link_to edit_project_session_mod_path(@session.project, @session, content) do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+			    <%= link_to project_session_mod_path(@session.project, @session, content), method: :delete, data: { confirm: "Are you sure ?"} do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
 			  	</li>
 			  <% end %>
 			</ul>
@@ -42,7 +46,7 @@
 
 			<%= link_to 'Edit session', edit_project_session_path(@session.project, @session), class: 'btn btn-warning' %>
 			<%= link_to 'Delete session', project_session_path(@session.project, @session), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger' %>
-			<%= link_to 'Select content', new_project_session_sessions_content_path(@session.project, @session) %>
+			<%# link_to 'Select content', new_project_session_mods_path(@session.project, @session) %>
 		</div>
 	</div>
 </div>

@@ -1,16 +1,50 @@
-<h1><%= @session.title %></h1>
+<div class="nav-side-menu">
+    <div class="brand">Content Manager</div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+                <% @chapter.each do |chapter| %>
+	                <li  data-toggle="collapse" data-target="#<%= chapter %>" class="collapsed">
+	                  <a href="#"><i class="fa fa-gift fa-lg"></i><%= chapter %><span class="arrow"></span></a>
+	                </li>
+		                <ul class="sub-menu collapse" id="<%= chapter %>">
+		                	<% @contents.where(chapter: chapter.to_s).first do |title| %>
+		                    	<li><a href="#"><%= title.title %></a></li>
+		                    <% end %>
+		               	</ul>
+                <% end %>
 
-<%= @session.date %>
-<%= @session.start_time %>
-<%= @session.end_time %>
 
-<ul>
-  <% @session.contents.each do |content| %>
-    <li><%= content.title %></li>
-  <% end %>
-</ul>
+                <!-- <li data-toggle="collapse" data-target="#service" class="collapsed">
+                  <a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
+                </li>  
+	                <ul class="sub-menu collapse" id="service">
+	                  <li></li>
+	                  <li></li>
+	                  <li></li>
+	                </ul> -->
+            </ul>
+     </div>
+</div>
 
 
-<%= link_to 'Edit session', edit_project_session_path(@session.project, @session), class: 'btn btn-warning' %>
-<%= link_to 'Delete session', project_session_path(@session.project, @session), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger' %>
-<%= link_to 'Select content', new_project_session_sessions_content_path(@session.project, @session) %>
+<div class="session-container">
+	<h1><%= @session.title %></h1>
+
+	<%= @session.date %>
+	<%= @session.start_time %>
+	<%= @session.end_time %>
+
+	<ul>
+	  <% @session.contents.each do |content| %>
+	    <li><%= content.title %></li>
+	  <% end %>
+	</ul>
+
+
+	<%= link_to 'Edit session', edit_project_session_path(@session.project, @session), class: 'btn btn-warning' %>
+	<%= link_to 'Delete session', project_session_path(@session.project, @session), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger' %>
+	<%= link_to 'Select content', new_project_session_sessions_content_path(@session.project, @session) %>
+</div>

@@ -2,8 +2,16 @@
 
 <div class="project-info">
   <%= @project.start_date %>
+  <br>
   <%= @project.end_date %>
+  <br>
   <%= @project.participant_number %>
+  <br>
+  <ul>
+    <% @project.sessions.each do |session| %>
+      <li><%= link_to "#{session.title}", project_session_path(@project, session) %></li>
+    <% end %>
+  </ul>
 </div>
 
 <%= link_to 'Edit a project', edit_project_path(@project), class: 'btn btn-warning' %>

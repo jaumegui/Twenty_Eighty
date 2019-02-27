@@ -9,7 +9,7 @@ class SessionsContentsController < ApplicationController
     @sessionscontent = SessionsContent.new
     @session = Session.find(params[:session_id])
     @sessionscontent.session = @session
-    @sessionscontent.content = Content.find(params[:sessions_content][:content].to_i)
+    @sessionscontent.content = Content.find(params[:content_id])
     if @sessionscontent.save
       redirect_to project_session_path(@session.project, @session)
     else

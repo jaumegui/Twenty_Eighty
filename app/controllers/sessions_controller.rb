@@ -6,6 +6,12 @@ class SessionsController < ApplicationController
 
   def show
     @session = Session.find(params[:id])
+    @contents = Content.all
+    @chapter = []
+    @contents.each do |content|
+      @chapter << content.chapter
+    end
+    @chapter = @chapter.uniq
   end
 
   def new

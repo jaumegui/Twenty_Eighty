@@ -8,15 +8,13 @@
 <br>
 <%= @content.description %>
 <br>
-<ul>
-  <% @content.intelligences.each do |intel| %>
-    <li><%= intel.name %></li>
-  <% end %>
-</ul>
+<%= @content.intel1 %>
+<br>
+<%= @content.intel2 %>
 
 
 
 <%= link_to 'Edit content', edit_content_path(@content), class: 'btn btn-warning' %>
 <%= link_to 'Delete content', content_path(@content), method: :delete, data: { confirm: "Are you sure ?" }, class: 'btn btn-danger' %>
 <br>
-<%= link_to 'Add an intelligence', new_content_intelligence_content_path(@content) %>
+

@@ -32,11 +32,13 @@ ActiveRecord::Schema.define(version: 2019_02_27_155015) do
     t.string "format"
     t.integer "duration"
     t.string "chapter"
-    t.text "desciption"
+    t.text "description"
     t.string "intel1"
     t.string "intel2"
+    t.bigint "session_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["session_id"], name: "index_mods_on_session_id"
   end
 
   create_table "projects", force: :cascade do |t|

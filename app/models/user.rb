@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  EXPERTISES = %w[ Entreprenariat Management Communication Developpement-Personnel Leadership Innovation Tech Stratégie].freeze
+  EXPERTISES = %w[Entreprenariat Management Communication Developpement-Personnel Leadership Innovation Tech Stratégie].freeze
   
   has_many :projects, dependent: :destroy
   has_many :user_project_as_sevener, source: :user_projects

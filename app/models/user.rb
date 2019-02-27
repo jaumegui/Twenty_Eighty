@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_many :user_project_as_admin, through: :projects, source: :user_projects
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :access_level, inclusion: { in: %w( admin project_manager sevener)}
+  validates :access_level, inclusion: { in: %w(admin project_manager sevener)}
   validates :expertise, inclusion: { in: EXPERTISES }
-
 end

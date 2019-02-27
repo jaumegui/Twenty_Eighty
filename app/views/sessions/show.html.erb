@@ -1,17 +1,17 @@
 <div class="nav-side-menu">
     <div class="brand">Content Manager</div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-  
+
         <div class="menu-list">
-  
+
             <ul id="menu-content" class="menu-content collapse out">
                 <% @chapter.each do |chapter| %>
 	                <li  data-toggle="collapse" data-target="#<%= chapter %>" class="collapsed">
 	                  <a href="#"><i class="fa fa-gift fa-lg"></i><%= chapter %><span class="arrow"></span></a>
 	                </li>
 		                <ul class="sub-menu collapse" id="<%= chapter %>">
-		                	<% @contents.where(chapter: chapter.to_s).first do |title| %>
-		                    	<li><a href="#"><%= title.title %></a></li>
+		                	<% @contents.where(chapter: chapter).each do |content| %>
+		                    	<li><%= link_to "#{content.title}", project_session_sessions_contents_path(@session.project, @session, content_id: content.id), method: :post %></li>
 		                    <% end %>
 		               	</ul>
                 <% end %>
@@ -19,7 +19,7 @@
 
                 <!-- <li data-toggle="collapse" data-target="#service" class="collapsed">
                   <a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
-                </li>  
+                </li>
 	                <ul class="sub-menu collapse" id="service">
 	                  <li></li>
 	                  <li></li>

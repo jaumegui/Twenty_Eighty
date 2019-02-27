@@ -1,6 +1,0 @@
-<h1>Add Intelligence to content</h1>
-
-<%= simple_form_for [@content, @intelcontent] do |f| %>
-  <%= f.input :intelligence, :collection => @intelligences, :label_method => :name, :value_method => :id, :label => 'Name', :include_blank => false %>
-  <%= f.submit %>
-<% end %>

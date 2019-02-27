@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_155208) do
+ActiveRecord::Schema.define(version: 2019_02_27_155015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,23 +20,21 @@ ActiveRecord::Schema.define(version: 2019_02_25_155208) do
     t.string "format"
     t.integer "duration"
     t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "chapter"
-  end
-
-  create_table "intelligence_contents", force: :cascade do |t|
-    t.bigint "content_id"
-    t.bigint "intelligence_id"
+    t.string "intel1"
+    t.string "intel2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["content_id"], name: "index_intelligence_contents_on_content_id"
-    t.index ["intelligence_id"], name: "index_intelligence_contents_on_intelligence_id"
   end
 
-  create_table "intelligences", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
+  create_table "mods", force: :cascade do |t|
+    t.string "title"
+    t.string "format"
+    t.integer "duration"
+    t.string "chapter"
+    t.text "desciption"
+    t.string "intel1"
+    t.string "intel2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -63,21 +61,6 @@ ActiveRecord::Schema.define(version: 2019_02_25_155208) do
     t.index ["project_id"], name: "index_sessions_on_project_id"
   end
 
-  create_table "sessions_contents", force: :cascade do |t|
-    t.bigint "content_id"
-    t.bigint "session_id"
-    t.string "title"
-    t.string "format"
-    t.integer "duration"
-    t.text "description"
-    t.string "chapter"
-    t.integer "order"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["content_id"], name: "index_sessions_contents_on_content_id"
-    t.index ["session_id"], name: "index_sessions_contents_on_session_id"
-  end
-
   create_table "user_projects", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "project_id"
@@ -102,12 +85,8 @@ ActiveRecord::Schema.define(version: 2019_02_25_155208) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "intelligence_contents", "contents"
-  add_foreign_key "intelligence_contents", "intelligences"
   add_foreign_key "projects", "users"
   add_foreign_key "sessions", "projects"
-  add_foreign_key "sessions_contents", "contents"
-  add_foreign_key "sessions_contents", "sessions"
   add_foreign_key "user_projects", "projects"
   add_foreign_key "user_projects", "users"
 end

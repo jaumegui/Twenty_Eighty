@@ -1,50 +1,47 @@
-<div class="nav-side-menu">
-    <div class="brand">Content Manager</div>
-    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+<div class="container-session-show">
+	<div class="nav-side-menu">
+	    <div class="brand">Content Manager</div>
+	    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
-        <div class="menu-list">
+	        <div class="menu-list">
 
-            <ul id="menu-content" class="menu-content collapse out">
-                <% @chapter.each do |chapter| %>
-	                <li  data-toggle="collapse" data-target="#<%= chapter %>" class="collapsed">
-	                  <a href="#"><i class="fa fa-gift fa-lg"></i><%= chapter %><span class="arrow"></span></a>
-	                </li>
-		                <ul class="sub-menu collapse" id="<%= chapter %>">
-		                	<% @contents.where(chapter: chapter).each do |content| %>
-		                    	<li><%= link_to "#{content.title}", project_session_sessions_contents_path(@session.project, @session, content_id: content.id), method: :post %></li>
-		                    <% end %>
-		               	</ul>
-                <% end %>
+	            <ul id="menu-content" class="menu-content collapse out">
+	                <% @chapter.each do |chapter| %>
+		                <li  data-toggle="collapse" data-target="#<%= chapter %>" class="collapsed">
+		                  <a href="#"><%= chapter %><span class="arrow"></span></a>
+		                </li>
+			                <ul class="sub-menu collapse" id="<%= chapter %>">
+			                	<% @contents.where(chapter: chapter).each do |content| %>
+			                    	<li><%= link_to "#{content.title}", project_session_sessions_contents_path(@session.project, @session, content_id: content.id), method: :post %></li>
+			                    <% end %>
+			               	</ul>
+	                <% end %>
+	            </ul>
+	     </div>
+	</div>
 
+	<div class="session-container">
+		<div class="container" style="text-align: center">
+			<h1><%= @session.title %></h1>
 
-                <!-- <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
-                </li>
-	                <ul class="sub-menu collapse" id="service">
-	                  <li></li>
-	                  <li></li>
-	                  <li></li>
-	                </ul> -->
-            </ul>
-     </div>
-</div>
+			<%= @session.date %>
+			<%= @session.start_time %>
+			<%= @session.end_time %>
 
-
-<div class="session-container">
-	<h1><%= @session.title %></h1>
-
-	<%= @session.date %>
-	<%= @session.start_time %>
-	<%= @session.end_time %>
-
-	<ul>
-	  <% @session.contents.each do |content| %>
-	    <li><%= content.title %></li>
-	  <% end %>
-	</ul>
+			<ul>	
+			  <% @session.sessions_contents.each do |content| %>
+			    <li>
+			    <%= content.title %>
+			    <%= link_to 'Edit content', edit_project_session_sessions_content_path(@session.project, @session, content), class: 'btn btn-warning' %>
+			    <%= link_to 'Delete content', project_session_sessions_content_path(@session.project, @session, content), method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-danger" %>
+			  	</li>
+			  <% end %>
+			</ul>
 
 
-	<%= link_to 'Edit session', edit_project_session_path(@session.project, @session), class: 'btn btn-warning' %>
-	<%= link_to 'Delete session', project_session_path(@session.project, @session), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger' %>
-	<%= link_to 'Select content', new_project_session_sessions_content_path(@session.project, @session) %>
+			<%= link_to 'Edit session', edit_project_session_path(@session.project, @session), class: 'btn btn-warning' %>
+			<%= link_to 'Delete session', project_session_path(@session.project, @session), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger' %>
+			<%= link_to 'Select content', new_project_session_sessions_content_path(@session.project, @session) %>
+		</div>
+	</div>
 </div>

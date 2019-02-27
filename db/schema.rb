@@ -66,6 +66,12 @@ ActiveRecord::Schema.define(version: 2019_02_25_155208) do
   create_table "sessions_contents", force: :cascade do |t|
     t.bigint "content_id"
     t.bigint "session_id"
+    t.string "title"
+    t.string "format"
+    t.integer "duration"
+    t.text "description"
+    t.string "chapter"
+    t.integer "order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["content_id"], name: "index_sessions_contents_on_content_id"

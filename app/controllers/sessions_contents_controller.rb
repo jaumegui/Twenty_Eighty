@@ -14,6 +14,7 @@ class SessionsContentsController < ApplicationController
     @sessionscontent.duration = @sessionscontent.content.duration
     @sessionscontent.format = @sessionscontent.content.format
     @sessionscontent.order = @sessionscontent.id
+    @sessionscontent.save
     redirect_to project_session_path(@session.project, @session)
   end
 
@@ -32,6 +33,8 @@ class SessionsContentsController < ApplicationController
   end
 
   def destroy
+    @sessionscontent = SessionsContent.find(params[:id])
+    @SessionsContent.destroy
   end
 
   private

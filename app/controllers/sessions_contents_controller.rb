@@ -4,7 +4,7 @@ class SessionsContentsController < ApplicationController
   end
 
   def create
-    @sessionscontent = SessionsContent.create
+    @sessionscontent = SessionsContent.new
     @session = Session.find(params[:session_id])
     @sessionscontent.session = @session
     @sessionscontent.content = Content.find(params[:content_id])
@@ -34,7 +34,7 @@ class SessionsContentsController < ApplicationController
 
   def destroy
     @sessionscontent = SessionsContent.find(params[:id])
-    @SessionsContent.destroy
+    @sessionscontent.destroy
   end
 
   private

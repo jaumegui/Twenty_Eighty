@@ -1,23 +1,32 @@
 <div class="container">
-  <h1><%= @project.title %></h1>
-
-  <div class="project-info">
-    <%= @project.start_date %>
-    <br>
-    <%= @project.end_date %>
-    <br>
-    <%= @project.participant_number %>
-    <br>
-    <ul>
-      <% @project.sessions.each do |session| %>
-        <li><%= link_to "#{session.title}", project_session_path(@project, session) %></li>
-      <% end %>
-    </ul>
+  <div class="project-show-title">
+    <h1><%= @project.title %></h1>
+    <div class="control-buttons">
+      <%= link_to 'Edit a project', edit_project_path(@project), class: 'btn btn-warning' %>
+      <%= link_to 'Delete a project', project_path(@project), method: :delete, data: { confirm: 'Are you sure ?'}, class: 'btn btn-danger' %>
+      <%= link_to 'Add a session', new_project_session_path(@project), class: 'btn btn-primary' %>
+    </div>
   </div>
 
-  <%= link_to 'Edit a project', edit_project_path(@project), class: 'btn btn-warning' %>
-  <%= link_to 'Delete a project', project_path(@project), method: :delete, data: { confirm: 'Are you sure ?'}, class: 'btn btn-danger' %>
 
+  <div class="project-info">
+    <div class="project-info-headers">
+      <p><%= "From #{@project.start_date.day}/#{@project.start_date.month}/#{@project.start_date.year} to #{@project.end_date.day}/#{@project.end_date.month}/#{@project.end_date.year}" %></p>
+      <i class="fas fa-user"></i><%= " #{@project.participant_number}" %>
+    </div>
+    <div class="sessions-cards">
+      <% @project.sessions.each do |session| %>
+      <div class="card-lg">
+        <div class="card-main-lg">
+          <h3><%= session.title %></h3>
+          <%= link_to '', project_session_path(session.project, session), class: "card-link" %>
+        </div>
+        <div class="card-footer-lg">
+          <p><%= session.date %></p><div><i class="far fa-hourglass"></i><%= " #{session.start_time.strftime("%k:%M")} to #{session.end_time.strftime("%k:%M")}" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
 
-  <%= link_to 'Add a session', new_project_session_path(@project), class: 'btn btn-primary' %>
 </div>

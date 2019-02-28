@@ -3,6 +3,10 @@
   width: 300px;
   border-radius: 10px;
   box-shadow: 1px 1px 10px rgba(115, 133, 152, 0.6);
+  &:hover {
+    transition: all 0.8s ease;
+    transform: scale(1.1);
+    }
   .card-main {
     height: 80%;
     width: 100%;
@@ -20,7 +24,7 @@
 
 .card-link {
     height: 100%;
-    width: 300px;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -40,5 +44,40 @@
   }
   li {
     list-style-type: none;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.card-lg {
+  width: 60%;
+  height: 300px;
+  border: 1px solid rgba(115, 133, 152, 0.6);
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(115, 133, 152, 0.6);
+  margin: 0 auto;
+  margin-top: 30px;
+  &:hover {
+    transition: all 0.8s ease;
+    transform: scale(1.1);
+    }
+  .card-main-lg {
+    height: 80%;
+    padding: 20px;
+    position: relative;
+    h3 {
+      margin: 0;
+    }
+  }
+  .card-footer-lg {
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(115, 133, 152, 0.6);
+    p {
+      margin: 0;
+    }
   }
 }

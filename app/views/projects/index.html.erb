@@ -1,41 +1,101 @@
-<h1>Project Index</h1>
-
-<h2>Projets en cours</h2>
-<ul>
-  <% result_cours = [] %>
-  <% @projects.each do |project| %>
-    <% if project.start_date <= Date.today && project.end_date >= Date.today %>
-      <li><%= link_to "#{project.title}", project_path(project) %> <%= "From #{project.start_date} to #{project.end_date} for #{project.participant_number} participants" %></li>
-      <% result_cours << project %>
+<div class="container">
+  <div class="new-project">
+    <%= link_to 'New project', new_project_path, class: "btn btn-lg btn-success" %>
+  </div>
+  <h4>Projets en cours</h4>
+  <div class="row">
+    <% result_cours = [] %>
+    <% @projects.each do |project| %>
+      <% if project.start_date <= Date.today && project.end_date >= Date.today %>
+        <div class="col-xs-12 col-md-4">
+          <div class="card">
+            <div class="card-main" style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url('https://i0.wp.com/www.grapheine.com/wp-content/uploads/2016/09/new-logo-deliveroo.gif?fit=1950%2C1200&quality=90&strip=all&ssl=1'); background-size: cover;">
+              <h6><%= project.title %></h6>
+              <%= link_to "", project_path(project), class: 'card-link' %>
+              <% result_cours << project %>
+            </div>
+            <div class="card-footer">
+                <div><i class="fas fa-table"></i><%= " #{project.start_date.day}/#{project.start_date.month} to #{project.end_date.day}/#{project.end_date.month}" %></div>
+                <div><i class="fas fa-user"></i><%= " #{project.participant_number}" %></div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-    <% if result_cours.empty? %>
-      <%= "Empty" %>
+      <% if result_cours.empty? %>
+        <div class="col-xs-12 col-md-4">
+          <div class="card">
+            <div class="card-main">
+              <%= "Empty" %>
+            </div>
+            <div class="card-footer"></div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+  <h4>Projets à venir</h4>
+  <div class="row">
+    <% result_fut = [] %>
+    <% @projects.each do |project| %>
+      <% if project.start_date > Date.today %>
+        <div class="col-xs-12 col-md-4">
+          <div class="card">
+            <div class="card-main" style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url('https://i0.wp.com/www.grapheine.com/wp-content/uploads/2016/09/new-logo-deliveroo.gif?fit=1950%2C1200&quality=90&strip=all&ssl=1'); background-size: cover;">
+              <h6><%= project.title %></h6>
+              <%= link_to "", project_path(project), class: 'card-link' %>
+              <% result_cours << project %>
+            </div>
+            <div class="card-footer">
+                <div><i class="fas fa-table"></i><%= " #{project.start_date.day}/#{project.start_date.month} to #{project.end_date.day}/#{project.end_date.month}" %></div>
+                <div><i class="fas fa-user"></i><%= " #{project.participant_number}" %></div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-</ul>
-<h2>Projets à venir</h2>
-<ul>
-  <% result_venir = [] %>
-  <% @projects.each do |project| %>
-    <% if project.start_date > Date.today %>
-      <li><%= link_to "#{project.title}", project_path(project) %> <%= "From #{project.start_date} to #{project.end_date} for #{project.participant_number} participants" %></li>
-      <% result_venir << project %>
+      <% if result_fut.empty? %>
+        <div class="col-xs-12 col-md-4">
+          <div class="card">
+            <div class="card-main">
+              <%= "Empty" %>
+            </div>
+            <div class="card-footer"></div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+  <h4>Projets terminés</h4>
+  <div class="row">
+    <% result_term = [] %>
+    <% @projects.each do |project| %>
+      <% if project.end_date < Date.today %>
+        <div class="col-xs-12 col-md-4">
+          <div class="card">
+            <div class="card-main" style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url('https://i0.wp.com/www.grapheine.com/wp-content/uploads/2016/09/new-logo-deliveroo.gif?fit=1950%2C1200&quality=90&strip=all&ssl=1'); background-size: cover;">
+              <h6><%= project.title %></h6>
+              <%= link_to "", project_path(project), class: 'card-link' %>
+              <% result_cours << project %>
+            </div>
+            <div class="card-footer">
+                <div><i class="fas fa-table"></i><%= " #{project.start_date.day}/#{project.start_date.month} to #{project.end_date.day}/#{project.end_date.month}" %></div>
+                <div><i class="fas fa-user"></i><%= " #{project.participant_number}" %></div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-    <% if result_venir.empty? %>
-      <%= "Empty" %>
-    <% end %>
-</ul>
-<h2>Projets terminés</h2>
-<ul>
-  <% result_termines = [] %>
-  <% @projects.each do |project| %>
-    <% if project.end_date < Date.today %>
-      <li><%= link_to "#{project.title}", project_path(project) %> <%= "From #{project.start_date} to #{project.end_date} for #{project.participant_number} participants" %></li>
-      <% result_termines << project %>
-    <% end %>
-  <% end %>
-    <% if result_termines.empty? %>
-      <%= "Empty" %>
-    <% end %>
-</ul>
+      <% if result_term.empty? %>
+        <div class="col-xs-12 col-md-4">
+          <div class="card">
+            <div class="card-main">
+              <%= "Empty" %>
+            </div>
+            <div class="card-footer"></div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>

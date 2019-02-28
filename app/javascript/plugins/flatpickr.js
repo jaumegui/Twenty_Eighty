@@ -10,3 +10,4 @@ flatpickr(".timepicker", {
   dateFormat: "H:i",
   time_24hr: true
 })
+

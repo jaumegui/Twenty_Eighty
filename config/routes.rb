@@ -8,4 +8,5 @@ Rails.application.routes.draw do
       resources :mods, only: [:create, :edit, :update, :destroy]
     end
   end
+  post 'mod/:id', to: "mods#move", as: "move_mod"
 end

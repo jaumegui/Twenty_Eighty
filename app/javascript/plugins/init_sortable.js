@@ -3,7 +3,8 @@ import Sortable from 'sortablejs';
 const initSortable = () => {
   const list = document.querySelector('#items');
   Sortable.create(list, {	
-  	onEnd: (event) => {
+  	ghostClass: 'ghost',
+    onEnd: (event) => {
   		const newPosition = event.newIndex + 1;
   		const itemId = event.item.dataset.itemId;
 

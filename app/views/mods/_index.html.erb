@@ -1,13 +1,17 @@
-<ul id="items" style="list-decoration: none;">
+<div id="items">
   <% session.mods.each do |mod| %>
-    <li data-item-id="<%= mod.id %>">
-	    <%= mod.title %>
-	    <%= link_to edit_project_session_mod_path(session.project, session, mod) do %>
-				<i class="fas fa-edit"></i>
-			<% end %>
-	    <%= link_to project_session_mod_path(session.project, session, mod), method: :delete, data: { confirm: "Are you sure ?"} do %>
-				<i class="far fa-trash-alt"></i>
-			<% end %>	
-  	</li>
+	<div class="card" data-item-id="<%= mod.id %>">
+	  <div class="card-category">Popular</div>
+	  <div class="card-description">
+		    <%= mod.title %>
+		    <%= link_to edit_project_session_mod_path(session.project, session, mod) do %>
+					<i class="fas fa-edit"></i>
+				<% end %>
+		    <%= link_to project_session_mod_path(session.project, session, mod), method: :delete, data: { confirm: "Are you sure ?"} do %>
+					<i class="far fa-trash-alt"></i>
+				<% end %>	
+	  </div>
+	</div>
   <% end %>
-</ul>
+</div>
+

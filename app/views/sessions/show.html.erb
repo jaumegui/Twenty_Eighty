@@ -48,5 +48,30 @@
 			<%= link_to 'Delete session', project_session_path(@session.project, @session), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger' %>
 			<%# link_to 'Select content', new_project_session_mods_path(@session.project, @session) %>
 		</div>
+    <div class="comment-box">
+      <div class="message-box">
+        <%= simple_form_for [@session.project, @session, @comment] do |f| %>
+          <%= f.input :message %>
+          <%= f.submit %>
+        <% end %>
+        <ul>
+          <% @session.comments.each do |comment| %>
+            <% if comment.message.split(' ').first != "Log" %>
+              <li><%= "#{comment.user.name} : #{comment.message} on #{comment.created_at.day}-#{comment.created_at.month}-#{comment.created_at.year}" %></li>
+              <% end %>
+          <% end %>
+        </ul>
+      </div>
+      <div class="log-box">
+        <h4>Logs</h4>
+        <ul>
+          <% @session.comments.each do |comment| %>
+            <% if comment.message.split(' ').first == "Log" %>
+              <li><%= "#{comment.message.split('|')[1]} - #{comment.created_at}" %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
 	</div>
 </div>

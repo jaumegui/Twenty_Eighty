@@ -1,7 +1,7 @@
 <h1>Project Index</h1>
 
 <ul>
-  <% @project.each do |project| %>
+  <% @projects.each do |project| %>
     <li><%= link_to "#{project.title}", project_path(project) %></li>
   <% end %>
 </ul>

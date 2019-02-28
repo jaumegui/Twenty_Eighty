@@ -1,0 +1,44 @@
+.card {
+  height: 200px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(115, 133, 152, 0.6);
+  .card-main {
+    height: 80%;
+    width: 100%;
+    text-align: right;
+    padding: 10px;
+    border: 1px solid rgba(115, 133, 152, 0.6);
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    h6 {
+      margin: 0;
+      color: white;
+    }
+  }
+}
+
+.card-link {
+    height: 100%;
+    width: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-footer {
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid rgba(115, 133, 152, 0.6);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  ul {
+    margin: 0;
+  }
+  li {
+    list-style-type: none;
+  }
+}

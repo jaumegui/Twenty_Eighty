@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     @session = Session.find(params[:id])
     authorize @session
     @contents = Content.all
+    @comment = Comment.new
     @chapter = []
     @contents.each do |content|
       @chapter << content.chapter
@@ -29,6 +30,7 @@ class SessionsController < ApplicationController
     @session.project = @project
     if @session.save
       redirect_to project_session_path(@project, @session)
+      Comment.create(message: "Log | Session #{@session.title} created |", user_id: current_user.id, session_id: @session.id)
     else
       render :new
     end
@@ -44,9 +46,12 @@ class SessionsController < ApplicationController
     @session = Session.find(params[:id])
     authorize @session
     @project = Project.find(@session.project.id)
+    params = @session.attributes
     @session.update(session_params)
     if @session.save
       redirect_to project_session_path(@project, @session)
+      Comment.create(message: "Log | Session #{@session.title} parameters updated | from #{params.except('id', 'created_at', 'updated_at', 'project_id')},\n
+        to #{@session.attributes.except('id', 'created_at', 'updated_at', 'project_id')}", user_id: current_user.id, session_id: @session.id)
     else
       render :edit
     end

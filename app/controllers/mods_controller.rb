@@ -12,6 +12,7 @@ class ModsController < ApplicationController
     @mod.session = @session
     if @mod.save
       redirect_to project_session_path(@session.project, @session)
+      Comment.create(message: "Log | Module #{@mod.title} added |", user_id: current_user.id, session_id: @mod.session.id)
     else
       raise
     end
@@ -25,9 +26,12 @@ class ModsController < ApplicationController
 
   def update
     @mod = Mod.find(params[:id])
+    params = @mod.attributes
     authorize @mod
     @mod.update(mod_params)
     if @mod.save
+      comment = Comment.create(message: "Log | Module #{@mod.title} updated | from #{params.except('id', 'created_at', 'updated_at', 'session_id')} to #{@mod.attributes.except('id', 'created_at', 'updated_at', 'session_id')}",
+                     user_id: current_user.id, session_id: @mod.session.id)
       redirect_to project_session_path(@mod.session.project, @mod.session)
     else
       render :edit
@@ -36,6 +40,7 @@ class ModsController < ApplicationController
 
   def destroy
     @mod = Mod.find(params[:id])
+    Comment.create(message: "Log | Module #{@mod.title} removed |", user_id: current_user.id, session_id: @mod.session.id)
     authorize @mod
     @mod.destroy
     redirect_to project_session_path(@mod.session.project, @mod.session)

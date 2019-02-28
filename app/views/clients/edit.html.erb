@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Edit a client</h1>
+
+  <%= simple_form_for @client do |f| %>
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :company %>
+    <%= f.input :address %>
+    <%= f.input :logo %>
+    <%= f.submit %>
+  <% end %>
+</div>

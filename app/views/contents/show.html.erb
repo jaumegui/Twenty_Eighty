@@ -1,20 +1,21 @@
-<h1><%= @content.title %></h1>
+<div class="container">
+  <h1><%= @content.title %></h1>
 
-<%= @content.chapter %>
-<br>
-<%= @content.format %>
-<br>
-<%= @content.duration %>
-<br>
-<%= @content.description %>
-<br>
-<%= @content.intel1 %>
-<br>
-<%= @content.intel2 %>
+  <%= @content.chapter %>
+  <br>
+  <%= @content.format %>
+  <br>
+  <%= @content.duration %>
+  <br>
+  <%= @content.description %>
+  <br>
+  <%= @content.intel1 %>
+  <br>
+  <%= @content.intel2 %>
 
 
 
-<%= link_to 'Edit content', edit_content_path(@content), class: 'btn btn-warning' %>
-<%= link_to 'Delete content', content_path(@content), method: :delete, data: { confirm: "Are you sure ?" }, class: 'btn btn-danger' %>
-<br>
-
+  <%= link_to 'Edit content', edit_content_path(@content), class: 'btn btn-warning' %>
+  <%= link_to 'Delete content', content_path(@content), method: :delete, data: { confirm: "Are you sure ?" }, class: 'btn btn-danger' %>
+  <br>
+</div>

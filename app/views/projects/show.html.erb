@@ -1,21 +1,23 @@
-<h1><%= @project.title %></h1>
+<div class="container">
+  <h1><%= @project.title %></h1>
 
-<div class="project-info">
-  <%= @project.start_date %>
-  <br>
-  <%= @project.end_date %>
-  <br>
-  <%= @project.participant_number %>
-  <br>
-  <ul>
-    <% @project.sessions.each do |session| %>
-      <li><%= link_to "#{session.title}", project_session_path(@project, session) %></li>
-    <% end %>
-  </ul>
+  <div class="project-info">
+    <%= @project.start_date %>
+    <br>
+    <%= @project.end_date %>
+    <br>
+    <%= @project.participant_number %>
+    <br>
+    <ul>
+      <% @project.sessions.each do |session| %>
+        <li><%= link_to "#{session.title}", project_session_path(@project, session) %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <%= link_to 'Edit a project', edit_project_path(@project), class: 'btn btn-warning' %>
+  <%= link_to 'Delete a project', project_path(@project), method: :delete, data: { confirm: 'Are you sure ?'}, class: 'btn btn-danger' %>
+
+
+  <%= link_to 'Add a session', new_project_session_path(@project), class: 'btn btn-primary' %>
 </div>
-
-<%= link_to 'Edit a project', edit_project_path(@project), class: 'btn btn-warning' %>
-<%= link_to 'Delete a project', project_path(@project), method: :delete, data: { confirm: 'Are you sure ?'}, class: 'btn btn-danger' %>
-
-
-<%= link_to 'Add a session', new_project_session_path(@project), class: 'btn btn-primary' %>

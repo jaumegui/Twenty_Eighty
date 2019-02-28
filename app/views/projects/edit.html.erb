@@ -5,7 +5,7 @@
     <%= f.input :title %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
-    <%= f.input :participant_number %>
+    <%= f.input :participant_number, input_html: { min: '0' } %>
     <%= f.submit %>
   <% end %>
 </div>

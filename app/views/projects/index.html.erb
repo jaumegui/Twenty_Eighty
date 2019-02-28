@@ -1,8 +1,32 @@
 <h1>Project Index</h1>
 
+<h2>Projets en cours</h2>
 <ul>
-  <% @project.each do |project| %>
-    <li><%= link_to "#{project.title}", project_path(project) %></li>
+  <% @projects.each do |project| %>
+    <% if project.start_date <= Date.today && project.end_date >= Date.today %>
+      <li><%= link_to "#{project.title}", project_path(project) %> <%= "From #{project.start_date} to #{project.end_date} for #{project.participant_number} participants" %></li>
+    <% else %>
+      <%= "Empty" %>
+    <% end %>
   <% end %>
 </ul>
-
+<h2>Projets à venir</h2>
+<ul>
+  <% @projects.each do |project| %>
+    <% if project.start_date > Date.today %>
+      <li><%= link_to "#{project.title}", project_path(project) %> <%= "From #{project.start_date} to #{project.end_date} for #{project.participant_number} participants" %></li>
+    <% else %>
+      <%= "Empty" %>
+    <% end %>
+  <% end %>
+</ul>
+<h2>Projets terminés</h2>
+<ul>
+  <% @projects.each do |project| %>
+    <% if project.end_date < Date.today %>
+      <li><%= link_to "#{project.title}", project_path(project) %> <%= "From #{project.start_date} to #{project.end_date} for #{project.participant_number} participants" %></li>
+    <% else %>
+      <%= "Empty" %>
+    <% end %>
+  <% end %>
+</ul>

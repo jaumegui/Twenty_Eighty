@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'jquery-rails'
+gem 'acts_as_list'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

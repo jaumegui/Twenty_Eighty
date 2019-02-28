@@ -37,12 +37,8 @@ class ModsController < ApplicationController
 
   def move
     @mod = Mod.find(params[:id])
-    if params[:direction] == 'up'
-      @mod.move_higher
-    elsif params[:direction] == 'down'
-      @mod.move_lower
-    end
-    redirect_to project_session_path(@mod.session.project, @mod.session)
+    @session = @mod.session
+    @mod.insert_at(params[:position].to_i)
   end
 
   private

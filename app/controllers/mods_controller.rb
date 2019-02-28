@@ -1,12 +1,14 @@
 class ModsController < ApplicationController
   def show
     @mod = Mod.find(params[:id])
+    authorize @mod
   end
 
   def create
     @content = Content.find(params[:content_id])
     @session = Session.find(params[:session_id])
     @mod = Mod.new(@content.attributes.except("id", "created_at", "updated_at"))
+    authorize @mod
     @mod.session = @session
     if @mod.save
       redirect_to project_session_path(@session.project, @session)
@@ -18,11 +20,14 @@ class ModsController < ApplicationController
 
   def edit
     @mod = Mod.find(params[:id])
+    # raise
+    authorize @mod
   end
 
   def update
     @mod = Mod.find(params[:id])
     params = @mod.attributes
+    authorize @mod
     @mod.update(mod_params)
     if @mod.save
       comment = Comment.create(message: "Log | Module #{@mod.title} updated | from #{params.except('id', 'created_at', 'updated_at', 'session_id')} to #{@mod.attributes.except('id', 'created_at', 'updated_at', 'session_id')}",
@@ -36,7 +41,18 @@ class ModsController < ApplicationController
   def destroy
     @mod = Mod.find(params[:id])
     Comment.create(message: "Log | Module #{@mod.title} removed |", user_id: current_user.id, session_id: @mod.session.id)
+    authorize @mod
     @mod.destroy
+    redirect_to project_session_path(@mod.session.project, @mod.session)
+  end
+
+  def move
+    @mod = Mod.find(params[:id])
+    if params[:direction] == 'up'
+      @mod.move_higher
+    elsif params[:direction] == 'down'
+      @mod.move_lower
+    end
     redirect_to project_session_path(@mod.session.project, @mod.session)
   end
 

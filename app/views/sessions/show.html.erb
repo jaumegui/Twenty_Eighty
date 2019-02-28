@@ -38,6 +38,8 @@
           <% end %>
 			    <%= link_to project_session_mod_path(@session.project, @session, content), method: :delete, data: { confirm: "Are you sure ?"} do %>
             <i class="far fa-trash-alt"></i>
+            	<%= link_to "+", move_mod_path(content, direction: :up), method: :post %>
+            	<%= link_to "-", move_mod_path(content, direction: :down), method: :post %>
           <% end %>
 			  	</li>
 			  <% end %>

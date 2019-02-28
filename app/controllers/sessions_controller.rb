@@ -2,10 +2,12 @@ class SessionsController < ApplicationController
   def index
     @project = Project.find(params[:project_id])
     @sessions = Session.where(project: @project)
+    @sessions = policy_scope(Session).order(created_at: :desc)
   end
 
   def show
     @session = Session.find(params[:id])
+    authorize @session
     @contents = Content.all
     @comment = Comment.new
     @chapter = []
@@ -17,12 +19,14 @@ class SessionsController < ApplicationController
 
   def new
     @session = Session.new
+    authorize @session
     @project = Project.find(params[:project_id])
   end
 
   def create
     @project = Project.find(params[:project_id])
     @session = Session.new(session_params)
+    authorize @session
     @session.project = @project
     if @session.save
       redirect_to project_session_path(@project, @session)
@@ -34,11 +38,13 @@ class SessionsController < ApplicationController
 
   def edit
     @session = Session.find(params[:id])
+    authorize @session
     @project = Project.find(@session.project_id)
   end
 
   def update
     @session = Session.find(params[:id])
+    authorize @session
     @project = Project.find(@session.project.id)
     params = @session.attributes
     @session.update(session_params)
@@ -54,6 +60,7 @@ class SessionsController < ApplicationController
   def destroy
     @project = Project.find(params[:project_id])
     @session = Session.find(params[:id])
+    authorize @session
     @session.destroy
     redirect_to project_path(@project)
   end

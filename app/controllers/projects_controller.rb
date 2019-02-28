@@ -1,18 +1,22 @@
 class ProjectsController < ApplicationController
   def index
-    @project = Project.all
+    @projects = Project.all
+    @projects = policy_scope(Project).order(created_at: :desc)
   end
 
   def show
     @project = Project.find(params[:id])
+    authorize @project
   end
 
   def new
     @project = Project.new
+    authorize @project
   end
 
   def create
     @project = Project.new(project_params)
+    authorize @project
     @project.user = current_user
     @userproject = UserProject.new(user: current_user, project: @project)
     if @project.save && @userproject.save
@@ -24,10 +28,12 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    authorize @project
   end
 
   def update
     @project = Project.find(params[:id])
+    authorize @project
     @project.update(project_params)
     if @project.save
       redirect_to project_path(@project)
@@ -38,6 +44,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:id])
+    authorize @project
     @userproject = UserProject.where(project: @project)
     @userproject.destroy(params[:id])
     @project.destroy

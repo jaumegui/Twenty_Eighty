@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_02_28_094535) do
     t.bigint "session_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "position"
     t.index ["session_id"], name: "index_mods_on_session_id"
   end
 

@@ -1,8 +1,41 @@
 <h1>Project Index</h1>
 
+<h2>Projets en cours</h2>
 <ul>
-  <% @project.each do |project| %>
-    <li><%= link_to "#{project.title}", project_path(project) %></li>
+  <% result_cours = [] %>
+  <% @projects.each do |project| %>
+    <% if project.start_date <= Date.today && project.end_date >= Date.today %>
+      <li><%= link_to "#{project.title}", project_path(project) %> <%= "From #{project.start_date} to #{project.end_date} for #{project.participant_number} participants" %></li>
+      <% result_cours << project %>
+    <% end %>
   <% end %>
+    <% if result_cours.empty? %>
+      <%= "Empty" %>
+    <% end %>
 </ul>
-
+<h2>Projets à venir</h2>
+<ul>
+  <% result_venir = [] %>
+  <% @projects.each do |project| %>
+    <% if project.start_date > Date.today %>
+      <li><%= link_to "#{project.title}", project_path(project) %> <%= "From #{project.start_date} to #{project.end_date} for #{project.participant_number} participants" %></li>
+      <% result_venir << project %>
+    <% end %>
+  <% end %>
+    <% if result_venir.empty? %>
+      <%= "Empty" %>
+    <% end %>
+</ul>
+<h2>Projets terminés</h2>
+<ul>
+  <% result_termines = [] %>
+  <% @projects.each do |project| %>
+    <% if project.end_date < Date.today %>
+      <li><%= link_to "#{project.title}", project_path(project) %> <%= "From #{project.start_date} to #{project.end_date} for #{project.participant_number} participants" %></li>
+      <% result_termines << project %>
+    <% end %>
+  <% end %>
+    <% if result_termines.empty? %>
+      <%= "Empty" %>
+    <% end %>
+</ul>

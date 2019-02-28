@@ -1,7 +1,9 @@
-<h1>List of contents</h1>
+<div class="container">
+  <h1>List of contents</h1>
 
-<ul>
-  <% @contents.each do |content| %>
-  <li><%= link_to "#{content.title}", content_path(content) %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @contents.each do |content| %>
+    <li><%= link_to "#{content.title}", content_path(content) %></li>
+    <% end %>
+  </ul>
+</div>

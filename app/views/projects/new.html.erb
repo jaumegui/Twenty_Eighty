@@ -1,9 +1,11 @@
-<h1>Add a project</h1>
+<div class="container">
+  <h1>Add a project</h1>
 
-<%= simple_form_for @project do |f| %>
-  <%= f.input :title %>
-  <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-  <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-  <%= f.input :participant_number %>
-  <%= f.submit %>
-<% end %>
+  <%= simple_form_for @project do |f| %>
+    <%= f.input :title %>
+    <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :participant_number %>
+    <%= f.submit %>
+  <% end %>
+</div>

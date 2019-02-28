@@ -1,9 +1,11 @@
-<h1>Edit a project</h1>
+<div class="container">
+  <h1>Edit a project</h1>
 
-<%= simple_form_for @project do |f| %>
-  <%= f.input :title %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.input :participant_number %>
-  <%= f.submit %>
-<% end %>
+  <%= simple_form_for @project do |f| %>
+    <%= f.input :title %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :participant_number %>
+    <%= f.submit %>
+  <% end %>
+</div>

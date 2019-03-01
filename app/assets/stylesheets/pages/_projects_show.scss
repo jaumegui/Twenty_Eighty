@@ -1,0 +1,35 @@
+.project-show-title {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 20px;
+  h1 {
+    margin: 0;
+  }
+  h1, .control-buttons {
+    height: 50px;
+  }
+  .control-buttons {
+    display: flex;
+    align-items: center;
+    width: auto;
+    a {
+      margin: 0 5px;
+    }
+  }
+}
+
+.project-info-headers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 35%;
+  margin: 10px 0;
+  p {
+    margin: 0;
+  }
+}
+
+.sessions-cards {
+  text-align: center;
+}

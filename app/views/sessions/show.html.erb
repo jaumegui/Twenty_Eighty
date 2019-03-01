@@ -27,25 +27,12 @@
 			<%= @session.date %>
 			<%= @session.start_time %>
 			<%= @session.end_time %>
+			
 
-			<ul>
-        <%# result_arr = @session.mods.sort_by { |content| content[:order]} %>
-			  <% @session.mods.each do |content| %>
-			    <li>
-			    <%= content.title %>
-			    <%= link_to edit_project_session_mod_path(@session.project, @session, content) do %>
-            <i class="fas fa-edit"></i>
-          <% end %>
-			    <%= link_to project_session_mod_path(@session.project, @session, content), method: :delete, data: { confirm: "Are you sure ?"} do %>
-            <i class="far fa-trash-alt"></i>
-            	<%= link_to "+", move_mod_path(content, direction: :up), method: :post %>
-            	<%= link_to "-", move_mod_path(content, direction: :down), method: :post %>
-          <% end %>
-			  	</li>
-			  <% end %>
-			</ul>
-
-
+			<div id="mods">
+				<%= render 'mods/index', session: @session %>	
+			</div>	
+			
 			<%= link_to 'Edit session', edit_project_session_path(@session.project, @session), class: 'btn btn-warning' %>
 			<%= link_to 'Delete session', project_session_path(@session.project, @session), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger' %>
 			<%# link_to 'Select content', new_project_session_mods_path(@session.project, @session) %>

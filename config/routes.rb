@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :clients
   resources :projects do
     resources :sessions  do
-      resources :mods, only: [:create, :edit, :update, :destroy]
+      resources :mods, only: [:show, :create, :edit, :update, :destroy]
       resources :comments, only: [:create, :destroy]
     end
   end

@@ -1,6 +1,7 @@
 <div id="items">
   <% session.mods.each do |mod| %>
 	<div class="card" data-item-id="<%= mod.id %>">
+    <%= link_to '', project_session_mod_path(mod.session.project, mod.session, mod), class: 'card-link' %>
 	  <div class="card-category"> <%= mod.title %> </div>
     <br>
 	  <div class="card-description">

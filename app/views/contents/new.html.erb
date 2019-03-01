@@ -5,6 +5,7 @@
     <%= f.input :title %>
     <%= f.input :format %>
     <%= f.input :duration, input_html: { min: '0' } %>
+    <%= f.input :chapter, :collection => %w[ Communication Developpement-Personnel Innovation Management Négociation Stratégie Leadership ] %>
     <%= f.input :description %>
     <%= f.submit %>
   <% end %>

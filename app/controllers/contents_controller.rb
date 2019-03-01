@@ -32,7 +32,8 @@ class ContentsController < ApplicationController
   def update
     @content = Content.find(params[:id])
     authorize @content
-    if @content.update(content_params)
+    @content.update(content_params)
+    if @content.save
       redirect_to content_path(@content)
     else
       render :edit
@@ -49,6 +50,6 @@ class ContentsController < ApplicationController
   private
 
   def content_params
-    params.require(:content).permit(:title, :format, :duration, :description)
+    params.require(:content).permit(:title, :format, :duration, :description, :chapter)
   end
 end

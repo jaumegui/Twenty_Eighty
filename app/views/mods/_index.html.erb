@@ -2,8 +2,9 @@
   <% session.mods.each do |mod| %>
 	<div class="card" data-item-id="<%= mod.id %>">
 	  <div class="card-category"> <%= mod.title %> </div>
+    <br>
 	  <div class="card-description">
-        <%= mod.description.first(200) %>
+        <%= "#{mod.description.split('.').first(3).join('.')}." %>
 		    <%= link_to edit_project_session_mod_path(session.project, session, mod) do %>
 					<i class="fas fa-edit"></i>
 				<% end %>

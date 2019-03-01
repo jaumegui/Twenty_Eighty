@@ -1,5 +1,6 @@
 puts 'Cleaning database...'
 Content.destroy_all
+Comment.destroy_all
 User.destroy_all
 Client.destroy_all
 

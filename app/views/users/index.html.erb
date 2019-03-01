@@ -1,0 +1,31 @@
+<div class="container">
+  <h4>Users List</h4>
+
+
+  <h6>Admins</h6>
+  <ul>
+    <% @users.where(access_level: 'admin').each do |user| %>
+      <li>
+        <%= link_to "#{user.name}", user_path(user) %>
+      </li>
+    <% end %>
+  </ul>
+
+  <h6>Project Managers</h6>
+  <ul>
+    <% @users.where(access_level: 'project_manager').each do |user| %>
+      <li>
+        <%= link_to "#{user.name}", user_path(user) %>
+      </li>
+    <% end %>
+  </ul>
+
+  <h6>Seveners</h6>
+  <ul>
+    <% @users.where(access_level: 'sevener').each do |user| %>
+      <li>
+        <%= link_to "#{user.name}", user_path(user) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

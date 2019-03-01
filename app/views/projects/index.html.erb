@@ -9,7 +9,7 @@
       <% if project.start_date <= Date.today && project.end_date >= Date.today %>
         <div class="col-xs-12 col-md-4">
           <div class="card">
-            <div class="card-main" style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>);background-size: contain;">
+            <div class="card-main" style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>);">
               <h6><%= project.title %></h6>
               <%= link_to "", project_path(project), class: 'card-link' %>
               <% result_cours << project %>
@@ -43,10 +43,10 @@
       <% if project.start_date > Date.today %>
         <div class="col-xs-12 col-md-4">
           <div class="card">
-            <div class="card-main" style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>);background-size: cover;">
+            <div class="card-main" style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>);">
               <h6><%= project.title %></h6>
               <%= link_to "", project_path(project), class: 'card-link' %>
-              <% result_cours << project %>
+              <% result_fut << project %>
             </div>
             <div class="card-footer">
                 <div><i class="fas fa-table"></i><%= " #{project.start_date.day}/#{project.start_date.month} to #{project.end_date.day}/#{project.end_date.month}" %></div>
@@ -75,10 +75,10 @@
       <% if project.end_date < Date.today %>
         <div class="col-xs-12 col-md-4">
           <div class="card">
-            <div class="card-main" style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>);background-size: contain;">
+            <div class="card-main" style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>);">
               <h6><%= project.title %></h6>
               <%= link_to "", project_path(project), class: 'card-link' %>
-              <% result_cours << project %>
+              <% result_term << project %>
             </div>
             <div class="card-footer">
                 <div><i class="fas fa-table"></i><%= " #{project.start_date.day}/#{project.start_date.month} to #{project.end_date.day}/#{project.end_date.month}" %></div>

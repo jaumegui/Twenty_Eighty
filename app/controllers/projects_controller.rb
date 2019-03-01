@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @clients = Client.all
     authorize @project
   end
 
@@ -19,6 +20,7 @@ class ProjectsController < ApplicationController
     authorize @project
     @project.user = current_user
     @userproject = UserProject.new(user: current_user, project: @project)
+    @project.client = Client.find(params[:project][:client].to_i)
     if @project.save && @userproject.save
       redirect_to projects_path
     else
@@ -54,6 +56,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :start_date, :end_date, :participant_number, :user)
+    params.require(:project).permit(:title, :start_date, :end_date, :participant_number, :user, :client_id)
   end
 end

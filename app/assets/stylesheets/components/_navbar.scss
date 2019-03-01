@@ -1,4 +1,15 @@
 /* Main navbar */
+
+.seven-button {
+  font-family: Roboto;
+  border: none;
+  color: #2d2c2cde;
+}
+
+button.seven-button:focus {
+    outline: none;
+}
+
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
@@ -13,8 +24,8 @@
 /* Logo */
 .navbar-wagon-brand {
   img {
-    width: 200px;
-    height: 30px !important;
+    width: 150px;
+    height: 100%;
   }
 }
 

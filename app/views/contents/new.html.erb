@@ -6,6 +6,8 @@
     <%= f.input :format %>
     <%= f.input :duration, input_html: { min: '0' } %>
     <%= f.input :chapter, :collection => %w[ Communication Developpement-Personnel Innovation Management Négociation Stratégie Leadership ] %>
+    <%= f.input :intel1, :collection => %w[ Logico-Mathématique Verbo-Linguistique Spatiale Intrapersonnelle Interpersonnelle Kinesthesique Musicale-Rythmique ] %>
+    <%= f.input :intel2, :collection => %w[ Logico-Mathématique Verbo-Linguistique Spatiale Intrapersonnelle Interpersonnelle Kinesthesique Musicale-Rythmique ] %>
     <%= f.input :description %>
     <%= f.submit %>
   <% end %>

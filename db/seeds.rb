@@ -93,3 +93,31 @@ User.create(name: "User", email: "user@2080.co", password: "tititoto", access_le
 User.create(name: "Sevener", email: "sevener@2080.co", password: "tititoto", access_level: "sevener", expertise: "Stratégie")
 
 puts "Done!"
+
+puts "Generating Clients..."
+Client.create(
+ name: "Michel Michel",
+ email: "michel@deliveroo.fr",
+ company: "Deliveroo",
+ address: "14 rue de la livraison, 75001 Paris",
+ logo: "https://i0.wp.com/www.grapheine.com/wp-content/uploads/2016/09/new-logo-deliveroo.gif?fit=1950%2C1200&quality=90&strip=all&ssl=1")
+Client.create(
+ name: "Jean-Michel Michel" ,
+ email: "jean-michel-michel@ibm.com",
+ company: "IBM",
+ address: "224 rue des Américains, 75016 Paris",
+ logo: "https://pbs.twimg.com/profile_images/1013563961633959936/X5epMthl_400x400.jpg")
+Client.create(
+ name: "Boris",
+ email: "boris@lewagon.com",
+ company: "Le Wagon",
+ address: "16 Villa Gaudelet, 75011 Paris",
+ logo: "https://amft.io/wp-content/uploads/2017/05/white_logo_red_font.png")
+Client.create(
+ name: "Xavier Niel",
+ email: "xavier@42.com",
+ company: "Ecole 42",
+ address: "96 Boulevard Bessières, 75017 Paris",
+ logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/42_Technologies_logo.svg/2000px-42_Technologies_logo.svg.png")
+
+puts "Done!"

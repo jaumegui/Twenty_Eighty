@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container" id="update-modal">
   <div class="project-show-title">
     <h1><%= @project.title %></h1>
     <div class="control-buttons">
-      <%= link_to 'Edit a project', edit_project_path(@project), class: 'btn btn-warning' %>
+      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editProject">Edit Project</button>
       <%= link_to 'Delete a project', project_path(@project), method: :delete, data: { confirm: 'Are you sure ?'}, class: 'btn btn-danger' %>
       <%= link_to 'Add a session', new_project_session_path(@project), class: 'btn btn-primary' %>
     </div>
@@ -40,4 +40,12 @@
     <% end %>
   </div>
 
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="editProject" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="border-radius: 20px">
+    <%= render 'edit', project: @project %>
+  </div>
 </div>

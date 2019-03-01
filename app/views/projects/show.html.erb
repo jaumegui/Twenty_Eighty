@@ -12,7 +12,7 @@
   <div class="project-info">
     <div class="project-info-headers">
       <p><%= "From #{@project.start_date.day}/#{@project.start_date.month}/#{@project.start_date.year} to #{@project.end_date.day}/#{@project.end_date.month}/#{@project.end_date.year}" %></p>
-      <i class="fas fa-user"></i><%= " #{@project.participant_number}" %>
+      <div><i class="fas fa-user"></i><%= " #{@project.participant_number}" %></div>
     </div>
     <div class="sessions-cards">
       <% @project.sessions.each do |session| %>
@@ -20,6 +20,17 @@
         <div class="card-main-lg">
           <h3><%= session.title %></h3>
           <%= link_to '', project_session_path(session.project, session), class: "card-link" %>
+          <div class="mods-list">
+            <ul>
+              <% list = session.mods %>
+              <% list.sort_by { |mod| mod[:position]} %>
+              <% list.each do |mod| %>
+                <li>
+                  <%= "#{mod.title} - #{mod.duration} min" %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
         <div class="card-footer-lg">
           <p><%= session.date %></p><div><i class="far fa-hourglass"></i><%= " #{session.start_time.strftime("%k:%M")} to #{session.end_time.strftime("%k:%M")}" %>

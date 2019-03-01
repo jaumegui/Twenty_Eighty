@@ -3,6 +3,7 @@
   width: 300px;
   border-radius: 10px;
   box-shadow: 1px 1px 10px rgba(115, 133, 152, 0.6);
+  margin-bottom: 40px;
   &:hover {
     transition: all 0.8s ease;
     transform: scale(1.1);
@@ -15,6 +16,9 @@
     border: 1px solid rgba(115, 133, 152, 0.6);
     border-radius: 10px 10px 0 0;
     position: relative;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     h6 {
       margin: 0;
       color: white;
@@ -53,7 +57,7 @@
 
 .card-lg {
   width: 60%;
-  height: 300px;
+  height: auto;
   border: 1px solid rgba(115, 133, 152, 0.6);
   border-radius: 10px;
   box-shadow: 1px 1px 10px rgba(115, 133, 152, 0.6);
@@ -64,15 +68,16 @@
     transform: scale(1.1);
     }
   .card-main-lg {
-    height: 80%;
+    height: auto;
     padding: 20px;
     position: relative;
     h3 {
       margin: 0;
+      margin-bottom: 20px;
     }
   }
   .card-footer-lg {
-    height: 20%;
+    height: 50px;
     display: flex;
     justify-content: space-around;
     align-items: center;

@@ -6,6 +6,6 @@ class PagePolicy < ApplicationPolicy
   end
 
   def home
-    record == user || user.admin
+    record.user == user
   end
 end

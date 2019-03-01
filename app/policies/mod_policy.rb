@@ -14,20 +14,14 @@ class ModPolicy < ApplicationPolicy
   end
 
   def edit?
-    if user
-      record.user == user || user.admin
-    end
+    true
   end
 
   def update?
-    if user
-      record.user == user || user.admin
-    end
+    true
   end
 
   def destroy?
-    if user
-      record.user == user || user.admin
-    end
+    true
   end
 end

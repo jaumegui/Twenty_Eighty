@@ -47,7 +47,28 @@ button.seven-button:focus {
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
+  height: 70px;
+  display: flex;
+  align-items: center;
 }
+
+.item-blue{
+    &:hover {
+      border-bottom : 3px solid rgb(88, 142, 173);
+    }
+  }
+
+  .item-green{
+    &:hover {
+      border-bottom : 3px solid rgb(40, 142, 147);
+    }
+  }
+
+  .item-yellow{
+    &:hover {
+      border-bottom : 3px solid rgb(255, 197, 83);
+    }
+  }
 
 /* Navbar link */
 .navbar-wagon-link {

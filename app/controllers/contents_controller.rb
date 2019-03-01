@@ -50,6 +50,6 @@ class ContentsController < ApplicationController
   private
 
   def content_params
-    params.require(:content).permit(:title, :format, :duration, :description, :chapter)
+    params.require(:content).permit(:title, :format, :duration, :description, :chapter, :intel1, :intel2)
   end
 end

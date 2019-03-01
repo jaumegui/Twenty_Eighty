@@ -32,6 +32,7 @@ class ClientsController < ApplicationController
   def update
     @client = Client.find(params[:id])
     authorize @client
+    @client.update(client_params)
     if @client.save
       redirect_to client_path(@client)
     else

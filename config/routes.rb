@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :mods, only: [:show, :create, :edit, :update, :destroy]
       resources :comments, only: [:create, :destroy]
     end
+    resources :user_projects, only: [:create, :destroy]
   end
   post 'mod/:id', to: "mods#move", as: "move_mod"
 end

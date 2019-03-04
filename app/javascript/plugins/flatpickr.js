@@ -6,11 +6,6 @@ flatpickr(".datepicker", {
 	    minDate: "today",
 })
 
-flatpickr(".rangepicker", {
-	    minDate: "today",
-	    mode: "range"
-})
-
 flatpickr(".timepicker", {
   enableTime: true,
   noCalendar: true,

@@ -20,10 +20,10 @@ class ProjectsController < ApplicationController
     authorize @project
     @project.user = current_user
     @userproject = UserProject.new(user: current_user, project: @project)
-    @project.client = Client.find(params[:project][:client].to_i)
     if @project.save && @userproject.save
       redirect_to projects_path
     else
+      @clients = Client.all
       render :new
     end
   end

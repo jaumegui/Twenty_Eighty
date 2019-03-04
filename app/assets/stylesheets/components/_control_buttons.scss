@@ -1,0 +1,26 @@
+.control-button {
+    border-radius: 50%;
+    // border: 1px solid rgba(115, 133, 152, 0.6);
+    text-align: center;
+    vertical-align: center;
+    height: 48px;
+    width: 48px;
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    opacity: 0.6;
+    transition: all 0.8s ease;
+    a {
+      color: white;
+    }
+    &:hover {
+      opacity: 1;
+    }
+}
+
+.control-button-warning {
+  background-color: $orange;
+}
+
+.control-button-danger {
+  background-color: $red;
+}

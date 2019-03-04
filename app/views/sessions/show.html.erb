@@ -22,24 +22,31 @@
 
 	<div class="session-container">
 		<div class="container" style="text-align: center">
-			<h1><%= @session.title %></h1>
+      <div class="session-header">
+        <div>
+          <%= link_to 'Return', project_path(@session.project), class: 'btn btn-primary' %>
+        </div>
+        <div>
+          <%= link_to 'Edit session', edit_project_session_path(@session.project, @session), class: 'btn btn-warning' %>
+  			 <%= link_to 'Delete session', project_session_path(@session.project, @session), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger' %>
+        </div>
+      </div>
 
-			<%= @session.date.strftime('%A, %d-%m-%Y') %>
+      <h1><%= @session.title %></h1>
+
+      <%= @session.date.strftime('%A, %d-%m-%Y') %>
       <%= "from #{@session.start_time.hour} : #{@session.start_time.min}0 to" if @session.start_time.min.to_s.length == 1 %>
       <%= "from #{@session.start_time.hour} : #{@session.start_time.min} to" if @session.start_time.min.to_s.length == 2 %>
       <%= "#{@session.end_time.hour} : #{@session.end_time.min}0" if @session.start_time.min.to_s.length == 1 %>
-			<%= "#{@session.end_time.hour} : #{@session.end_time.min}" if @session.start_time.min.to_s.length == 2 %>
+      <%= "#{@session.end_time.hour} : #{@session.end_time.min}" if @session.start_time.min.to_s.length == 2 %>
 
 
-			<div id="mods">
-				<%= render 'mods/index', session: @session %>
-			</div>
+      <div id="mods">
+        <%= render 'mods/index', session: @session %>
+      </div>
 
-			<%= link_to 'Edit session', edit_project_session_path(@session.project, @session), class: 'btn btn-warning' %>
-			<%= link_to 'Delete session', project_session_path(@session.project, @session), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger' %>
 			<%# link_to 'Select content', new_project_session_mods_path(@session.project, @session) %>
-		</div>
-    <div class="comment-box">
+          <div class="comment-box">
       <div class="message-box">
         <%= simple_form_for [@session.project, @session, @comment] do |f| %>
           <%= f.input :message %>
@@ -64,5 +71,7 @@
         </ul>
       </div>
     </div>
+		</div>
+
 	</div>
 </div>

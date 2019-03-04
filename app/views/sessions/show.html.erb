@@ -46,8 +46,7 @@
       </div>
 
 			<%# link_to 'Select content', new_project_session_mods_path(@session.project, @session) %>
-		</div>
-    <div class="comment-box">
+          <div class="comment-box">
       <div class="message-box">
         <%= simple_form_for [@session.project, @session, @comment] do |f| %>
           <%= f.input :message %>
@@ -72,5 +71,7 @@
         </ul>
       </div>
     </div>
+		</div>
+
 	</div>
 </div>

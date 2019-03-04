@@ -1,8 +1,8 @@
+$timeline: #5959a5;
+
 .card {
   height: 200px;
   width: 300px;
-  border-radius: 10px;
-  box-shadow: 1px 1px 10px rgba(115, 133, 152, 0.6);
   margin-bottom: 40px;
   position: relative;
   &:hover {
@@ -91,4 +91,95 @@
 
 #card-dates {
   text-align: right;
+}
+
+#items {
+    margin-bottom: 20px;
+    .card-mods {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 65vw;
+    opacity: 0.75;
+    &:hover {
+      transition: all 0.8s ease;
+      transform: scale(1.0);
+      opacity: 1;
+    }
+  }
+  .card-left {
+    border-right-style: solid;
+    border-right-color: $timeline;
+    border-right-width: 4px;
+    flex: 0 0 15%;
+  }
+  .mod-time {
+    margin-left: 35%;
+  }
+  .card-right {
+    flex-shrink: 2;
+    padding-left: 40px;
+  }
+  .circle {
+    border: solid 2px $timeline;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    margin-right: -7%;
+    background-color: $timeline;
+  }
+
+  .align-elements-in-flexbox {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: space-between;
+  }
+  .card-description {
+    text-align: justify;
+  }
+
+}
+
+.top-mods {
+  margin-bottom: 40px;
+}
+
+duration {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 15px;
+
+}
+
+.card-mods:first-child {
+  .card-left {
+     -webkit-border-image: 
+      -webkit-gradient(linear, 0 100%, 0 0, from($timeline), to(rgba(0, 0, 0, 0))) 1 100%;
+    -webkit-border-image: 
+      -webkit-linear-gradient(top, $timeline, rgba(0, 0, 0, 0)) 1 100%;
+    -moz-border-image:
+      -moz-linear-gradient(top, $timeline, rgba(0, 0, 0, 0)) 1 100%;  
+    -o-border-image:
+      -o-linear-gradient(top, $timeline, rgba(0, 0, 0, 0)) 1 100%;
+    border-image:
+      linear-gradient(to top, $timeline, rgba(0, 0, 0, 0)) 1 100%;
+  }
+}
+
+.card-mods:last-child {
+  .card-left {
+     -webkit-border-image: 
+      -webkit-gradient(linear, 0 100%, 0 0, from($timeline), to(rgba(0, 0, 0, 0))) 1 100%;
+    -webkit-border-image: 
+      -webkit-linear-gradient(bottom, $timeline, rgba(0, 0, 0, 0)) 1 100%;
+    -moz-border-image:
+      -moz-linear-gradient(bottom, $timeline, rgba(0, 0, 0, 0)) 1 100%;  
+    -o-border-image:
+      -o-linear-gradient(bottom, $timeline, rgba(0, 0, 0, 0)) 1 100%;
+    border-image:
+      linear-gradient(to bottom, $timeline, rgba(0, 0, 0, 0)) 1 100%;
+  }
 }

@@ -5,14 +5,25 @@
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editProject">Edit Project</button>
       <%= link_to 'Delete a project', project_path(@project), method: :delete, data: { confirm: 'Are you sure ?'}, class: 'btn btn-danger' %>
       <%= link_to 'Add a session', new_project_session_path(@project), class: 'btn btn-primary' %>
+      <div class="user-manager">
+        <%= simple_form_for [@project, @userproject], wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
+          <%= f.input :user, :collection => @users, label: false %>
+          <%= f.submit "Add User to Project", class: 'btn' %>
+        <% end %>
+      </div>
     </div>
   </div>
 
-
   <div class="project-info">
     <div class="project-info-headers">
-      <p><%= "From #{@project.start_date.day}/#{@project.start_date.month}/#{@project.start_date.year} to #{@project.end_date.day}/#{@project.end_date.month}/#{@project.end_date.year}" %></p>
-      <div><i class="fas fa-user"></i><%= " #{@project.participant_number}" %></div>
+      <p><%="From #{@project.start_date.strftime('%d/%m/%y')} to #{@project.end_date.strftime('%d/%m/%y')}" %> - <i class="fas fa-user"> </i> <%= "#{@project.participant_number}"%> </p>
+      <ul class='list-inline'>
+        <% @project.users.each do |user| %>
+        <li>
+          <%= user.name %>
+        </li>
+        <% end %>
+      </ul>
     </div>
     <div class="sessions-cards">
       <% @project.sessions.each do |session| %>
@@ -33,7 +44,8 @@
           </div>
         </div>
         <div class="card-footer-lg">
-          <p><%= session.date %></p><div><i class="far fa-hourglass"></i><%= " #{session.start_time.strftime("%k:%M")} to #{session.end_time.strftime("%k:%M")}" %>
+          <p> <%="#{session.date.strftime('%d/%m/%y')}"%> </p><div><i class="far fa-hourglass"></i><%= " #{session.start_time.strftime("%k:%M")} to #{session.end_time.strftime("%k:%M")}" %>
+          <p><%=   %></p>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-class ModPolicy < ApplicationPolicy
+class UserProjectPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -6,10 +6,6 @@ class ModPolicy < ApplicationPolicy
   end
 
   def create?
-    true
-  end
-
-  def move?
     true
   end
 

@@ -1,18 +1,23 @@
 <div id="items">
   <% session.mods.each do |mod| %>
-	<div class="card" data-item-id="<%= mod.id %>">
-    <%= link_to '', project_session_mod_path(mod.session.project, mod.session, mod), class: 'card-link' %>
-	  <div class="card-category"> <%= mod.title %> </div>
-    <br>
-	  <div class="card-description">
-        <%= "#{mod.description.split('.').first(3).join('.')}." %>
-		    <%= link_to edit_project_session_mod_path(session.project, session, mod) do %>
-					<i class="fas fa-edit"></i>
-				<% end %>
-		    <%= link_to project_session_mod_path(session.project, session, mod), method: :delete, data: { confirm: "Are you sure ?"} do %>
-					<i class="far fa-trash-alt"></i>
-				<% end %>
-	  </div>
+	<div class="card card-mods" data-item-id="<%= mod.id %>">
+	    <div class="card-left">
+	    	<%= session.start_time %>
+	    </div>
+	    <div class="card-right">
+		    <%= link_to '', project_session_mod_path(mod.session.project, mod.session, mod), class: 'card-link' %>
+			  <div class="card-category"> <%= mod.title %> </div>
+		    <br>
+			  <div class="card-description">
+		        <%= "#{mod.description.split('.').first(3).join('.')}." %>
+				    <%= link_to edit_project_session_mod_path(session.project, session, mod) do %>
+							<i class="fas fa-edit"></i>
+						<% end %>
+				    <%= link_to project_session_mod_path(session.project, session, mod), method: :delete, data: { confirm: "Are you sure ?"} do %>
+							<i class="far fa-trash-alt"></i>
+						<% end %>
+			  </div>
+	    </div>
 	</div>
   <% end %>
 </div>

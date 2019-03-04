@@ -1,13 +1,14 @@
 <div id="items">
   <% session.mods.each do |mod| %>
 	<div class="card card-mods" data-item-id="<%= mod.id %>">
-	    <div class="card-left align-elements-in-flexbox ">
+	    <div class="card-left align-elements-in-flexbox">
 	    	<div class="mod-time">
 	    		<% if mod.position == 1 %>
 	    			<% @start = @session.start_time %>
 	    			<%= @start.strftime("%H:%M") %>
 	    		<% else %>
-		    		<% @start += mod.duration.minutes %>
+	    			<% @duration = session.mods.find_by(position: (mod.position - 1 )).duration.minutes %>
+		    		<% @start += @duration %>
 		    		<%= @start.strftime("%H:%M") %>
 	    		<% end %>
 	    	</div>
@@ -15,18 +16,20 @@
 	    </div>
 	    <div class="card-right">
 		    <%= link_to '', project_session_mod_path(mod.session.project, mod.session, mod), class: 'card-link' %>
-			  <div class="card-category"> <%= mod.title %> </div>
+			  <div class="card-category"><h4><%= mod.title %></h4></div>
 		    <br>
 			  <div class="card-description">
-		        <%= "#{mod.description.split('.').first(3).join('.')}." %>
+		        <h5><%= "#{mod.description.split('.').first(3).join('.')}." %></h5>
 				    <%= link_to edit_project_session_mod_path(session.project, session, mod) do %>
 							<i class="fas fa-edit"></i>
 						<% end %>
 				    <%= link_to project_session_mod_path(session.project, session, mod), method: :delete, data: { confirm: "Are you sure ?"} do %>
 							<i class="far fa-trash-alt"></i>
 						<% end %>
+			  	<duration><i class="far fa-clock"><%= mod.duration %></i></duration> 
 			  </div>
 	    </div>
 	</div>
   <% end %>
+  <%# raise %>
 </div>

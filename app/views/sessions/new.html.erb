@@ -4,8 +4,14 @@
   <%= simple_form_for [@project, @session] do |f| %>
     <%= f.input :title %>
     <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <div class="row">
+      <div class="col-xs-6">
     <%= f.input :start_time, as: :string, required: false, input_html: {class: "timepicker"} %>
+      </div>
+      <div class="col-xs-6">
     <%= f.input :end_time, as: :string, required: false, input_html: {class: "timepicker"} %>
+      </div>
+    </div>
     <%= f.submit %>
   <% end %>
 </div>

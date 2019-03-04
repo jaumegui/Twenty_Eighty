@@ -38,8 +38,7 @@
 			<%= link_to 'Edit session', edit_project_session_path(@session.project, @session), class: 'btn btn-warning' %>
 			<%= link_to 'Delete session', project_session_path(@session.project, @session), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger' %>
 			<%# link_to 'Select content', new_project_session_mods_path(@session.project, @session) %>
-		</div>
-    <div class="comment-box">
+          <div class="comment-box">
       <div class="message-box">
         <%= simple_form_for [@session.project, @session, @comment] do |f| %>
           <%= f.input :message %>
@@ -64,5 +63,7 @@
         </ul>
       </div>
     </div>
+		</div>
+
 	</div>
 </div>

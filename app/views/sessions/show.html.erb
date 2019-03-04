@@ -55,7 +55,7 @@
         <ul>
           <% @session.comments.each do |comment| %>
             <% if comment.message.split(' ').first != "Log" %>
-              <li class="logs-message"><%= "#{comment.user.name} : #{comment.message} on #{comment.created_at.day}-#{comment.created_at.month}-#{comment.created_at.year}" %></li>
+              <li class="logs-message"><%= "#{comment.user.name} : #{comment.message} on #{comment.created_at.strftime(("%d/%m/%Y - %H:%M"))}" %></li>
               <% end %>
           <% end %>
         </ul>
@@ -65,7 +65,7 @@
         <ul>
           <% @session.comments.each do |comment| %>
             <% if comment.message.split(' ').first == "Log" %>
-              <li class="logs-message"><%= "#{comment.message.split('|')[1]} - #{comment.created_at}" %></li>
+              <li class="logs-message"><%= "#{comment.message.split('|')[1]} - #{comment.created_at.strftime(("%d/%m/%Y - %H:%M"))}" %></li>
             <% end %>
           <% end %>
         </ul>

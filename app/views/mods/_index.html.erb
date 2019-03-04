@@ -1,8 +1,9 @@
 <div id="items">
   <% session.mods.each do |mod| %>
-   <% @previous = session.mods.find_by(position: (mod.position - 1)) %>
-    <% @error = true if (@previous != nil) && ((mod.duration + @previous.duration) > 45) && (mod.format == @previous.format) %>
-  	<div class="card card-mods <%= 'error' if @error %>" data-item-id="<%= mod.id %>">
+    <% @error = false %>
+    <% @previous = session.mods.find_by(position: (mod.position - 1)) %>
+    <% @error = true if ((@previous != nil) && ((mod.duration + @previous.duration) > 45) && (mod.format == @previous.format)) %>
+  	<div class="card card-mods" data-item-id="<%= mod.id %>">
 	    <div class="card-left align-elements-in-flexbox">
 	    	<div class="mod-time">
 	    		<% if mod.position == 1 %>
@@ -28,7 +29,10 @@
 				    <%= link_to project_session_mod_path(session.project, session, mod), method: :delete, data: { confirm: "Are you sure ?"} do %>
 							<i class="far fa-trash-alt"></i>
 						<% end %>
-			  	<duration><i class="far fa-clock"><%= mod.duration %></i></duration> 
+            <% if @error %>
+              <i class="fas fa-exclamation-triangle error"></i>
+            <% end %>
+			  	<duration><i class="far fa-clock"><%= mod.duration %></i></duration>
 			  </div>
 	    </div>
 	</div>

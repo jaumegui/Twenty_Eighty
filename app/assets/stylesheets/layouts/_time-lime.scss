@@ -2,6 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding-right: 180px;
 	.card {
 		margin: 10px 10px;
 		width: 900px;
@@ -9,6 +10,10 @@
 }
 
 .ghost {
-  opacity: .5;
-  background: #000;
+  opacity: 0.9;
+  background: rgba(212, 227, 244, 0.6);
+  color: rgba(255,255,255,0);
+  a {
+  	color: rgba(255,255,255,0);
+  }
 }

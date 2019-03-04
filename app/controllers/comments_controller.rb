@@ -6,8 +6,6 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       redirect_to project_session_path(@comment.session.project, @comment.session)
-    else
-      raise
     end
   end
 

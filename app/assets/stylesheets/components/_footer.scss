@@ -4,12 +4,16 @@ html {
 
 body {
   min-height: 100%;
-  position: relative !important;
+  position: relative;
+}
+
+.container {
+  height: calc(100vh - 130px);
 }
 
 .footer {
+  clear: both;
   background-color: #cccccc;
-  min-height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,8 +22,7 @@ body {
   height: 60px;
   padding: 0;
   color: white;
-  margin-top: 50px;
-  position: absolute;
+  position: static;
   bottom: 0;
   left: 0;
   right: 0;

@@ -92,3 +92,16 @@
 #card-dates {
   text-align: right;
 }
+
+.card-mods {
+  display: flex;
+}
+
+.card-left {
+  border-right-style: solid;
+  border-right-color: blue;
+  border-right-width: 4px;
+  width: auto;
+  height: auto;
+}
+

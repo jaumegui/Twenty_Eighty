@@ -15,8 +15,7 @@
               <% result_cours << project %>
             </div>
             <div class="card-footer">
-                <div id='card-dates'><div><%= "From #{project.start_date.strftime('%d/%m/%y')}" %></div>
-                  <div><%= "to #{project.end_date.strftime('%d/%m/%y')}" %></div>
+                <div id='card-dates'><div><%= "#{project.start_date.strftime('%d/%m/%y')} to #{project.end_date.strftime('%d/%m/%y')}" %></div>
                 </div>
                 <div><i class="fas fa-user"></i><%= " #{project.participant_number}" %></div>
               </ul>
@@ -49,7 +48,7 @@
               <% result_fut << project %>
             </div>
             <div class="card-footer">
-                <div><i class="fas fa-table"></i><%= " #{project.start_date.day}/#{project.start_date.month} to #{project.end_date.day}/#{project.end_date.month}" %></div>
+                <div><i class="fas fa-table"></i><%= "#{project.start_date.strftime('%d/%m/%y')} to #{project.end_date.strftime('%d/%m/%y')}" %></div>
                 <div><i class="fas fa-user"></i><%= " #{project.participant_number}" %></div>
               </ul>
             </div>
@@ -81,7 +80,7 @@
               <% result_term << project %>
             </div>
             <div class="card-footer">
-                <div><i class="fas fa-table"></i><%= " #{project.start_date.day}/#{project.start_date.month} to #{project.end_date.day}/#{project.end_date.month}" %></div>
+                <div><i class="fas fa-table"></i><%= "#{project.start_date.strftime('%d/%m/%y')} to #{project.end_date.strftime('%d/%m/%y')}" %></div>
                 <div><i class="fas fa-user"></i><%= " #{project.participant_number}" %></div>
               </ul>
             </div>

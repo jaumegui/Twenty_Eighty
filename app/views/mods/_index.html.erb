@@ -1,8 +1,17 @@
 <div id="items">
   <% session.mods.each do |mod| %>
 	<div class="card card-mods" data-item-id="<%= mod.id %>">
-	    <div class="card-left">
-	    	<%= session.start_time %>
+	    <div class="card-left align-elements-in-flexbox ">
+	    	<div class="mod-time">
+	    		<% if mod.position == 1 %>
+	    			<% @start = @session.start_time %>
+	    			<%= @start.strftime("%H:%M") %>
+	    		<% else %>
+		    		<% @start += mod.duration.minutes %>
+		    		<%= @start.strftime("%H:%M") %>
+	    		<% end %>
+	    	</div>
+	    	<div class="circle"></div>
 	    </div>
 	    <div class="card-right">
 		    <%= link_to '', project_session_mod_path(mod.session.project, mod.session, mod), class: 'card-link' %>
@@ -21,4 +30,3 @@
 	</div>
   <% end %>
 </div>
-

@@ -9,6 +9,10 @@ class ModPolicy < ApplicationPolicy
     true
   end
 
+  def move?
+    true
+  end
+
   def show?
     true
   end

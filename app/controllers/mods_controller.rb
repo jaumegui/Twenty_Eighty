@@ -48,6 +48,7 @@ class ModsController < ApplicationController
 
   def move
     @mod = Mod.find(params[:id])
+    authorize @mod
     @session = @mod.session
     @mod.insert_at(params[:position].to_i)
   end

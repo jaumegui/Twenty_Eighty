@@ -23,7 +23,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 35%;
+  width: 100%;
   margin: 10px 0;
   p {
     margin: 0;
@@ -36,4 +36,8 @@
 
 .invalid-feedback {
   color: red;
+}
+
+.user-manager {
+  margin: 0 5px;
 }

@@ -27,6 +27,13 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @expertises = %w[Entreprenariat Management Communication Developpement-Personnel Leadership Innovation Tech Stratégie].freeze
+    authorize @user
+  end
+
+  def update
+    @user = User.find(params[:id])
+    authorize @user
     @user.update(user_params)
     if @user.save
       redirect_to user_path(@user)
@@ -35,9 +42,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    authorize @user
+    @user.destroy
+    redirect_to users_path
+  end
+
+  def add_project
+    @user = User.find(params[:id])
+    authorize @user
+
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :expertise, :email, :password, :access_level)
+    params.require(:user).permit(:name, :expertise, :email, :password, :password_confirmation, :access_level)
   end
 end

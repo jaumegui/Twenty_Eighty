@@ -1,12 +1,18 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
     @projects = policy_scope(Project).order(created_at: :desc)
+    if current_user.access_level == 'admin'
+      @projects = Project.all
+    else
+      @projects = current_user.projects
+    end
   end
 
   def show
     @project = Project.find(params[:id])
     authorize @project
+    @users = User.all
+    @userproject = UserProject.new
   end
 
   def new

@@ -9,15 +9,18 @@
       <% if project.start_date <= Date.today && project.end_date >= Date.today %>
         <div class="col-xs-12 col-md-4">
           <div class="card">
-            <div class="card-main" style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>);">
+            <div class="card-main">
+              <div class='client-logo' style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>); background-size: 50px 50px; background-repeat: no-repeat;"></div>
               <h6><%= project.title %></h6>
-              <%= link_to "", project_path(project), class: 'card-link' %>
               <% result_cours << project %>
+              <div class="card-infos">
+                <div class='card-infos-elements'><i class="fas fa-user"></i><%= " #{project.participant_number} people" %></div>
+                <div id='card-dates'><div class='card-infos-elements'><i class="far fa-calendar-alt"></i><%= " From #{project.start_date.strftime('%d/%m/%y')} to #{project.end_date.strftime('%d/%m/%y')}" %></div>
+                </div>
+              </div>
             </div>
             <div class="card-footer">
-                <div id='card-dates'><div><%= "#{project.start_date.strftime('%d/%m/%y')} to #{project.end_date.strftime('%d/%m/%y')}" %></div>
-                </div>
-                <div><i class="fas fa-user"></i><%= " #{project.participant_number}" %></div>
+                <%= link_to 'Check details', project_path(project) %>
               </ul>
             </div>
           </div>
@@ -42,14 +45,18 @@
       <% if project.start_date > Date.today %>
         <div class="col-xs-12 col-md-4">
           <div class="card">
-            <div class="card-main" style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>);">
+            <div class="card-main">
+              <div class='client-logo' style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>); background-size: 50px 50px; background-repeat: no-repeat;"></div>
               <h6><%= project.title %></h6>
-              <%= link_to "", project_path(project), class: 'card-link' %>
               <% result_fut << project %>
+              <div class="card-infos">
+                <div class='card-infos-elements'><i class="fas fa-user"></i><%= " #{project.participant_number} people" %></div>
+                <div id='card-dates'><div class='card-infos-elements'><i class="far fa-calendar-alt"></i><%= " From #{project.start_date.strftime('%d/%m/%y')} to #{project.end_date.strftime('%d/%m/%y')}" %></div>
+                </div>
+              </div>
             </div>
             <div class="card-footer">
-                <div><i class="fas fa-table"></i><%= "#{project.start_date.strftime('%d/%m/%y')} to #{project.end_date.strftime('%d/%m/%y')}" %></div>
-                <div><i class="fas fa-user"></i><%= " #{project.participant_number}" %></div>
+                <%= link_to 'Check details', project_path(project) %>
               </ul>
             </div>
           </div>
@@ -74,14 +81,18 @@
       <% if project.end_date < Date.today %>
         <div class="col-xs-12 col-md-4">
           <div class="card">
-            <div class="card-main" style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>);">
+            <div class="card-main">
+              <div class='client-logo' style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>); background-size: 50px 50px; background-repeat: no-repeat;"></div>
               <h6><%= project.title %></h6>
-              <%= link_to "", project_path(project), class: 'card-link' %>
               <% result_term << project %>
+              <div class="card-infos">
+                <div class='card-infos-elements'><i class="fas fa-user"></i><%= " #{project.participant_number} people" %></div>
+                <div id='card-dates'><div class='card-infos-elements'><i class="far fa-calendar-alt"></i><%= " From #{project.start_date.strftime('%d/%m/%y')} to #{project.end_date.strftime('%d/%m/%y')}" %></div>
+                </div>
+              </div>
             </div>
             <div class="card-footer">
-                <div><i class="fas fa-table"></i><%= "#{project.start_date.strftime('%d/%m/%y')} to #{project.end_date.strftime('%d/%m/%y')}" %></div>
-                <div><i class="fas fa-user"></i><%= " #{project.participant_number}" %></div>
+                <%= link_to 'Check details', project_path(project) %>
               </ul>
             </div>
           </div>

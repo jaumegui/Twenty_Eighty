@@ -6,8 +6,6 @@
   <%= @client.company %>
   <br>
   <%= @client.address %>
-  <br>
-  <%= @client.logo %>
 
   <%= link_to 'Edit client', edit_client_path(@client), class: 'btn btn-warning' %>
   <%= link_to 'Delete client', client_path(@client), method: :delete, data: { confirm: "Are you sure ?" }, class: 'btn btn-danger' %>

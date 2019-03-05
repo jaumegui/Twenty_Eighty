@@ -3,41 +3,45 @@
 		<div class="container" style="text-align: center">
       <div class="session-header">
         <div>
-          <div class="user-controls session-controls">
+          <%= link_to project_path(@session.project) do %>
+            <i class="fas fa-arrow-left" style="font-size: 30px";></i>
+          <% end %>
+        </div>
+        <div>
+          <div class="user-controls">
             <button class="btn control-button control-button-warning">
-              <%= link_to edit_project_session_path(@session.project, @session) do %>
-                <i class="fas fa-edit"></i>
+                <%= link_to edit_project_session_path(@session.project, @session) do %>
+                  <i class="fas fa-edit"></i>
+                <% end %>
+            </button>
+            <button class="btn control-button control-button-danger">
+              <%= link_to project_session_path(@session.project, @session), method: :delete, data: { confirm: 'Are you sure ?'} do %>
+                <i class="fas fa-trash-alt"></i>
               <% end %>
-          </button>
-          <button class="btn control-button control-button-danger">
-            <%= link_to project_session_path(@session.project, @session), method: :delete, data: { confirm: 'Are you sure ?'} do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
-          </button>
-          <button class="btn control-button control-button-add">
-            <%= link_to 'Add Session', new_project_session_path %>
-          </button>
+            </button>
           </div>
         </div>
       </div>
       <div class="top-mods">
-        <h2><%= @session.title %></h2>
+        <h3><%= @session.title %></h3>
 
-        <h3><%= @session.date.strftime("%A %e %B %Y") %></h3>
+        <h4><%= @session.date.strftime("%A %e %B %Y") %>
         <%= "from #{@session.start_time.hour}:#{@session.start_time.min}0 to" if @session.start_time.min.to_s.length == 1 %>
         <%= "from #{@session.start_time.hour}:#{@session.start_time.min} to" if @session.start_time.min.to_s.length == 2 %>
         <%= "#{@session.end_time.hour}:#{@session.end_time.min}0" if @session.start_time.min.to_s.length == 1 %>
         <%= "#{@session.end_time.hour}:#{@session.end_time.min}" if @session.start_time.min.to_s.length == 2 %>
+        </h4>
       </div>
       <div id="mods">
         <%= render 'mods/index', session: @session %>
       </div>
 
       <%# link_to 'Select content', new_project_session_mods_path(@session.project, @session) %>
-          <div class="comment-box">
+    <div class="comment-box">
       <div class="message-box">
+        <h4>Add a message</h4>
         <%= simple_form_for [@session.project, @session, @comment] do |f| %>
-          <%= f.input :message %>
+          <%= f.input :message, label: false %>
           <%= f.submit %>
         <% end %>
         <ul>
@@ -68,7 +72,7 @@
         <ul id="menu-content" class="menu-content collapse out">
           <% @chapter.each do |chapter| %>
             <li  data-toggle="collapse" data-target="#<%= chapter %>" class="collapsed">
-              <a href="#"><%= chapter %><span class="arrow"></span></a>
+              <a><%= chapter %><span class="arrow"></span></a>
             </li>
               <ul class="sub-menu collapse" id="<%= chapter %>">
                 <% @contents.where(chapter: chapter).each do |content| %>

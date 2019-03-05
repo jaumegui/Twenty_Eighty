@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @projects = policy_scope(Project).order(created_at: :desc)
-    if current_user.access_level == 'admin'
+    if current_user.access_level == ('admin' || 'project_manager')
       @projects = Project.all
     else
       @projects = current_user.projects

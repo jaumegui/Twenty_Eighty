@@ -3,8 +3,14 @@
 }
 
 .session-container {
-	width: calc(100vw - 250px);
+	width: calc(100vw - 20vw);
 	padding: 20px;
+  flex: 1 0;
+}
+
+.session-controls {
+  position: absolute;
+  right: 13vw;
 }
 
 .mods-list {

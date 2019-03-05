@@ -3,7 +3,7 @@
   font-size: 12px;
   font-weight: 200;
   background-color: #2e353d;
-  width: 250px;
+  width: 20vw;
   height: 100vh;
   position: sticky;
   top: 0;
@@ -66,9 +66,6 @@
   line-height: 28px;
   border-bottom: 1px solid #23282e;
   margin-left: 0px;
-  a {
-    margin-left: 20px;
-  }
 }
 .nav-side-menu ul .sub-menu li:hover,
 .nav-side-menu li .sub-menu li:hover {

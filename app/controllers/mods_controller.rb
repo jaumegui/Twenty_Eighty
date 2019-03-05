@@ -10,12 +10,12 @@ class ModsController < ApplicationController
     @mod = Mod.new(@content.attributes.except("id", "created_at", "updated_at"))
     authorize @mod
     @mod.session = @session
-    if @mod.save
-      redirect_to project_session_path(@session.project, @session)
-      Comment.create(message: "Log | Module #{@mod.title} added |", user_id: current_user.id, session_id: @mod.session.id)
-    else
-      raise
+    @mod.save
+    respond_to do |format|
+      format.html {redirect_to project_session_path(@session.project, @session)}
+      format.js
     end
+    Comment.create(message: "Log | Module #{@mod.title} added |", user_id: current_user.id, session_id: @mod.session.id)
   end
 
   def edit

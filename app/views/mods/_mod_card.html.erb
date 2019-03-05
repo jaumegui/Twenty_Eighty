@@ -1,0 +1,28 @@
+<% error = false %>
+<% previous = session.mods.find_by(position: (mod.position - 1)) %>
+<% error = true if ((@previous != nil) && ((mod.duration + @previous.duration) > 45) && (mod.format == @previous.format)) %>
+	<div class="card card-mods" data-item-id="<%= mod.id %>">
+    <div class="card-left align-elements-in-flexbox">
+    	<div class="mod-time">
+    		<%= start.strftime("%H:%M") %>
+    	</div>
+    	<div class="circle"></div>
+    </div>
+    <div class="card-right">
+	    <%= link_to '', project_session_mod_path(mod.session.project, mod.session, mod), class: 'card-link' %>
+		  <div class="card-category"><h4><%= "#{mod.title} - (#{mod.duration} min)" %></h4></div>
+		  <div class="card-description">
+	      <h5><%= "#{mod.description.split('.').first(3).join('.')}." %></h5>
+		    <%= link_to edit_project_session_mod_path(session.project, session, mod) do %>
+					<i class="fas fa-ellipsis-v"></i>
+				<% end %>
+	    	<% if @error %>
+	      	<i class="fas fa-exclamation-triangle error"></i>
+        <% end %>
+		  </div>
+    </div>
+</div>
+
+<%#= link_to project_session_mod_path(session.project, session, mod), method: :delete, data: { confirm: "Are you sure ?"} do %>
+					<!-- <i class="far fa-trash-alt"></i> -->
+				<%# end %>

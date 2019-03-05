@@ -17,9 +17,15 @@
   text-align: left;
 }
 
+.fa-arrow-left{
+  position: absolute;
+  left: 1px;
+}
+
 .session-header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 80px;
 }
 
 // .error {

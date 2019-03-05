@@ -42,7 +42,11 @@
 }
 
 .control-button-danger {
-  background-color: $red;
+  background-color: #e4113359;
+  opacity: 0.6;
+  &:hover{
+    opacity: 1;
+  }
 }
 
 .control-button-add {

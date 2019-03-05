@@ -1,5 +1,12 @@
 <div class="container">
-  <h1>Edit a session</h1>
+  <h1>Edit <%= @session.title %> 
+	              <%= link_to project_session_path(@session.project, @session), method: :delete, data: { confirm: 'Are you sure ?'} do %>
+	              <button class="btn control-button control-button-danger">
+	                <i class="fas fa-trash-alt"></i>
+	                </button>
+	              <% end %>
+	</h1>
+	
 
   <%= simple_form_for [@project, @session] do |f| %>
     <%= f.input :title %>
@@ -9,3 +16,4 @@
     <%= f.submit %>
   <% end %>
 </div>
+

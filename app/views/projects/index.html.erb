@@ -1,6 +1,7 @@
 <div class="container">
+  <h3><%= "Welcome #{current_user.name}" %></h3>
   <div class="new-project">
-    <%= link_to 'New project', new_project_path, class: "btn btn-lg btn-success" %>
+    <%= link_to 'New project', new_project_path, class: "btn btn-success" %>
   </div>
   <h4 class='project-cat'>Pending Projects</h4>
   <div class="row">
@@ -10,7 +11,7 @@
         <div class="col-xs-12 col-md-4">
           <div class="card">
             <div class="card-main">
-              <div class='client-logo' style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>); background-size: 50px 50px; background-repeat: no-repeat;"></div>
+              <div class='client-logo' style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>); background-size: cover; background-repeat: no-repeat;"></div>
               <h6><%= project.title %></h6>
               <% result_cours << project %>
               <div class="card-infos">
@@ -46,7 +47,7 @@
         <div class="col-xs-12 col-md-4">
           <div class="card">
             <div class="card-main">
-              <div class='client-logo' style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>); background-size: 50px 50px; background-repeat: no-repeat;"></div>
+              <div class='client-logo' style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>); background-size: cover; background-repeat: no-repeat;"></div>
               <h6><%= project.title %></h6>
               <% result_fut << project %>
               <div class="card-infos">
@@ -82,7 +83,7 @@
         <div class="col-xs-12 col-md-4">
           <div class="card">
             <div class="card-main">
-              <div class='client-logo' style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>); background-size: 50px 50px; background-repeat: no-repeat;"></div>
+              <div class='client-logo' style="background-image: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 50%), url(<%= project.client.logo %>); background-size: cover; background-repeat: no-repeat;"></div>
               <h6><%= project.title %></h6>
               <% result_term << project %>
               <div class="card-infos">

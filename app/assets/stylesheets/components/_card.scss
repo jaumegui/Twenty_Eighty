@@ -8,10 +8,7 @@ $timeline: #5959a5;
   background-color: white;
   font-family: 'Roboto';
   font-weight: lighter;
-  &:hover {
-    transition: all 0.8s ease;
-    transform: scale(1.1);
-    }
+  box-shadow: 1px 1px 10px rgba(115, 133, 152, 0.6);
   .card-main {
     height: 75%;
     width: 100%;
@@ -49,7 +46,7 @@ $timeline: #5959a5;
 .card-infos {
   margin-top: 30px;
  .card-infos-elements {
-    margin-top: 10px;
+    margin-top: 5px;
   }
 }
 
@@ -65,6 +62,8 @@ $timeline: #5959a5;
   }
   a {
     text-decoration: none;
+    color: $green;
+    font-weight: bolder;
   }
 }
 

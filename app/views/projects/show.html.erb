@@ -2,13 +2,24 @@
   <div class="project-show-title">
     <h1><%= @project.title %></h1>
     <div class="control-buttons">
-      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editProject">Edit Project</button>
-      <%= link_to 'Delete a project', project_path(@project), method: :delete, data: { confirm: 'Are you sure ?'}, class: 'btn btn-danger' %>
-      <%= link_to 'Add a session', new_project_session_path(@project), class: 'btn btn-primary' %>
+      <div>
+      <div class="user-controls">
+        <button class="btn control-button control-button-warning">
+          <%= link_to edit_project_path(@project) do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+        </button>
+        <button class="btn control-button control-button-danger">
+          <%= link_to project_path(@project), method: :delete, data: { confirm: 'Are you sure ?'} do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </button>
+      </div>
+      </div>
       <div class="user-manager">
         <%= simple_form_for [@project, @userproject], wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
           <%= f.input :user, :collection => @users, label: false %>
-          <%= f.submit "Add User to Project", class: 'btn' %>
+          <%= f.submit "Invite User", class: 'btn' %>
         <% end %>
       </div>
     </div>

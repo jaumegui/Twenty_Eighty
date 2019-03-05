@@ -1,37 +1,26 @@
 <div class="container-session-show">
-  <div class="nav-side-menu">
-      <div class="brand">Content Manager</div>
-      <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-
-          <div class="menu-list">
-
-              <ul id="menu-content" class="menu-content collapse out">
-                  <% @chapter.each do |chapter| %>
-                    <li  data-toggle="collapse" data-target="#<%= chapter %>" class="collapsed">
-                      <a><%= chapter %><span class="arrow"></span></a>
-                    </li>
-                      <ul class="sub-menu collapse" id="<%= chapter %>">
-                        <% @contents.where(chapter: chapter).each do |content| %>
-                            <li><%= link_to "#{content.title}", project_session_mods_path(@session.project, @session, content_id: content.id), method: :post, remote: true %></li>
-                          <% end %>
-                      </ul>
-                  <% end %>
-              </ul>
-       </div>
-  </div>
-
-  <div class="session-container">
-    <div class="container" style="text-align: center">
+	<div class="session-container">
+		<div class="container" style="text-align: center">
       <div class="session-header">
         <div>
           <%= link_to 'Return', project_path(@session.project), class: 'btn btn-primary' %>
         </div>
         <div>
-          <%= link_to 'Edit session', edit_project_session_path(@session.project, @session), class: 'btn btn-warning' %>
-         <%= link_to 'Delete session', project_session_path(@session.project, @session), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger' %>
+          <div class="user-controls">
+            <button class="btn control-button control-button-warning">
+              <%= link_to edit_project_session_path(@session.project, @session) do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+          </button>
+          <button class="btn control-button control-button-danger">
+            <%= link_to project_session_path(@session.project, @session), method: :delete, data: { confirm: 'Are you sure ?'} do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </button>
+          </div>
         </div>
       </div>
-      <div class="top-mods">  
+      <div class="top-mods">
         <h2><%= @session.title %></h2>
 
         <h3><%= @session.date.strftime("%A %e %B %Y") %></h3>
@@ -71,6 +60,23 @@
       </div>
     </div>
     </div>
-
+	</div>
+  <div class="nav-side-menu">
+    <div class="brand">Content Manager</div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+    <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse out">
+          <% @chapter.each do |chapter| %>
+            <li  data-toggle="collapse" data-target="#<%= chapter %>" class="collapsed">
+              <a href="#"><%= chapter %><span class="arrow"></span></a>
+            </li>
+              <ul class="sub-menu collapse" id="<%= chapter %>">
+                <% @contents.where(chapter: chapter).each do |content| %>
+                    <li><%= link_to "#{content.title}", project_session_mods_path(@session.project, @session, content_id: content.id), method: :post %></li>
+                  <% end %>
+              </ul>
+          <% end %>
+        </ul>
+     </div>
   </div>
 </div>

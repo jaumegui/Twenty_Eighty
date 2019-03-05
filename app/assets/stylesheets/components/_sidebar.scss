@@ -67,7 +67,12 @@
   border-bottom: 1px solid #23282e;
   margin-left: 0px;
   a {
-    margin-left: 20px;
+    margin-left: 10px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    padding: 2px;
+    margin: -2px;
   }
 }
 .nav-side-menu ul .sub-menu li:hover,

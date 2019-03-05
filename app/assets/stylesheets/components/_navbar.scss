@@ -12,9 +12,6 @@ button.seven-button:focus {
 
 .navbar-wagon {
   overflow: hidden;
-  position: sticky;
-  top: 0;
-  z-index: 200;
   background: white;
   transition: all 0.3s ease;
   height: 70px;
@@ -23,14 +20,12 @@ button.seven-button:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
   top: 0;
-  z-index: 2000000;
-  overflow: auto;
 }
 
 /* Logo */
 .navbar-wagon-brand {
+  z-index: 10;
   img {
     width: 110px;
     height: 100%;

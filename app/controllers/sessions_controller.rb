@@ -15,6 +15,20 @@ class SessionsController < ApplicationController
       @chapter << content.chapter
     end
     @chapter = @chapter.uniq
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render(
+          pdf: "#{@session.title}",
+          title: "#{@session.title}",
+          show_as_html: params.key?('debug'),
+          page_size: 'A4',
+          encoding: 'TEXT',
+          dpi: 500,
+          zoom: 1.6,
+        )
+      end
+    end
   end
 
   def new

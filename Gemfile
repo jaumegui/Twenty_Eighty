@@ -10,6 +10,8 @@ gem 'puma'
 gem "pundit"
 gem 'rails', '5.2.2'
 gem 'redis'
+gem 'wicked_pdf', '~> 1.1'
+gem 'wkhtmltopdf-binary'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

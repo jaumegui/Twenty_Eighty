@@ -29,7 +29,6 @@
         </h4>
       </div>
       <div id="mods">
-        <h4>Contents</h4>
         <%= render 'mods/index', session: @session %>
       </div>
 
@@ -37,8 +36,8 @@
     <div class="comment-box">
       <div class="message-box">
         <h4>Add a message</h4>
-        <%= simple_form_for [@session.project, @session, @comment] do |f| %>
-          <%= f.input :message, label: false %>
+        <%= simple_form_for [@session.project, @session, @comment], html: { class: "form-inline"} do |f| %>
+          <%= f.input :message, placeholder: "Add a messsage to your collaborators", html: { style: "width: 600px"}, label: false %>
           <%= f.submit %>
         <% end %>
         <ul>
@@ -50,7 +49,7 @@
         </ul>
       </div>
       <div class="log-box">
-        <h4>Logs</h4>
+        <h4>Historique des modifications</h4>
         <ul>
           <% @session.comments.each do |comment| %>
             <% if comment.message.split(' ').first == "Log" %>

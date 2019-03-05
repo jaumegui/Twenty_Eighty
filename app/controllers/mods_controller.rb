@@ -16,7 +16,6 @@ class ModsController < ApplicationController
       format.js
     end
     Comment.create(message: "Log | Module #{@mod.title} added |", user_id: current_user.id, session_id: @mod.session.id)
-
   end
 
   def edit

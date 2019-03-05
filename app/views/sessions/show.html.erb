@@ -2,24 +2,20 @@
 	<div class="session-container">
 		<div class="container" style="text-align: center">
       <div class="session-header">
-        <div>
+        <div class="user-controls">
           <%= link_to project_path(@session.project) do %>
             <i class="fas fa-arrow-left" style="font-size: 30px";></i>
           <% end %>
-        </div>
-        <div>
-          <div class="user-controls">
-            <button class="btn control-button control-button-warning">
-                <%= link_to edit_project_session_path(@session.project, @session) do %>
-                  <i class="fas fa-edit"></i>
-                <% end %>
+          <%= link_to edit_project_session_path(@session.project, @session), id: "edit-btn" do %>
+            <button class="btn btn-edit">
+              Edit session
             </button>
-            <button class="btn control-button control-button-danger">
-              <%= link_to project_session_path(@session.project, @session), method: :delete, data: { confirm: 'Are you sure ?'} do %>
-                <i class="fas fa-trash-alt"></i>
-              <% end %>
+          <% end %>
+          <%= link_to project_session_path(@session.project, @session, format: :pdf), id: "export-btn" do %>
+            <button class="btn btn-edit btn-edit">
+                Export as <i class="fas fa-file-pdf"></i>
             </button>
-          </div>
+          <% end %>
         </div>
       </div>
       <div class="top-mods">
@@ -33,6 +29,7 @@
         </h4>
       </div>
       <div id="mods">
+        <h4>Contents</h4>
         <%= render 'mods/index', session: @session %>
       </div>
 

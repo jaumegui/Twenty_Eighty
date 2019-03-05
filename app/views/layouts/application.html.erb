@@ -15,12 +15,12 @@
     <% if params[:controller] == "pages" && params[:action] == "home" %>
       <%= render 'shared/navbar-home' %>
     <% else %>
-      <div id="left-side">
-        <%= render 'shared/left-navbar' %>
-      </div>
-      <div id="right-side">
-        <%= render 'shared/navbar' %>
+    <div id="left-side">
+      <%= render 'shared/left-navbar' %>
+    </div>
+      <%= render 'shared/navbar' %>
     <% end %>
+    <div id="right-side">
       <div>
         <%= yield %>
         <%= javascript_include_tag 'application' %>

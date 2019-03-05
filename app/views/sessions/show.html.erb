@@ -33,7 +33,7 @@
         <%= render 'mods/index', session: @session %>
       </div>
 
-			<%# link_to 'Select content', new_project_session_mods_path(@session.project, @session) %>
+      <%# link_to 'Select content', new_project_session_mods_path(@session.project, @session) %>
           <div class="comment-box">
       <div class="message-box">
         <%= simple_form_for [@session.project, @session, @comment] do |f| %>
@@ -59,8 +59,7 @@
         </ul>
       </div>
     </div>
-		</div>
-
+    </div>
 	</div>
   <div class="nav-side-menu">
     <div class="brand">Content Manager</div>

@@ -5,10 +5,19 @@ $timeline: $yellow;
   width: 300px;
   margin-bottom: 40px;
   position: relative;
-  background-color: white;
+  background-color: rgb(244, 244, 244);
   font-family: 'Roboto';
   font-weight: lighter;
   box-shadow: 1px 1px 10px rgba(115, 133, 152, 0.6);
+  background-color: white;
+  transition: all 0.8s ease;
+  &:hover {
+      transform: scale(1.1);
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
   .card-main {
     height: 75%;
     width: 100%;
@@ -32,15 +41,6 @@ $timeline: $yellow;
   position: absolute;
   top: 10px;
   right: 10px;
-}
-
-.card-link {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 10px 10px 0 0;
 }
 
 .card-infos {
@@ -260,12 +260,12 @@ duration {
 
 #edit-btn {
   position: absolute;
-  right: -684px;  
+  right: -684px;
 }
 
 #export-btn {
   position: absolute;
-  right: -868px;  
+  right: -868px;
 }
 
 

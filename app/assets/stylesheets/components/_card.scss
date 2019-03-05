@@ -1,18 +1,18 @@
 $timeline: $yellow;
 
 .card {
-  height: 200px;
-  width: 300px;
+  height: 250px;
+  width: 350px;
   margin-bottom: 40px;
   position: relative;
   background-color: rgb(244, 244, 244);
   font-family: 'Roboto';
   font-weight: lighter;
-  box-shadow: 1px 1px 10px rgba(115, 133, 152, 0.6);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   background-color: white;
   transition: all 0.8s ease;
   &:hover {
-      transform: scale(1.1);
+      box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.3);
   }
   a {
     text-decoration: none;
@@ -23,7 +23,7 @@ $timeline: $yellow;
     width: 100%;
     text-align: left;
     padding: 15px;
-    border: 1px solid rgba(115, 133, 152, 0.6);
+    // border: 1px solid rgba(0, 0, 0, 0.1);
     position: relative;
     background-size: cover;
     background-position: center;
@@ -45,8 +45,11 @@ $timeline: $yellow;
 
 .card-infos {
   margin-top: 30px;
+  position: absolute;
+  bottom: 15px;
  .card-infos-elements {
     margin-top: 5px;
+    color: rgb(160, 160, 160)
   }
 }
 
@@ -55,7 +58,8 @@ $timeline: $yellow;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid rgba(115, 133, 152, 0.6);
+  // border: 1px solid rgba(115, 133, 152, 0.6);
+  background: rgba(115, 133, 152, 0.15);
   border-top: none;
   p {
     margin: 0;
@@ -69,7 +73,7 @@ $timeline: $yellow;
 
 .card-lg {
   background-color: white;
-  width: 60%;
+  width: 80%;
   height: auto;
   border: 1px solid rgba(115, 133, 152, 0.6);
   border-radius: 10px;
@@ -82,7 +86,6 @@ $timeline: $yellow;
   }
   &:hover {
     transition: all 0.8s ease;
-    transform: scale(1.1);
     }
   .card-main-lg {
     height: auto;
@@ -104,7 +107,13 @@ $timeline: $yellow;
     }
   }
 }
-
+.card-link {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+}
 #mods {
   background: white;
   padding-right: 80px;

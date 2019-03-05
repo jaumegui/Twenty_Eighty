@@ -5,26 +5,36 @@ $timeline: #5959a5;
   width: 300px;
   margin-bottom: 40px;
   position: relative;
+  background-color: white;
+  font-family: 'Roboto';
+  font-weight: lighter;
   &:hover {
     transition: all 0.8s ease;
     transform: scale(1.1);
     }
   .card-main {
-    height: 70%;
+    height: 75%;
     width: 100%;
-    text-align: right;
-    padding: 10px;
+    text-align: left;
+    padding: 15px;
     border: 1px solid rgba(115, 133, 152, 0.6);
-    border-radius: 10px 10px 0 0;
     position: relative;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     h6 {
-      margin: 0;
-      color: white;
+      margin: 15px 0;
     }
   }
+}
+
+.client-logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .card-link {
@@ -36,23 +46,25 @@ $timeline: #5959a5;
     border-radius: 10px 10px 0 0;
 }
 
+.card-infos {
+  margin-top: 30px;
+ .card-infos-elements {
+    margin-top: 10px;
+  }
+}
+
 .card-footer {
-  height: 30%;
+  height: 25%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   border: 1px solid rgba(115, 133, 152, 0.6);
   border-top: none;
-  border-radius: 0 0 10px 10px;
-  background-color: rgb(58, 162, 173);
-  ul {
-    margin: 0;
-  }
-  li {
-    list-style-type: none;
-  }
   p {
     margin: 0;
+  }
+  a {
+    text-decoration: none;
   }
 }
 
@@ -87,10 +99,6 @@ $timeline: #5959a5;
       margin: 0;
     }
   }
-}
-
-#card-dates {
-  text-align: right;
 }
 
 #items {
@@ -156,12 +164,12 @@ duration {
 
 .card-mods:first-child {
   .card-left {
-     -webkit-border-image: 
+     -webkit-border-image:
       -webkit-gradient(linear, 0 100%, 0 0, from($timeline), to(rgba(0, 0, 0, 0))) 1 100%;
-    -webkit-border-image: 
+    -webkit-border-image:
       -webkit-linear-gradient(top, $timeline, rgba(0, 0, 0, 0)) 1 100%;
     -moz-border-image:
-      -moz-linear-gradient(top, $timeline, rgba(0, 0, 0, 0)) 1 100%;  
+      -moz-linear-gradient(top, $timeline, rgba(0, 0, 0, 0)) 1 100%;
     -o-border-image:
       -o-linear-gradient(top, $timeline, rgba(0, 0, 0, 0)) 1 100%;
     border-image:
@@ -171,12 +179,12 @@ duration {
 
 .card-mods:last-child {
   .card-left {
-     -webkit-border-image: 
+     -webkit-border-image:
       -webkit-gradient(linear, 0 100%, 0 0, from($timeline), to(rgba(0, 0, 0, 0))) 1 100%;
-    -webkit-border-image: 
+    -webkit-border-image:
       -webkit-linear-gradient(bottom, $timeline, rgba(0, 0, 0, 0)) 1 100%;
     -moz-border-image:
-      -moz-linear-gradient(bottom, $timeline, rgba(0, 0, 0, 0)) 1 100%;  
+      -moz-linear-gradient(bottom, $timeline, rgba(0, 0, 0, 0)) 1 100%;
     -o-border-image:
       -o-linear-gradient(bottom, $timeline, rgba(0, 0, 0, 0)) 1 100%;
     border-image:

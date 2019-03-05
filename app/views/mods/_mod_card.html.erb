@@ -10,20 +10,19 @@
     </div>
     <div class="card-right">
 	    <%= link_to '', project_session_mod_path(mod.session.project, mod.session, mod), class: 'card-link' %>
-		  <div class="card-category"><h4><%= mod.title %></h4></div>
-	    <br>
+		  <div class="card-category"><h4><%= "#{mod.title} - (#{mod.duration} min)" %></h4></div>
 		  <div class="card-description">
-	        <h5><%= "#{mod.description.split('.').first(3).join('.')}." %></h5>
-			    <%= link_to edit_project_session_mod_path(session.project, session, mod) do %>
-						<i class="fas fa-edit"></i>
-					<% end %>
-			    <%= link_to project_session_mod_path(session.project, session, mod), method: :delete, data: { confirm: "Are you sure ?"} do %>
-						<i class="far fa-trash-alt"></i>
-					<% end %>
-        <% if @error %>
-          <i class="fas fa-exclamation-triangle error"></i>
+	      <h5><%= "#{mod.description.split('.').first(3).join('.')}." %></h5>
+		    <%= link_to edit_project_session_mod_path(session.project, session, mod) do %>
+					<i class="fas fa-ellipsis-v"></i>
+				<% end %>
+	    	<% if @error %>
+	      	<i class="fas fa-exclamation-triangle error"></i>
         <% end %>
-		  	<duration><i class="far fa-clock"><%= mod.duration %></i></duration>
 		  </div>
     </div>
 </div>
+
+<%#= link_to project_session_mod_path(session.project, session, mod), method: :delete, data: { confirm: "Are you sure ?"} do %>
+					<!-- <i class="far fa-trash-alt"></i> -->
+				<%# end %>

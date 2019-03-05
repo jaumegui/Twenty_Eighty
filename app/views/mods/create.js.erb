@@ -1,7 +1,7 @@
 function addMod(modHTML) {
   const mods = document.getElementById('items');
   items.insertAdjacentHTML('beforeend', modHTML);
-}
+};
 
 <% @session.mods.each do |mod| %>
 	<% if mod.position == 1 %>
@@ -12,4 +12,4 @@ function addMod(modHTML) {
 	<% end %>
 <% end %>
 
-addMod('<%= j render "mods/mod_card", mod: @mod, session: @session, start: @start%>')
+addMod('<%= j render "mods/mod_card", mod: @mod, session: @session, start: @start%>');

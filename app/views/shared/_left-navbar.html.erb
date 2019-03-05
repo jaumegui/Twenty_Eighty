@@ -1,18 +1,48 @@
 <div class="left-navbar">
   <div class="menu-list">
-    <div class="menu-list-left"><%= link_to "Projects", projects_path %></div>
-    <div class="menu-list-right"><%= link_to "+", new_project_path %></div>
+    <%= link_to projects_path do %>
+      <i class="fas fa-tasks"></i> Projects
+    <% end %>
   </div>
   <div class="menu-list">
-    <div class="menu-list-left"><%= link_to "Contents", contents_path %></div>
-    <div class="menu-list-right"><%= link_to "+", new_content_path %></div>
+    <%= link_to contents_path do %>
+      <i class="fas fa-book"></i> Contents
+    <% end %>
   </div>
   <div class="menu-list">
-    <div class="menu-list-left"><%= link_to "Clients", clients_path %></div>
-    <div class="menu-list-right"><%= link_to "+", new_client_path %></div>
+    <%= link_to clients_path do %>
+      <i class="fas fa-users"></i> Clients
+    <% end %>
   </div>
   <div class="menu-list">
-    <div class="menu-list-left"><%= link_to "Users", users_path %></div>
-    <div class="menu-list-right"><%= link_to "+", new_user_path %></div>
+    <%= link_to users_path do %>
+      <i class="fas fa-user-tie"></i></i> Users
+    <% end %>
   </div>
 </div>
+
+
+<!-- Ici c'est la version avec une flex et un + directement dans la left bar -->
+
+<!-- <div class="left-navbar">
+  <div class="menu-list">
+    <div class="menu-list-left"><%#= link_to "Projects", projects_path %></div>
+    <div class="menu-list-right"><%#= link_to new_project_path do %>
+      <i class="fas fa-plus"></i>
+      <%# end %>
+    </div>
+  </div>
+  <div class="menu-list">
+    <div class="menu-list-left"><%#= link_to "Contents", contents_path %></div>
+    <div class="menu-list-right"><%#= link_to "+", new_content_path %></div>
+  </div>
+  <div class="menu-list">
+    <div class="menu-list-left"><%#= link_to "Clients", clients_path %></div>
+    <div class="menu-list-right"><%#= link_to "+", new_client_path %></div>
+  </div>
+  <div class="menu-list">
+    <div class="menu-list-left"><%#= link_to "Users", users_path %></div>
+    <div class="menu-list-right"><%#= link_to "+", new_user_path %></div>
+  </div>
+</div>
+ -->

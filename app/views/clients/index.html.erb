@@ -1,12 +1,10 @@
 <div class="container">
   <div class="list-clients">
     <div class='client-control'>
-      <button class="btn control-button control-button-add">
-        <%= link_to new_client_path do %>
-          <i class="fas fa-plus"></i>
-        <% end %>
-      </button>
       <h3>List of clients</h3>
+      <button class="btn btn-success">
+        <%= link_to 'New client', new_client_path %>
+      </button>
     </div>
       <ul>
         <% @clients = @clients.sort_by(&:company) %>

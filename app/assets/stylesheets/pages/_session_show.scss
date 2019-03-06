@@ -2,14 +2,6 @@
 	display: flex;
 }
 
-#arrow-project {
-  .fa-arrow-left {
-    position: absolute;
-    top: 103px;
-    left: 246px;
-  }
-}
-
 .session-container {
   flex-shrink: 0;
 	padding: 20px;
@@ -25,10 +17,10 @@
   text-align: left;
 }
 
-.session-header {
+.session-header, .project-info-headers {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 // .error {

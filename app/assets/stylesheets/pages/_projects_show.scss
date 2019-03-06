@@ -61,7 +61,20 @@
 }
 
 .middle-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  h3, p {
+    margin: 0;
+  }
   li {
-    font-size: 26px;
+    font-size: 20px;
+  }
+  .middle-info-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
   }
 }

@@ -1,30 +1,28 @@
 <div class="container" id="update-modal">
-  <div class="project-show-title">
       <div class="project-info-headers">
-        <div id="arrow-project">
-          <%= link_to projects_path do %>
-            <i class="fas fa-arrow-left" style="font-size: 30px";></i>
-          <% end %>
-          <h1><%= @project.title %></h1>
-          <p><%="From #{@project.start_date.strftime('%d/%m/%y')} to #{@project.end_date.strftime('%d/%m/%y')}" %> - <i class="fas fa-user"> </i> <%= "#{@project.participant_number}"%> </p>
-        </div>
-        <div class="middle-info">
-          <ul class='list-inline'>
-            <% @project.users.each do |user| %>
-            <li>
-              <%= user.name %>
-            </li>
-            <% end %>
-          </ul>
-        </div>
+        <%= link_to projects_path do %>
+          <i class="fas fa-arrow-left" style="font-size: 30px";></i>
+        <% end %>
         <div>
           <button class="btn btn-edit" data-toggle='modal' data-target='#editProject'>Edit project</button>
           <%= link_to new_project_session_path(@project) do %>
           <button class="btn btn-edit">Add a session</button>
           <% end %>
+        </div>
       </div>
+      <div class="middle-info">
+        <div class='middle-info-main'>
+          <h3><%= @project.title %></h3>
+          <p><%="From #{@project.start_date.strftime('%d/%m/%y')} to #{@project.end_date.strftime('%d/%m/%y')}" %> - <i class="fas fa-user"> </i> <%= "#{@project.participant_number}"%> </p>
+        </div>
+        <ul class='list-inline'>
+          <% @project.users.each do |user| %>
+          <li>
+            <%= user.name %>
+          </li>
+          <% end %>
+        </ul>
       </div>
-  </div>
 
   <div class="project-info">
     <div class="sessions-cards">

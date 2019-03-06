@@ -51,9 +51,17 @@
 }
 
 .client-control {
-  .control-button-add {
-    margin-top: 15px;
-    margin-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    margin: 0;
+  }
+  .btn {
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
 }
 

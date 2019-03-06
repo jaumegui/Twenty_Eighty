@@ -1,13 +1,27 @@
 <div class="container">
-  <h1><%= @client.name %></h1>
+  <div class="project-info-headers">
+    <%= link_to contents_path do %>
+      <i class="fas fa-arrow-left" style="font-size: 30px";></i>
+    <% end %>
+    <div>
+      <button class="btn btn-edit" data-toggle='modal' data-target='#editClient'>Edit content</button>
+      <%= link_to client_path(@client), method: :delete, data: { confirm: 'Are you sure ?'} do %>
+      <button class="btn btn-edit">Delete Content</button>
+      <% end %>
+    </div>
+  </div>
+  <h3><%= @client.name %></h3>
 
   <%= @client.email %>
   <br>
   <%= @client.company %>
   <br>
   <%= @client.address %>
+</div>
 
-  <%= link_to 'Edit client', edit_client_path(@client), class: 'btn btn-warning' %>
-  <%= link_to 'Delete client', client_path(@client), method: :delete, data: { confirm: "Are you sure ?" }, class: 'btn btn-danger' %>
-  <br>
+<!-- Modal -->
+<div class="modal fade" id="editClient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="border-radius: 20px">
+    <%= render 'edit', client: @client %>
+  </div>
 </div>

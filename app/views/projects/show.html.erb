@@ -41,10 +41,10 @@
     </div>
     <div class="sessions-cards">
       <% @project.sessions.each do |session| %>
+      <%= link_to project_session_path(session.project, session) do %>
       <div class="card-lg">
         <div class="card-main-lg">
           <h3><%= session.title %></h3>
-          <%= link_to '', project_session_path(session.project, session), class: "card-link" %>
           <div class="mods-list">
             <ul>
               <% list = session.mods %>
@@ -63,6 +63,7 @@
         </div>
       </div>
     </div>
+    <% end %>
     <% end %>
   </div>
 

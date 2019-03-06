@@ -2,6 +2,14 @@
 	display: flex;
 }
 
+#arrow-project {
+  .fa-arrow-left {
+    position: absolute;
+    top: 103px;
+    left: 246px;
+  }
+}
+
 .session-container {
   flex-shrink: 0;
 	padding: 20px;
@@ -15,11 +23,6 @@
 
 .mods-list {
   text-align: left;
-}
-
-.fa-arrow-left{
-  position: absolute;
-  left: 1px;
 }
 
 .session-header {

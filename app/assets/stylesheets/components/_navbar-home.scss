@@ -1,9 +1,13 @@
 /* Main navbar */
 
 /* Logo */
-// .navbar-wagon-brand img {
-//   height: 50px;
-// }
+.navbar-wagon-brand img {
+  width: 100px;
+  height: 100%;
+  position: relative;
+  top: 2px;
+  left: -19px;
+}
 
 /* User Avatar */
 .navbar-home .avatar {

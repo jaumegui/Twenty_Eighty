@@ -136,10 +136,46 @@ Client.create(
  address: "1 rue Gustave Eiffel, 78045 Guyancourt Cedex",
  logo: "https://www.mcdonalds.fr/mcdo-mcdofr-front-theme/image/img-logo-head.gif")
 Client.create(
- name: "",
- email: "ronald.mcdonald@mcdonald.fr",
- company: "McDonald's France",
- address: "1 rue Gustave Eiffel, 78045 Guyancourt Cedex",
- logo: "https://www.mcdonalds.fr/mcdo-mcdofr-front-theme/image/img-logo-head.gif")
+ name: "Patrick Birdman",
+ email: "patrick.birdman@twitter.fr",
+ company: "Twitter France",
+ address: "10 rue de la Paix, 75002 Paris",
+ logo: "http://www.twitterpourlesnuls.com/img/Twitterl.png")
+Client.create(
+ name: "Elon Musk",
+ email: "elon.musk@tesla.com",
+ company: "Tesla",
+ address: "3 boulevard Malesherbes, 75008 Paris",
+ logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Tesla_T_symbol.svg/771px-Tesla_T_symbol.svg.png")
+Client.create(
+ name: "Nasser Al-Khelaïfi" ,
+ email: "nasser.al-khelaifi@psg.fr",
+ company: "PSG",
+ address: "24 Rue du Commandant Guilbaud, 75016 Paris",
+ logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/8/86/Paris_Saint-Germain_Logo.svg/1024px-Paris_Saint-Germain_Logo.svg.png")
+Client.create(
+ name: "Santa Claus",
+ email: "santa.claus@coca-cola.com",
+ company: "Coca-Cola",
+ address: "9 Chemin de Bretagne, 92130 Issy-les-Moulineaux",
+ logo: "https://www.multigp.com/wp-content/uploads/2018/08/Coca-Cola-Logo.png")
+Client.create(
+ name: "Niel Goldman",
+ email: "n.goldman@goldman-sachs.com",
+ company: "Goldman Sachs",
+ address: "5 Avenue Kléber, 75016 Paris",
+ logo: "https://www.nasuni.com/wp-content/uploads/2017/04/goldman-sachs.png")
+Client.create(
+ name: "Jérôme Kerviel",
+ email: "j.kerviel@sg-trading.fr",
+ company: "Société Générale",
+ address: "29 Boulevard Haussmann, 75009 Paris",
+ logo: "http://www.happyhourescapegame.com/wp-content/uploads/2014/10/soci%C3%A9t%C3%A9-gal.png")
+Client.create(
+ name: "Bernard de La Villardière",
+ email: "bernard.de-la-villardière@m6.fr",
+ company: "M6 Groupe",
+ address: "89 Avenue Charles-de-gaulle, 92200 Neuilly-sur-seine",
+ logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/2/22/M6_2009.svg/1200px-M6_2009.svg.png")
 
 puts "Done!"

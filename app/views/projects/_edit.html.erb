@@ -1,7 +1,14 @@
 <div class="modal-content">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h3 class="modal-title" id="myModalLabel"><%= project.title %></h3>
+    <div id="modal-title" style=" display: flex; justify-content: space-between;">
+      <h3 class="modal-title" id="myModalLabel"><%= project.title %></h3>
+      <button class="btn btn-edit">
+        <%= link_to project_path(@project), method: :delete, data: { confirm: 'Are you sure ?'} do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </button>
+    </div>
   </div>
   <div class="modal-body" id="modalNewBookinBody">
 	  <%= simple_form_for project do |f| %>
@@ -13,7 +20,18 @@
 	    </div>
   </div>
   <div class="modal-footer" id="modalNewBookingFooter">
-	    <%= f.button :submit, class: 'btn btn-warning btn-lg' %>
-	  <% end %>
+	  <div>
+      <%= f.button :submit, class: 'btn btn-edit' %>
+      <% end %>
+    </div>
+    <div class="user-manager">
+      <%= simple_form_for [@project, @userproject], wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
+        <%= f.input :user, :collection => @users, label: false %>
+        <%= f.submit "Invite User", class: 'btn' %>
+      <% end %>
+    </div>
+  </div>
+     
+    </div>
   </div>
 </div>

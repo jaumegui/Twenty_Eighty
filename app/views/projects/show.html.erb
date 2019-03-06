@@ -1,44 +1,32 @@
 <div class="container" id="update-modal">
   <div class="project-show-title">
-    <h1><%= @project.title %></h1>
-    <div class="control-buttons">
-      <div>
-      <div class="user-controls">
-        <button class="btn control-button control-button-warning" data-toggle='modal' data-target='#editProject'>
-          <%= link_to edit_project_path(@project) do %>
-            <i class="fas fa-edit warning-project"></i>
+      <div class="project-info-headers">
+        <div id="arrow-project">
+          <%= link_to projects_path do %>
+            <i class="fas fa-arrow-left" style="font-size: 30px";></i>
           <% end %>
-        </button>
-        <button class="btn control-button control-button-danger">
-          <%= link_to project_path(@project), method: :delete, data: { confirm: 'Are you sure ?'} do %>
-            <i class="fas fa-trash-alt"></i>
+          <h1><%= @project.title %></h1>
+          <p><%="From #{@project.start_date.strftime('%d/%m/%y')} to #{@project.end_date.strftime('%d/%m/%y')}" %> - <i class="fas fa-user"> </i> <%= "#{@project.participant_number}"%> </p>
+        </div>
+        <div class="middle-info">
+          <ul class='list-inline'>
+            <% @project.users.each do |user| %>
+            <li>
+              <%= user.name %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <div>
+          <button class="btn btn-edit" data-toggle='modal' data-target='#editProject'>Edit project</button>
+          <%= link_to new_project_session_path(@project) do %>
+            <button class="btn btn-edit">Add a session</button>
           <% end %>
-        </button>
-        <button class="btn control-button control-button-add text">
-            <%= link_to 'Add Session', new_project_session_path(@project) %>
-        </button>
       </div>
       </div>
-      <div class="user-manager">
-        <%= simple_form_for [@project, @userproject], wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
-          <%= f.input :user, :collection => @users, label: false %>
-          <%= f.submit "Invite User", class: 'btn' %>
-        <% end %>
-      </div>
-    </div>
   </div>
 
   <div class="project-info">
-    <div class="project-info-headers">
-      <p><%="From #{@project.start_date.strftime('%d/%m/%y')} to #{@project.end_date.strftime('%d/%m/%y')}" %> - <i class="fas fa-user"> </i> <%= "#{@project.participant_number}"%> </p>
-      <ul class='list-inline'>
-        <% @project.users.each do |user| %>
-        <li>
-          <%= user.name %>
-        </li>
-        <% end %>
-      </ul>
-    </div>
     <div class="sessions-cards">
       <% @project.sessions.each do |session| %>
       <%= link_to project_session_path(session.project, session) do %>

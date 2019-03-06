@@ -1,21 +1,25 @@
 <div class="container">
-  <h1><%= @content.title %></h1>
+  <div class="project-info-headers">
+        <%= link_to contents_path do %>
+          <i class="fas fa-arrow-left" style="font-size: 30px";></i>
+        <% end %>
+        <div>
+          <button class="btn btn-edit" data-toggle='modal' data-target='#editContent'>Edit content</button>
+          <%= link_to content_path(@content), method: :delete, data: { confirm: 'Are you sure ?'} do %>
+          <button class="btn btn-edit">Delete Content</button>
+          <% end %>
+        </div>
+      </div>
+  <h3><%= @content.title %></h3>
+  <div class="content-info"> <p><%= "Chapter : #{@content.chapter}" %></p> <p><%= "Intelligences : #{@content.intel1}, #{@content.intel2}" %></p> </div>
+  <%= "Format : #{@content.format}  -  Duration : #{@content.duration}" %>
+  <br>
+  <br>
+  <div class="content-text-area"><%= @content.description %></div>
 
-  <%= @content.chapter %>
-  <br>
-  <%= @content.format %>
-  <br>
-  <%= @content.duration %>
-  <br>
-  <%= @content.description %>
-  <br>
-  <%= @content.intel1 %>
-  <br>
-  <%= @content.intel2 %>
-
-
-
-  <%= link_to 'Edit content', edit_content_path(@content), class: 'btn btn-warning' %>
-  <%= link_to 'Delete content', content_path(@content), method: :delete, data: { confirm: "Are you sure ?" }, class: 'btn btn-danger' %>
-  <br>
+<!-- Modal -->
+<div class="modal fade" id="editContent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="border-radius: 20px">
+    <%= render 'edit', content: @content %>
+  </div>
 </div>

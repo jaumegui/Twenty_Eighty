@@ -24,8 +24,8 @@ class SessionsController < ApplicationController
           show_as_html: params.key?('debug'),
           page_size: 'A4',
           encoding: 'TEXT',
-          dpi: 500,
-          zoom: 1.6,
+          dpi: 300,
+          zoom: 1,
         )
       end
     end

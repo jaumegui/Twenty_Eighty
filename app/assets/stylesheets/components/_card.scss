@@ -98,8 +98,15 @@ $timeline: $yellow;
     padding: 20px;
     position: relative;
     h3 {
+      font-family: "Roboto";
+      font-weight: 500;
+      line-height: 1.1;
+      color: inherit;
+      text-align: left;
       margin: 0;
       margin-bottom: 20px;
+      padding-left: 39px;
+      padding-top: 10px;
     }
   }
   .card-footer-lg {
@@ -288,17 +295,6 @@ duration {
 .card-mods {
   box-shadow: none;
 }
-
-#edit-btn {
-  position: absolute;
-  left: 45vw;
-}
-
-#export-btn {
-  position: absolute;
-  left: 58vw;
-}
-
 
 .btn-edit {
   opacity: 0.8;

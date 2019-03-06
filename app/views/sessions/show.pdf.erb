@@ -3,16 +3,16 @@
   <h3 class="session-details-pdf"><%= @session.date.strftime("%A %e %B %Y") %> ( Start time: <%= @session.start_time.strftime("%H:%M") %> - End time: <%= @session.end_time.strftime("%H:%M") %> )</h3>
   <p class="project-details-pdf">(Project name: <%= @session.project.title %> - Client: <%= @session.project.client.name %>)</p>
   <br>
-    <% @contents.each do |content| %>
-    <h3 class="content-details-pdf"><%= content.title %> ( <%= content.format %> - <em><%= content.duration %> min</em> )</h3>
-    <p class="content-intel-pdf">Intelligences: <% if content.intel2.nil? %>
-                                                  <%= content.intel1 %>
+    <% @session.mods.each do |mod| %>
+    <h3 class="content-details-pdf"><%= mod.title %> ( <%= mod.format %> - <em><%= mod.duration %> min</em> )</h3>
+    <p class="content-intel-pdf">Intelligences: <% if mod.intel2.nil? %>
+                                                  <%= mod.intel1 %>
                                                   <% else %>
-                                                  <%= content.intel1 %> - <%= content.intel2 %>
+                                                  <%= mod.intel1 %> - <%= mod.intel2 %>
                                                   <% end %>
     </p>
     <br>
-    <p class="content-description-pdf"><%= content.description %></p>
+    <p class="content-description-pdf"><%= mod.description %></p>
     <br>
     <% end %>
 </div>

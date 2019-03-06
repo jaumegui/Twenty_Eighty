@@ -5,8 +5,8 @@
   background-color: #2e353d;
   width: 20vw;
   height: 100vh;
-  position: sticky;
-  top: 0;
+  position: sticky !important;
+  top: 0px;
   color: #e1ffff;
 }
 .nav-side-menu .brand {

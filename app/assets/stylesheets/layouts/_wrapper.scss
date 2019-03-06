@@ -3,7 +3,10 @@
   border-top: 3px ridge rgba(0,0,0,0.1);
   // overflow: hidden;
   .container {
-    width: 1345px;
-    padding-top: 50px;
+    width: auto;
+    padding: 30px;
+    .session-container {
+      padding: 30px 10px;
+    }
   }
 }

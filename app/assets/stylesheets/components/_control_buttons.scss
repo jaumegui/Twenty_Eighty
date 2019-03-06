@@ -12,13 +12,14 @@
   cursor: pointer; /* Mouse pointer on hover */
   opacity: 0.6;
   transition: all 0.8s ease;
+  color: white;
   a {
     color: white;
-    margin: 0;
-    text-align: center;
+    text-decoration: none;
   }
   &:hover {
     opacity: 1;
+    color: white;
   }
   &:focus {
     outline: none;
@@ -42,11 +43,7 @@
 }
 
 .control-button-danger {
-  background-color: #e4113359;
-  opacity: 0.6;
-  &:hover{
-    opacity: 1;
-  }
+  background-color: $red;
 }
 
 .control-button-add {

@@ -20,7 +20,7 @@
     </div>
       <%= render 'shared/navbar' %>
     <% end %>
-    <div id="right-side">
+    <div id="right-side" style="<%= 'padding: 0;' if params[:controller] == 'pages' && params[:action] == 'home' %>">
       <div class='wrapper'>
         <%= yield %>
         <%= javascript_include_tag 'application' %>

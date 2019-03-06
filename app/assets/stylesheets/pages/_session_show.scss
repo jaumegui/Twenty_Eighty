@@ -3,7 +3,7 @@
 }
 
 .session-container {
-	width: calc(100vw - 20vw);
+  flex-shrink: 0;
 	padding: 20px;
   flex: 1 0;
 }

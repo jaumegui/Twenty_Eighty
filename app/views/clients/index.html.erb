@@ -6,10 +6,15 @@
         <%= link_to 'New client', new_client_path %>
       </button>
     </div>
-      <ul>
+      <ul class='clients-list'>
         <% @clients = @clients.sort_by(&:company) %>
         <% @clients.each do |client| %>
-          <li><%= link_to "#{client.company} - #{client.name}", client_path(client) %></li>
+          <li><%= link_to client_path(client), class: 'client-card' do %>
+            <img class='client-logo-list' src='<%= "#{client.logo}" %>' alt="" style="height: 35px; width: 35px; border-radius: 50%;">
+            <p class='client-company'><strong><%= client.company %></strong></p>
+            <p class='client-name'><%= client.name %></p>
+            <% end %>
+          </li>
         <% end %>
       </ul>
   </div>

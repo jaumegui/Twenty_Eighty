@@ -5,10 +5,10 @@
           <%= link_to project_path(@session.project) do %>
             <i class="fas fa-arrow-left" style="font-size: 30px";></i>
           <% end %>
+        </div>
+        <div>
           <%= link_to edit_project_session_path(@session.project, @session), id: "edit-btn" do %>
-            <button class="btn btn-edit">
-              Edit session
-            </button>
+            <button class="btn btn-edit">Edit session</button>
           <% end %>
           <%= link_to project_session_path(@session.project, @session, format: :pdf), id: "export-btn" do %>
             <button class="btn btn-edit btn-edit">

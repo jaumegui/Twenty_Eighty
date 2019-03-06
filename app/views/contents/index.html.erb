@@ -1,9 +1,11 @@
 <div class="container">
-  <h1>List of contents</h1>
+  <h3>List of contents</h3>
+
+  <% @contents = @contents.sort_by(&:chapter) %>
 
   <ul>
     <% @contents.each do |content| %>
-    <li><%= link_to "#{content.title}", content_path(content) %></li>
+    <li><%= link_to "#{content.chapter} - #{content.title}", content_path(content) %></li>
     <% end %>
   </ul>
 </div>

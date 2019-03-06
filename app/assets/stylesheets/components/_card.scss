@@ -316,6 +316,8 @@ duration {
   transition: all 0.2s;
   &:hover{
     opacity: 1;
+    color: $yellow;
+    border: 0.1em solid $yellow;
   }
   a {
       color: #00000075;

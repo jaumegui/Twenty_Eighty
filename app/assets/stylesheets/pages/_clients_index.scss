@@ -1,7 +1,7 @@
 .list-clients {
   ul {
     margin-top: 20px;
-    margin-left: 57px;
+    padding: 0;
   }
 }
 
@@ -32,11 +32,15 @@
   }
 }
 
-.client-logo-list, .client-company {
+.client-logo-list, .client-company, .client-name {
   margin: 10px 20px;
   width: 200px;
 }
 
 .client-name {
   padding: 5px;
+}
+
+.client-email {
+  margin-left: 20vw !important;
 }

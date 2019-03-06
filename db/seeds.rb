@@ -130,49 +130,13 @@ Client.create(
  address: "300 E. Street SW, Suite 5R30, Washington, DC 20546",
  logo: "https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg")
 Client.create(
- name: "Ronald Mcdonald"
+ name: "Ronald Mcdonald",
  email: "ronald.mcdonald@mcdonald.fr",
  company: "McDonald's France",
  address: "1 rue Gustave Eiffel, 78045 Guyancourt Cedex",
  logo: "https://www.mcdonalds.fr/mcdo-mcdofr-front-theme/image/img-logo-head.gif")
 Client.create(
- name: ""
- email: "ronald.mcdonald@mcdonald.fr",
- company: "McDonald's France",
- address: "1 rue Gustave Eiffel, 78045 Guyancourt Cedex",
- logo: "https://www.mcdonalds.fr/mcdo-mcdofr-front-theme/image/img-logo-head.gif")
-Client.create(
- name: ""
- email: "ronald.mcdonald@mcdonald.fr",
- company: "McDonald's France",
- address: "1 rue Gustave Eiffel, 78045 Guyancourt Cedex",
- logo: "https://www.mcdonalds.fr/mcdo-mcdofr-front-theme/image/img-logo-head.gif")
-Client.create(
- name: ""
- email: "ronald.mcdonald@mcdonald.fr",
- company: "McDonald's France",
- address: "1 rue Gustave Eiffel, 78045 Guyancourt Cedex",
- logo: "https://www.mcdonalds.fr/mcdo-mcdofr-front-theme/image/img-logo-head.gif")
-Client.create(
- name: ""
- email: "ronald.mcdonald@mcdonald.fr",
- company: "McDonald's France",
- address: "1 rue Gustave Eiffel, 78045 Guyancourt Cedex",
- logo: "https://www.mcdonalds.fr/mcdo-mcdofr-front-theme/image/img-logo-head.gif")
-Client.create(
- name: ""
- email: "ronald.mcdonald@mcdonald.fr",
- company: "McDonald's France",
- address: "1 rue Gustave Eiffel, 78045 Guyancourt Cedex",
- logo: "https://www.mcdonalds.fr/mcdo-mcdofr-front-theme/image/img-logo-head.gif")
-Client.create(
- name: ""
- email: "ronald.mcdonald@mcdonald.fr",
- company: "McDonald's France",
- address: "1 rue Gustave Eiffel, 78045 Guyancourt Cedex",
- logo: "https://www.mcdonalds.fr/mcdo-mcdofr-front-theme/image/img-logo-head.gif")
-Client.create(
- name: ""
+ name: "",
  email: "ronald.mcdonald@mcdonald.fr",
  company: "McDonald's France",
  address: "1 rue Gustave Eiffel, 78045 Guyancourt Cedex",

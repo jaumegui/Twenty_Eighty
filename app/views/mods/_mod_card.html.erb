@@ -1,6 +1,10 @@
 <% @error = false %>
 <% @previous = session.mods.find_by(position: (mod.position - 1)) %>
 <% @error = true if ((@previous != nil) && ((mod.duration + @previous.duration) > 45) && (mod.format == @previous.format)) %>
+<% total_duration = 0 %>
+<% mod.session.mods.each do |mod| %>
+  <% total_duration += mod.duration %>
+<% end %>
 	<div class="card card-mods" data-item-id="<%= mod.id %>">
     <div class="card-left align-elements-in-flexbox">
     	<div class="mod-time">
@@ -13,14 +17,14 @@
 		  <div class="card-category">
         <h4><%= "#{mod.title} - (#{mod.duration} min)" %></h4>
         <% if @error %>
-            <i class="fas fa-exclamation-triangle error"></i>
+          <i class="fas fa-exclamation-triangle error"></i>
+        <% end %>
+        <% if (total_duration * 60) > (mod.session.end_time - mod.session.start_time) %>
+          <p class='error'>Session duration exceeded</p>
         <% end %>
       </div>
 		  <div class="card-description">
 	      <h5><%= "#{mod.description.split('.').first(2).join('.')}." %></h5>
-  		    <%= link_to edit_project_session_mod_path(session.project, session, mod) do %>
-  					<i class="fas fa-ellipsis-v"></i>
-  				<% end %>
 		  </div>
     </div>
 </div>

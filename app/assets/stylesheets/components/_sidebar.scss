@@ -14,8 +14,13 @@
   line-height: 50px;
   display: block;
   text-align: center;
-  font-size: 14px;
+  font-size: 18px;
 }
+
+.content-chapter a {
+  font-size: 14px !important;
+}
+
 .nav-side-menu .toggle-btn {
   display: none;
 }
@@ -86,6 +91,7 @@
 .nav-side-menu li a {
   text-decoration: none;
   color: #e1ffff;
+  font-size: 15px;
 }
 .nav-side-menu li a i {
   padding-left: 10px;
@@ -95,11 +101,11 @@
 .nav-side-menu li:hover {
   border-left: 3px solid #d19b3d;
   background-color: #4f5b69;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 @media (max-width: 767px) {
   .nav-side-menu {

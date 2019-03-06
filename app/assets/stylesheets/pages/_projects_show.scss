@@ -19,6 +19,14 @@
   }
 }
 
+.project-info {
+  background-color: white;
+  padding-bottom: 20px;
+  margin-bottom: 90px;
+  padding-top: 20px;
+
+}
+
 .project-info-headers {
   display: flex;
   justify-content: space-between;
@@ -27,6 +35,11 @@
   margin: 10px 0;
   p {
     margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  :first-child {
+    text-align: left;
   }
 }
 
@@ -41,4 +54,14 @@
 
 .user-manager {
   margin: 0 5px;
+}
+
+#update-modal {
+  background-color: #F6F9FC;
+}
+
+.middle-info {
+  li {
+    font-size: 26px;
+  }
 }

@@ -1,22 +1,22 @@
 <div class="left-navbar">
-  <%= link_to projects_path do %>
+  <%= link_to projects_path, class: 'left-buttons' do %>
     <div class="left-menu-list">
-      <i class="fas fa-tasks"></i> Projects
+      <i class="fas fa-tasks"></i> <p>Projects</p>
     </div>
   <% end %>
-  <%= link_to contents_path do %>
+  <%= link_to contents_path, class: 'left-buttons' do %>
     <div class="left-menu-list">
-      <i class="fas fa-book"></i> Contents
+      <i class="fas fa-book"></i> <p>Contents</p>
     </div>
   <% end %>
-  <%= link_to clients_path do %>
+  <%= link_to clients_path, class: 'left-buttons' do %>
     <div class="left-menu-list">
-      <i class="fas fa-users"></i> Clients
+      <i class="fas fa-users"></i> <p>Clients</p>
     </div>
   <% end %>
-  <%= link_to users_path do %>
+  <%= link_to users_path, class: 'left-buttons' do %>
     <div class="left-menu-list">
-      <i class="fas fa-user-tie"></i></i> Users
+      <i class="fas fa-user-tie"></i></i> <p>Users</p>
     </div>
   <% end %>
 </div>

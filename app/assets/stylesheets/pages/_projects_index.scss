@@ -13,3 +13,12 @@
   top: 62px;
   right: 62px
 }
+
+.projects-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    margin: 0;
+  }
+}

@@ -273,6 +273,12 @@ duration {
 }
 
 .card-category {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  i {
+    padding-bottom: 20px;
+  }
   h4{
     text-align: left;
     padding-bottom: 16px;
@@ -285,12 +291,12 @@ duration {
 
 #edit-btn {
   position: absolute;
-  right: -684px;
+  left: 45vw;
 }
 
 #export-btn {
   position: absolute;
-  right: -868px;
+  left: 58vw;
 }
 
 

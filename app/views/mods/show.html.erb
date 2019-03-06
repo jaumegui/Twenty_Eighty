@@ -1,6 +1,3 @@
-<div class="path-link">
-      <%= link_to "Projects", projects_path %> / <%= link_to "#{@mod.session.project.title}", project_path(@mod.session.project) %> / <%= link_to "#{@mod.session.title}", project_session_path(@mod.session.project, @mod.session) %> / <%= link_to "#{@mod.title}", project_session_mod_path(@mod.session.project, @mod.session, @mod) %>
-</div>
 <div class="container">
   <h4><%= @mod.title %></h4>
 

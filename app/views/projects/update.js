@@ -14,7 +14,7 @@ function refreshDetails(outerHTML) {
 
 refreshForm('<%= j render "edit", session: @session %>');
 
-<% unless @session.errors.any? %>
+<% unless @project.errors.any? %>
 	closeModal();
-	refreshDetails('<%= j render "details", session: @session %>')	
+	refreshDetails('<%= j render "details", session: @session %>')
 <% end %>

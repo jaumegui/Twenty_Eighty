@@ -37,8 +37,8 @@
       <div class="message-box">
         <h4>Add a message</h4>
         <%= simple_form_for [@session.project, @session, @comment], html: { class: "form-inline"} do |f| %>
-          <%= f.input :message, placeholder: "Add a messsage to your collaborators", html: { style: "width: 600px"}, label: false %>
-          <%= f.submit %>
+          <%= f.input :message, placeholder: "Add a messsage to your collaborators", input_html: { style: "width: 500px; margin-right: 20px;"}, label: false %>
+          <%= f.submit class: 'btn btn-edit'%>
         <% end %>
         <ul>
           <% @session.comments.each do |comment| %>
@@ -49,7 +49,7 @@
         </ul>
       </div>
       <div class="log-box">
-        <h4>Historique des modifications</h4>
+        <h4>Log Records</h4>
         <ul>
           <% @session.comments.each do |comment| %>
             <% if comment.message.split(' ').first == "Log" %>

@@ -1,6 +1,12 @@
 <% @error = false %>
 <% @previous = session.mods.find_by(position: (mod.position - 1)) %>
 <% @error = true if ((@previous != nil) && ((mod.duration + @previous.duration) > 45) && (mod.format == @previous.format)) %>
+<% @too_long = false %>
+<% total_duration = 0 %>
+<% mod.session.mods.each do |mod| %>
+  <% total_duration += mod.duration %>
+<% end %>
+<% @too_long = true if (total_duration * 60) > (mod.session.end_time - mod.session.start_time) %>
 	<div class="card card-mods" data-item-id="<%= mod.id %>">
     <div class="card-left align-elements-in-flexbox">
     	<div class="mod-time">
@@ -15,12 +21,15 @@
         <% if @error %>
             <i class="fas fa-exclamation-triangle error"></i>
         <% end %>
+        <% if @too_long %>
+            <p class='error-message error'>Session duration exceeded</p>
+        <% end %>
       </div>
 		  <div class="card-description">
 	      <h5><%= "#{mod.description.split('.').first(2).join('.')}." %></h5>
-  		    <%= link_to edit_project_session_mod_path(session.project, session, mod) do %>
+  		    <button data-toggle='modal' data-target='#editMod' style='height: 0; width: 0; padding: 0; border: none;'>
   					<i class="fas fa-ellipsis-v"></i>
-  				<% end %>
+  				</button>
 		  </div>
     </div>
 </div>
@@ -28,3 +37,8 @@
 <%#= link_to project_session_mod_path(session.project, session, mod), method: :delete, data: { confirm: "Are you sure ?"} do %>
 					<!-- <i class="far fa-trash-alt"></i> -->
 				<%# end %>
+<div class="modal fade" id="editMod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="border-radius: 20px">
+    <%= render './mods/edit', mod: mod %>
+  </div>
+</div>

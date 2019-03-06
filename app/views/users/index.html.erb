@@ -1,31 +1,55 @@
 <div class="container">
-  <h4>Users List</h4>
-
-
-  <h6>Admins</h6>
-  <ul>
-    <% @users.where(access_level: 'admin').each do |user| %>
-      <li>
-        <%= link_to "#{user.name}", user_path(user) %>
-      </li>
-    <% end %>
-  </ul>
-
-  <h6>Project Managers</h6>
-  <ul>
-    <% @users.where(access_level: 'project_manager').each do |user| %>
-      <li>
-        <%= link_to "#{user.name}", user_path(user) %>
-      </li>
-    <% end %>
-  </ul>
-
-  <h6>Seveners</h6>
-  <ul>
-    <% @users.where(access_level: 'sevener').each do |user| %>
-      <li>
-        <%= link_to "#{user.name}", user_path(user) %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="list-clients">
+    <div class='client-control'>
+      <h3>Users List</h3>
+      <button class="btn btn-success">
+        <%= link_to 'New User', new_user_path %>
+      </button>
+    </div>
+    <div>
+      <h6>Admins</h6>
+        <ul class='clients-list'>
+          <% @users.where(access_level: 'admin').each do |user| %>
+            <li>
+            <%= link_to user_path(user), class: 'client-card' do %>
+              <img class='client-logo-list' src='<%= "#" %>' alt="" style="height: 35px; width: 35px; border-radius: 50%;">
+              <p class='client-company'><strong><%= user.name %></strong></p>
+              <p class='client-name'><%= user.expertise %></p>
+              <p class='client-email'><%= user.email %></p>
+            <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <br>
+      <div>
+      <h6>Project Managers</h6>
+        <ul class='clients-list'><% @users.where(access_level: 'project_manager').each do |user| %>
+            <li>
+            <%= link_to user_path(user), class: 'client-card' do %>
+              <img class='client-logo-list' src='<%= "#" %>' alt="" style="height: 35px; width: 35px; border-radius: 50%;">
+              <p class='client-company'><strong><%= user.name %></strong></p>
+              <p class='client-name'><%= user.expertise %></p>
+              <p class='client-email'><%= user.email %></p>
+            <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <br>
+      <div>
+      <h6>Seveners</h6>
+        <ul class='clients-list'><% @users.where(access_level: 'sevener').each do |user| %>
+            <li>
+            <%= link_to user_path(user), class: 'client-card' do %>
+              <img class='client-logo-list' src='<%= "#" %>' alt="" style="height: 35px; width: 35px; border-radius: 50%;">
+              <p class='client-company'><strong><%= user.name %></strong></p>
+              <p class='client-name'><%= user.expertise %></p>
+              <p class='client-email'><%= user.email %></p>
+            <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+  </div>
 </div>

@@ -1,5 +1,22 @@
 <div class="container">
+  <div class="project-info-headers">
+        <%= link_to project_session_path(@mod.session.project, @mod.session) do %>
+          <i class="fas fa-arrow-left" style="font-size: 30px";></i>
+        <% end %>
+        <div>
+          <button class="btn btn-edit" data-toggle='modal' data-target='#editMod'>Edit Module</button>
+          <%= link_to project_session_mod_path(@mod.session.project, @mod.session, @mod), method: :delete, data: { confirm: 'Are you sure ?'} do %>
+          <button class="btn btn-edit">Delete Module</button>
+          <% end %>
+        </div>
+      </div>
   <h4><%= @mod.title %></h4>
 
   <%= @mod.description %>
+</div>
+
+<div class="modal fade" id="editMod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="border-radius: 20px">
+    <%= render 'edit', mod: @mod %>
+  </div>
 </div>

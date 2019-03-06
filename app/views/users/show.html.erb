@@ -6,12 +6,12 @@
     <h4><%= @user.access_level %></h4>
   </div>
   <div class="user-controls">
-    <button class="btn control-button control-button-warning">
+    <button class="btn btn-edit">
       <%= link_to edit_user_path(@user) do %>
-        <i class="fas fa-edit warning-client"></i>
+        <i class="fas fa-edit"></i>
       <% end %>
   </button>
-  <button class="btn control-button control-button-danger">
+  <button class="btn btn-edit">
     <%= link_to user_path(@user), method: :delete, data: { confirm: 'Are you sure ?'} do %>
       <i class="fas fa-trash-alt"></i>
     <% end %>

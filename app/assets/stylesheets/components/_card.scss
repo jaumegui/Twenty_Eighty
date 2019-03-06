@@ -34,6 +34,12 @@ $timeline: $yellow;
   }
 }
 
+.sessions-cards {
+  a {
+    text-decoration: none;
+  }
+}
+
 .client-logo {
   height: 50px;
   width: 50px;
@@ -80,12 +86,15 @@ $timeline: $yellow;
   box-shadow: 1px 1px 10px rgba(115, 133, 152, 0.6);
   margin: 0 auto;
   margin-top: 30px;
-  & li {
-    list-style: none;
-    padding: 10px 0px;
-  }
+  text-decoration: none;
+  color: black;
   &:hover {
     transition: all 0.8s ease;
+    transform: scale(1.1);
+  }
+  a {
+    text-decoration: none;
+    color: black;
     }
   .card-main-lg {
     height: auto;

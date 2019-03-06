@@ -9,3 +9,34 @@
   display: flex;
   align-items: center;
 }
+
+.clients-list {
+  list-style-type: none;
+  a { text-decoration: none;
+    transition: all 0.8s ease;
+    &:hover {
+    color: black;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.9);
+    }
+  }
+}
+
+.client-card {
+  display: flex;
+  align-items: center;
+  color: rgba(0,0,0,0.6);
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+  margin: 10px 0;
+  p {
+    margin: 0;
+  }
+}
+
+.client-logo-list, .client-company {
+  margin: 10px 20px;
+  width: 200px;
+}
+
+.client-name {
+  padding: 5px;
+}

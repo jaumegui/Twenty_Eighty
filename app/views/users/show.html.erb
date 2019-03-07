@@ -1,20 +1,29 @@
 <div class="container">
-  <div class="user-info">
-    <h4><%= @user.name %></h4>
-    <h4><%= @user.email %></h4>
-    <h4><%= @user.expertise %></h4>
-    <h4><%= @user.access_level %></h4>
-  </div>
-  <div class="user-controls">
-    <button class="btn control-button control-button-warning">
-      <%= link_to edit_user_path(@user) do %>
-        <i class="fas fa-edit warning-client"></i>
-      <% end %>
-  </button>
-  <button class="btn control-button control-button-danger">
-    <%= link_to user_path(@user), method: :delete, data: { confirm: 'Are you sure ?'} do %>
-      <i class="fas fa-trash-alt"></i>
+  <div class="project-info-headers">
+    <%= link_to users_path do %>
+      <i class="fas fa-arrow-left" style="font-size: 30px";></i>
     <% end %>
-  </button>
+    <div>
+      <button class="btn btn-edit" data-toggle='modal' data-target='#editUser'>Edit User</button>
+      <%= link_to user_path(@user), method: :delete, data: { confirm: 'Are you sure ?'} do %>
+      <button class="btn btn-edit">Delete User</button>
+      <% end %>
+    </div>
+  </div>
+  <div class="user-info">
+    <h4><%= "Name : #{@user.name}" %></h4>
+    <h4><%= "Email : #{@user.email}" %></h4>
+    <h4><%= "Expertise : #{@user.expertise}" %></h4>
+    <% if @user.access_level == "project_manager" %>
+      <h4><%= "Access Level : Project Manager" %></h4>
+    <% else %>
+      <h4><%= "Access Level : #{@user.access_level}" %></h4>
+    <% end %>
+  </div>
+</div>
+
+<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="border-radius: 20px">
+    <%= render 'edit', user: @user %>
   </div>
 </div>

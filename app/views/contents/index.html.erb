@@ -1,11 +1,22 @@
 <div class="container">
-  <h3>List of contents</h3>
-
-  <% @contents = @contents.sort_by(&:chapter) %>
-
-  <ul>
-    <% @contents.each do |content| %>
-    <li><%= link_to "#{content.chapter} - #{content.title}", content_path(content) %></li>
-    <% end %>
-  </ul>
+<div class="list-clients">
+    <div class='client-control'>
+      <h3>Contents List</h3>
+      <button class="btn btn-success">
+        <%= link_to 'New Content', new_content_path %>
+      </button>
+    </div>
+      <ul class='clients-list'>
+        <% @contents = @contents.sort_by(&:chapter) %>
+        <% @contents.each do |content| %>
+          <li><%= link_to content_path(content), class: 'client-card' do %>
+            <p class='client-company'><strong><%= content.chapter %></strong></p>
+            <p class='client-name'><%= content.title %></p>
+            <p class='client-email'><%= content.format %></p>
+            <p class='client-email'><%= content.intel1 %></p>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+  </div>
 </div>

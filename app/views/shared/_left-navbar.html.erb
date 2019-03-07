@@ -1,7 +1,9 @@
 <div class="left-navbar">
   <div class="dropdown">
     <div class="left-navbar-top">
-      <%= image_tag "Yahya.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+      <% if user_signed_in? %>
+        <img src='<%= "#{current_user.photo}" %>' class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+      <% end %>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>

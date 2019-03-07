@@ -1,4 +1,4 @@
-$timeline: $yellow;
+$timeline: #115173;
 
 .card {
   height: 250px;
@@ -63,6 +63,7 @@ $timeline: $yellow;
   height: 25%;
   display: flex;
   align-items: center;
+  background-color: #faebd7 !important;
   justify-content: space-around;
   // border: 1px solid rgba(115, 133, 152, 0.6);
   background: rgba(115, 133, 152, 0.15);
@@ -315,16 +316,24 @@ duration {
     opacity: 1;
     font-weight: 600;
     color: white;
-    border: 0.1em solid $yellow;
   }
   a {
       text-decoration: none;
   }
 }
 
+.edit-btn {
+  font-size: 17px;
+  cursor: pointer;
+}
+
 #new-project {
   font-size: 20px;
   margin-right: 90px;
+}
+
+#edit-btn:hover {
+  text-decoration: none !important;
 }
 
 .card-mods:last-child {

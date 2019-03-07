@@ -11,9 +11,6 @@ $timeline: #115173;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   background-color: white;
   transition: all 0.8s ease;
-  &:hover {
-      box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.3);
-  }
   a {
     text-decoration: none;
     color: black;
@@ -186,6 +183,9 @@ $timeline: #115173;
       font-weight: 300;
       letter-spacing: 0.6px;
       line-height: 1.6;
+    }
+    &:hover {
+      box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.3);
     }
   }
   .grabbable {

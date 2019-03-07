@@ -1,31 +1,33 @@
 <div class="container">
-  <h4>Users List</h4>
+  <div class="list-clients">
+    <div class='client-control'>
+      <h3>Users List</h3>
+      <button class="btn btn-success" data-toggle='modal' data-target='#newUser'>Add User</button>
+    </div>
+    <ul class='clients-list'>
+      <% @users = @users.sort_by(&:expertise) %>
+      <% @users.each do |user| %>
+        <li>
+          <%= link_to user_path(user), class: 'client-card' do %>
+            <img class='client-logo-list' src='<%= "#" %>' alt="" style="height: 35px; width: 35px; border-radius: 50%;">
+            <p class='client-company'><strong><%= user.expertise %></strong></p>
+            <p class='client-name'><%= user.name %></p>
+            <p class='client-email'><%= user.email %></p>
+            <% if user.access_level == "project_manager" %>
+              <p class='client-access'>Project Manager</p>
+            <% else %>
+              <p class='client-access'><%= user.access_level.capitalize %></p>
+            <% end %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
-
-  <h6>Admins</h6>
-  <ul>
-    <% @users.where(access_level: 'admin').each do |user| %>
-      <li>
-        <%= link_to "#{user.name}", user_path(user) %>
-      </li>
-    <% end %>
-  </ul>
-
-  <h6>Project Managers</h6>
-  <ul>
-    <% @users.where(access_level: 'project_manager').each do |user| %>
-      <li>
-        <%= link_to "#{user.name}", user_path(user) %>
-      </li>
-    <% end %>
-  </ul>
-
-  <h6>Seveners</h6>
-  <ul>
-    <% @users.where(access_level: 'sevener').each do |user| %>
-      <li>
-        <%= link_to "#{user.name}", user_path(user) %>
-      </li>
-    <% end %>
-  </ul>
+<!-- Modal -->
+<div class="modal fade" id="newUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="border-radius: 20px">
+    <%= render 'new', user: @user %>
+  </div>
 </div>

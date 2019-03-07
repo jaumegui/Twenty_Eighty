@@ -381,3 +381,14 @@ duration {
 .center-button {
   text-align: center;
 }
+
+.empty-mod {
+  text-align: center;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  font-size: 25px;
+}
+.empty-mod:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=100);
+}

@@ -1,4 +1,4 @@
-$timeline: $yellow;
+$timeline: #115173;
 
 .card {
   height: 250px;
@@ -63,6 +63,7 @@ $timeline: $yellow;
   height: 25%;
   display: flex;
   align-items: center;
+  background-color: #facd7e7a !important;
   justify-content: space-around;
   // border: 1px solid rgba(115, 133, 152, 0.6);
   background: rgba(115, 133, 152, 0.15);
@@ -175,12 +176,30 @@ $timeline: $yellow;
     margin-right: 25px;
     margin-top: 20px;
     margin-bottom: 20px;
+    cursor: grab;
     h5{
       font-size: 20px;
       font-weight: 300;
       letter-spacing: 0.6px;
       line-height: 1.6;
     }
+  }
+  .grabbable {
+    cursor: move ; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    h4 {
+      color: rgba(0,0,0,0.6);
+    }
+    h4:hover {
+      color: rgba(0,0,0,1);
+    }
+  }
+  .grabbable:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
   }
   .circle {
     border: solid 2px $timeline;
@@ -315,16 +334,29 @@ duration {
     opacity: 1;
     font-weight: 600;
     color: white;
-    border: 0.1em solid $yellow;
   }
   a {
       text-decoration: none;
   }
 }
 
+.edit-btn {
+  font-size: 17px;
+  cursor: pointer;
+  color: $gray;
+  &:hover {
+    color: $gray;
+    text-decoration: none;
+  }
+}
+
 #new-project {
   font-size: 20px;
   margin-right: 90px;
+}
+
+#edit-btn:hover {
+  text-decoration: none !important;
 }
 
 .card-mods:last-child {

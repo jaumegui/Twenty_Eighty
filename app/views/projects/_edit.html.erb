@@ -24,14 +24,8 @@
       <%= f.button :submit, class: 'btn btn-edit' %>
       <% end %>
     </div>
-    <div class="user-manager">
-      <%= simple_form_for [@project, @userproject], wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
-        <%= f.input :user, :collection => @users, label: false %>
-        <%= f.submit "Invite User", class: 'btn' %>
-      <% end %>
-    </div>
   </div>
-     
+
     </div>
   </div>
 </div>

@@ -1,6 +1,5 @@
 .wrapper {
-  border-left: 3px ridge rgba(0,0,0,0.1);
-  border-top: 3px ridge rgba(0,0,0,0.1);
+  border-left: 3px inset rgba(0,0,0,0.1);
   // overflow: hidden;
   .container {
     width: auto;
@@ -9,4 +8,17 @@
       padding: 30px 10px;
     }
   }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+}
+
+.container, .session-container {
+  min-height: 100vh;
 }

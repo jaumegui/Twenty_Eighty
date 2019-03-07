@@ -15,9 +15,10 @@
     	<div class="circle"></div>
     </div>
     <div class="card-right">
-	    <%= link_to '', project_session_mod_path(mod.session.project, mod.session, mod), class: 'card-link' %>
-		  <div class="card-category">
-        <h4><%= "#{mod.title} - (#{mod.duration} min)" %></h4>
+      <div class="card-category">
+        <%= link_to project_session_mod_path(mod.session.project, mod.session, mod), class: 'grabbable' do %>
+          <h4><%= "#{mod.title} - (#{mod.duration} min)" %></h4>
+        <% end %>
         <% if @error %>
           <i class="fas fa-exclamation-triangle error"></i>
         <% end %>

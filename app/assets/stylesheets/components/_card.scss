@@ -176,12 +176,30 @@ $timeline: #115173;
     margin-right: 25px;
     margin-top: 20px;
     margin-bottom: 20px;
+    cursor: grab;
     h5{
       font-size: 20px;
       font-weight: 300;
       letter-spacing: 0.6px;
       line-height: 1.6;
     }
+  }
+  .grabbable {
+    cursor: move ; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    h4 {
+      color: rgba(0,0,0,0.6);
+    }
+    h4:hover {
+      color: rgba(0,0,0,1);
+    }
+  }
+  .grabbable:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
   }
   .circle {
     border: solid 2px $timeline;

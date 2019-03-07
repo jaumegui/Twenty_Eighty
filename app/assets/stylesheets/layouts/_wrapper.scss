@@ -1,10 +1,12 @@
 .wrapper {
-  border-left: 3px ridge rgba(0,0,0,0.1);
-  border-top: 3px ridge rgba(0,0,0,0.1);
-  // overflow: hidden;
+    // overflow: hidden;
   .container {
     width: auto;
-    padding: 30px;
+    height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 80px;
+    padding-right: 80px;
     .session-container {
       padding: 30px 10px;
     }

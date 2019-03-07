@@ -1,16 +1,15 @@
-<div class="container" style="background-color: #F5F9FC;">
+<div class="container" style="background-color: white">
   <div class="projects-title">
-    <h3><%= "Welcome #{current_user.name}" %></h3>
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="#ongoing" data-toggle="tab">Ongoing Projects</a></li>
+      <li role="presentation"><a href="#coming" data-toggle="tab">Coming Projects</a></li>
+      <li role="presentation"><a href="#completed" data-toggle="tab">Completed Projects</a></li>    
+      <!-- <h3><%#= "Welcome #{current_user.name}" %></h3> -->
+    </ul>
     <div class="new-project">
       <%= link_to 'New project', new_project_path, class: "btn btn-edit" %>
     </div>
   </div>
-  <ul class="nav nav-tabs">
-    <li role="presentation" class="active"><a href="#ongoing" data-toggle="tab">Ongoing Projects</a></li>
-    <li role="presentation"><a href="#coming" data-toggle="tab">Coming Projects</a></li>
-    <li role="presentation"><a href="#completed" data-toggle="tab">Completed Projects</a></li>
-      
-  </ul>
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="ongoing">
       <%= render 'ongoing', projects: @projects %>

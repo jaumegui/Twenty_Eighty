@@ -22,7 +22,7 @@
               <% @project.users.each do |user| %>
               <li>
                 <%= link_to user_path(user) do %>
-                  <img src='<%= "#{user.photo}" %>' alt="" class='avatar'>
+                  <img src='<%= "#{user.photo}" %>' alt="" class='avatar-sm'>
                 <% end %>
               </li>
               <% end %>

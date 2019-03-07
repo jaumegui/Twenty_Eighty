@@ -309,6 +309,9 @@ duration {
   color: white;
   text-align: center;
   transition: all 0.1s;
+  i {
+    color: white;
+  }
   &:hover{
     opacity: 1;
     font-weight: 600;

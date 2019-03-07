@@ -1,13 +1,14 @@
 .wrapper {
   .container {
     width: auto;
-    height: 100vh;
+    min-height: 100vh;
     padding-top: 35px;
     padding-bottom: 80px;
     padding-left: 80px;
     padding-right: 80px;
     .session-container {
       padding: 30px 10px;
+      min-height: 100vh;
     }
   }
 }
@@ -26,6 +27,3 @@ body {
   position: relative;
 }
 
-.container, .session-container {
-  min-height: 100vh;
-}

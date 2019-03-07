@@ -7,9 +7,7 @@
           <% end %>
         </div>
         <div>
-          <%= link_to edit_project_session_path(@session.project, @session), id: "edit-btn" do %>
-            <button class="btn btn-edit">Edit session</button>
-          <% end %>
+          <button class="btn btn-edit" data-toggle='modal' data-target='#editSession'>Edit Session</button>
           <%= link_to project_session_path(@session.project, @session, format: :pdf), id: "export-btn" do %>
             <button class="btn btn-edit btn-edit">
                 Export as <i class="fas fa-file-pdf"></i>
@@ -76,5 +74,11 @@
           <% end %>
         </ul>
      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="editSession" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="border-radius: 20px">
+    <%= render 'edit', session: @session %>
   </div>
 </div>

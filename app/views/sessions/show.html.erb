@@ -15,8 +15,8 @@
         </div>
       </div>
       <div class="top-mods">
-        <h3><%= @session.title %>    <em style="font-size: 17px; cursor: pointer; font-style: normal;" ><%= link_to 'Edit', edit_project_session_path(@session.project, @session), id: "edit-btn"%></em></h3>
-        </%>
+        <h3><%= @session.title %>    <em style="font-size: 17px; cursor: pointer; font-style: normal;" ><%= link_to edit_project_session_path(@session.project, @session), id: "edit-btn" do %>
+          <i class="fas fa-edit"></i><% end %>
         <h4><%= @session.date.strftime("%A %e %B %Y") %>
         <%= "from #{@session.start_time.hour}:#{@session.start_time.min}0 to" if @session.start_time.min.to_s.length == 1 %>
         <%= "from #{@session.start_time.hour}:#{@session.start_time.min} to" if @session.start_time.min.to_s.length == 2 %>

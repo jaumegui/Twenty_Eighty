@@ -299,26 +299,23 @@ duration {
 .btn-edit {
   opacity: 0.8;
   display: inline-block;
-  background-color: transparent;
+  background-color: #ec405b;
   padding: 0.45em 2em;
-  border: 0.1em solid #1d1d1d52;
-  margin: 0 0.3em 0.3em 0;
   border-radius: 0.22em;
   box-sizing: border-box;
   font-family: 'Roboto',sans-serif;
-  font-weight: 300;
-  color: #00000085;
+  font-weight: 600;
+  color: white;
   text-align: center;
-  transition: all 0.2s;
+  transition: all 0.1s;
   &:hover{
     opacity: 1;
-    color: $yellow;
-    border: 0.1em solid $yellow;
+    font-weight: 600;
+    color: white;
+    border: 0.1em solid #ec405b;
   }
   a {
-      color: #00000075;
       text-decoration: none;
-      font-weight: 400;
   }
 }
 

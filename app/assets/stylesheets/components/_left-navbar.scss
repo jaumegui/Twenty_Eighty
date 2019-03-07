@@ -9,6 +9,9 @@
   width: 150px;
   text-align: left;
   padding-top: 15px;
+  -webkit-box-shadow: inset -4px 0px 0px 0px rgba(0,0,0,0.18);
+  -moz-box-shadow: inset -4px 0px 0px 0px rgba(0,0,0,0.18);
+  box-shadow: inset -4px 0px 0px 0px rgba(0,0,0,0.18);
 }
 
 .left-navbar-top {

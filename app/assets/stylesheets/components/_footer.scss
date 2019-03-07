@@ -10,29 +10,3 @@ body {
 .container, .session-container {
   min-height: calc(100vh - 130px);
 }
-
-.footer {
-  clear: both;
-  background-color: #cccccc;
-  padding-left: 15px;
-  padding-right: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
-  height: 60px;
-  color: white;
-  position: static;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  a {
-    color: white;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-  p {
-    margin: 0;
-  }
-}

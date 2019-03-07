@@ -1,11 +1,9 @@
-<div class="container" id="update-modal">
+<div class="container">
       <div class="project-info-headers">
         <%= link_to projects_path do %>
           <i class="fas fa-arrow-left" style="font-size: 30px";></i>
         <% end %>
         <div>
-          <button class="btn btn-edit" data-toggle='modal' data-target='#editProject'>Edit project</button>
-          <button class="btn btn-edit" data-toggle='modal' data-target='#newUserProject'>Invite User</button>
           <%= link_to new_project_session_path(@project) do %>
           <button class="btn btn-edit">Add a session</button>
           <% end %>
@@ -13,18 +11,24 @@
       </div>
       <div class="middle-info">
         <div class='middle-info-main'>
-          <h3><%= @project.title %></h3>
+          <h3><%= @project.title %>    <a class="edit-btn" data-toggle='modal' data-target='#editProject'>Edit</a></h3>
           <h4><%="From #{@project.start_date.strftime('%d/%m/%y')} to #{@project.end_date.strftime('%d/%m/%y')}" %> - <i class="fas fa-user"> </i> <%= "#{@project.participant_number}"%> </h4>
         </div>
-        <ul id="participant" class='list-inline'>
-          <% @project.users.each do |user| %>
-          <li>
-            <%= link_to user_path(user) do %>
-              <img src='<%= "#{user.photo}" %>' alt="" class='avatar'>
-            <% end %>
-          </li>
-          <% end %>
-        </ul>
+          <div style="
+    display: flex;
+    align-items: center;
+    justify-content: space-between;>
+            <ul id="participant" class='list-inline'>
+              <% @project.users.each do |user| %>
+              <li>
+                <%= link_to user_path(user) do %>
+                  <img src='<%= "#{user.photo}" %>' alt="" class='avatar'>
+                <% end %>
+              </li>
+              <% end %>
+            </ul>
+            <a data-toggle='modal' data-target='#newUserProject'><i class="fas fa-user-plus"></i></a>
+          </div>
       </div>
 
   <div class="project-info">

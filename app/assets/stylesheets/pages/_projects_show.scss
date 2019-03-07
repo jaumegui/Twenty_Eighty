@@ -30,6 +30,7 @@
 .project-info-headers {
   display: flex;
   justify-content: space-between;
+  padding-top: 25px;
   width: 100%;
   p {
     margin: 0;
@@ -55,12 +56,13 @@
 }
 
 #update-modal {
-  background-color: #F6F9FC;
+  background-color: white;
 }
 
 .middle-info {
   display: flex;
   justify-content: space-between;
+  margin-right: 120px;
   align-items: center;
   margin-bottom: 40px;
   h3, p {
@@ -81,6 +83,10 @@
     align-items: center;
     width: 50%;
   }
+}
+
+.middle-info-main img {
+  margin-right: 20px;
 }
 
 #participant {

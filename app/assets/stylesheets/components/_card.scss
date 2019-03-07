@@ -63,7 +63,7 @@ $timeline: #115173;
   height: 25%;
   display: flex;
   align-items: center;
-  background-color: #faebd7 !important;
+  background-color: #facd7e7a !important;
   justify-content: space-around;
   // border: 1px solid rgba(115, 133, 152, 0.6);
   background: rgba(115, 133, 152, 0.15);
@@ -343,6 +343,11 @@ duration {
 .edit-btn {
   font-size: 17px;
   cursor: pointer;
+  color: $gray;
+  &:hover {
+    color: $gray;
+    text-decoration: none;
+  }
 }
 
 #new-project {

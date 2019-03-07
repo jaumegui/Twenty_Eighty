@@ -1,10 +1,10 @@
 .container-session-show {
-	display: flex;
+	position: relative;
 }
 
 .session-container {
-  flex-shrink: 0;
 	padding: 20px;
+  padding-right: calc(20vw + 20px) !important;
   flex: 1 0;
 }
 

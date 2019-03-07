@@ -1,14 +1,22 @@
+.nav-side-menu-container {
+  position: fixed;
+  top: 205px;
+  right: 40px;
+  height: 100%;
+}
+
 .nav-side-menu {
+  position: sticky;
   flex-shrink: 0;
   font-family: verdana;
   font-size: 12px;
   font-weight: 200;
   background-color: #2e353d;
   width: 15vw;
-  height: 100vh;
-  position: sticky !important;
-  top: 0px;
+  height: auto;
   color: #e1ffff;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.7);
+  margin-top: 20px;
 }
 .nav-side-menu .brand {
   background-color: #23282e;
@@ -139,6 +147,16 @@
     display: block;
   }
 }
+
+.menu-content > #click-to-add {
+  padding: 0;
+  p {
+    font-size: 15px;
+    margin: 0;
+    text-align: center;
+  }
+}
+
 body {
   margin: 0px;
   padding: 0px;

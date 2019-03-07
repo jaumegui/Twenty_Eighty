@@ -299,7 +299,7 @@ duration {
 .btn-edit {
   opacity: 0.8;
   display: inline-block;
-  background-color: #ec405b;
+  background-color: $yellow;
   padding: 0.45em 2em;
   border-radius: 0.22em;
   box-sizing: border-box;
@@ -312,11 +312,16 @@ duration {
     opacity: 1;
     font-weight: 600;
     color: white;
-    border: 0.1em solid #ec405b;
+    border: 0.1em solid $yellow;
   }
   a {
       text-decoration: none;
   }
+}
+
+#new-project {
+  font-size: 20px;
+  margin-right: 90px;
 }
 
 .card-mods:last-child {

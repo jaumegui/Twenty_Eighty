@@ -6,6 +6,6 @@
     <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
     <%= f.input :start_time, as: :string, required: false, input_html: {class: "timepicker"} %>
     <%= f.input :end_time, as: :string, required: false, input_html: {class: "timepicker"} %>
-    <%= f.submit %>
+    <p class="center-button"> <%= f.submit class: 'btn btn-edit' %> </p>
   <% end %>
 </div>

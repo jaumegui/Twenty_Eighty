@@ -1,8 +1,8 @@
-<div class="row">
+<div class="row" style="background-color: white; margin-right: 15px;">
   <% result_term = [] %>
   <% projects.each do |project| %>
     <% if project.end_date < Date.today %>
-      <div class="col-xs-12 col-md-4">
+      <div class="col-xs-12 col-md-4" style="display: flex; justify-content: center;">
         <%= link_to project_path(project) do %>
         <div class="card">
           <div class="card-main">

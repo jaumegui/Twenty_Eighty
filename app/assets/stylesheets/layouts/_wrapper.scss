@@ -1,5 +1,4 @@
 .wrapper {
-    // overflow: hidden;
   .container {
     width: auto;
     height: 100vh;
@@ -11,4 +10,17 @@
       padding: 30px 10px;
     }
   }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+}
+
+.container, .session-container {
+  min-height: 100vh;
 }

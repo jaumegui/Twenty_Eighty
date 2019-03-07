@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @users = policy_scope(User).order(created_at: :desc)
+    @user = User.new
   end
 
   def show
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @expertises = %w[Entreprenariat Management Communication Developpement-Personnel Leadership Innovation Tech Stratégie].freeze
+    %w[Entreprenariat Management Communication Developpement-Personnel Leadership Innovation Tech Stratégie].freeze
     authorize @user
   end
 
@@ -58,6 +59,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :expertise, :email, :password, :password_confirmation, :access_level)
+    params.require(:user).permit(:name, :expertise, :email, :password, :password_confirmation, :access_level, :photo)
   end
 end

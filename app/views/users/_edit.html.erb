@@ -1,0 +1,25 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <div id="modal-title" style=" display: flex; justify-content: space-between;">
+      <h3 class="modal-title" id="myModalLabel"><%= user.name %></h3>
+    </div>
+  </div>
+  <div class="modal-body" id="modalNewBookinBody">
+    <%= simple_form_for user do |f| %>
+      <%= f.input :name %>
+      <%= f.input :expertise, :collection => @expertises %>
+      <%= f.input :email %>
+      <%= f.input :access_level, :collection => %w(admin project_manager sevener) %>
+      <%= f.input :photo %>
+  </div>
+  <div class="modal-footer" id="modalNewBookingFooter">
+    <div>
+      <%= f.button :submit, class: 'btn btn-edit' %>
+      <% end %>
+    </div>
+  </div>
+
+    </div>
+  </div>
+</div>

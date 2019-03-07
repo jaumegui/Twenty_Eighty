@@ -242,12 +242,12 @@ Plus une chose semble rare plus nous désirons la posséder. Technique : Il n’
 puts "Done!"
 puts "Generating Users..."
 
-User.create(name: "Yahya", email: "yahya@2080.co", password: "tititoto", access_level: "admin", expertise: "Stratégie")
-User.create(name: "Guillaume", email: "guillaume@2080.co", password: "tititoto", access_level: "admin", expertise: "Stratégie")
-User.create(name: "Benoit", email: "benoit@2080.co", password: "tititoto", access_level: "admin", expertise: "Stratégie")
-User.create(name: "Brice", email: "brice@2080.co", password: "tititoto", access_level: "admin", expertise: "Stratégie")
-User.create(name: "User", email: "user@2080.co", password: "tititoto", access_level: "project_manager", expertise: "Stratégie")
-User.create(name: "Sevener", email: "sevener@2080.co", password: "tititoto", access_level: "sevener", expertise: "Stratégie")
+User.create(name: "Yahya", email: "yahya@2080.co", password: "tititoto", access_level: "admin", expertise: "Stratégie", photo: "https://avatars1.githubusercontent.com/u/45921830?s=460&v=4")
+User.create(name: "Guillaume", email: "guillaume@2080.co", password: "tititoto", access_level: "admin", expertise: "Stratégie", photo: "https://avatars0.githubusercontent.com/u/38280154?s=460&v=4")
+User.create(name: "Benoit", email: "benoit@2080.co", password: "tititoto", access_level: "admin", expertise: "Stratégie", photo: "https://avatars2.githubusercontent.com/u/45844158?s=460&v=4")
+User.create(name: "Brice", email: "brice@2080.co", password: "tititoto", access_level: "admin", expertise: "Stratégie", photo: "https://avatars1.githubusercontent.com/u/45003333?s=460&v=4")
+User.create(name: "User", email: "user@2080.co", password: "tititoto", access_level: "project_manager", expertise: "Stratégie", photo: "https://i.pinimg.com/originals/d1/58/cc/d158ccef5dc0cadde05bdd0b7521a34d.jpg")
+User.create(name: "Sevener", email: "sevener@2080.co", password: "tititoto", access_level: "sevener", expertise: "Stratégie", photo: "https://bloody-disgusting.com/wp-content/uploads/2017/05/Screen-Shot-2017-05-01-at-11.17.09-AM.jpg")
 
 puts "Done!"
 

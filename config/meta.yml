@@ -1,0 +1,5 @@
+meta_product_name: "Twenty-Eighty"
+meta_title: "Twenty-Eighty - Don't waste your time on planification"
+meta_description: "Welcome to your Sevener's training builder"
+meta_image: "background-home.jpg" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards

@@ -1,0 +1,12 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+}
+
+.container, .session-container {
+  min-height: calc(100vh - 130px);
+}

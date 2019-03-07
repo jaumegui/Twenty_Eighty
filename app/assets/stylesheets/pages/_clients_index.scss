@@ -13,10 +13,10 @@
 .clients-list {
   list-style-type: none;
   a { text-decoration: none;
-    transition: all 0.8s ease;
+    transition: all 0.5s ease;
     &:hover {
     color: black;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.9);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
   }
 }
@@ -25,14 +25,13 @@
   display: flex;
   align-items: center;
   color: rgba(0,0,0,0.6);
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
   margin: 10px 0;
   p {
     margin: 0;
   }
 }
 
-.client-logo-list, .client-company, .client-name {
+.client-logo-list, .client-company, .client-name, .client-email {
   margin: 10px 20px;
   width: 200px;
 }
@@ -41,6 +40,10 @@
   padding: 5px;
 }
 
-.client-email {
+.client-email, .client-access {
   margin-left: 20vw !important;
+}
+
+.client-access {
+
 }

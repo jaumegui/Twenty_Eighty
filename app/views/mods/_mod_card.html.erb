@@ -17,7 +17,7 @@
     <div class="card-right grabbable">
       <div class="card-category">
         <%= link_to project_session_mod_path(mod.session.project, mod.session, mod), class: 'grabbable' do %>
-          <h4><%= "#{mod.title} - (#{mod.duration} min)" %></h4>
+          <h4><%= "#{mod.title} - (#{mod.duration} min) - #{mod.format}" %></h4>
         <% end %>
         <% if @error %>
           <p class='error'>Add some rythm</p>

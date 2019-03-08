@@ -114,7 +114,7 @@ La plate-forme en feu sur laquelle se trouvait Andy Mochan l’a poussé à modi
 De la plate-forme en feu à l’ambition ardente
 Si Daryl Connor a popularisé le concept de « burning-platform », celui-ci a néanmoins subit des déformations dans son interprétation et certains peuvent y voir un moyen de générer la peur et la panique. Qu’on ne se méprenne pas, la « burning-platform » est avant tout porteuse d’un message sur l’importance de l’engagement. Le point critique à atteindre pour une entreprise, une équipe ou même un manager, se situe dans le glissement opéré d’une « burning platform » vers une « burning ambition » : créer l’engagement d’un groupe plutôt que la peur et la panique, cela suppose de catalyser les externalités négatives et de les internaliser sous forme d’énergie créatrice et de passion ! Plus facile à dire qu’à faire, mais une personne avertie en vaut deux : vous êtes presque prêts à faire le plongeon !")
 
-Content.create(intel1: "Interpersonnelle", intel2: "Rythmique", title: 'Management Situationnel', chapter: 'Management', format: 'Top-down', duration: 30, description: "« Tout le monde est un génie. Mais si vous jugez un poisson à ses capacités à grimper aux arbres, il passera sa vie à croire qu’il est stupide. » — Albert Einstein.
+Content.create(intel1: "Interpersonnelle", intel2: "Musicale-Rythmique", title: 'Management Situationnel', chapter: 'Management', format: 'Top-down', duration: 30, description: "« Tout le monde est un génie. Mais si vous jugez un poisson à ses capacités à grimper aux arbres, il passera sa vie à croire qu’il est stupide. » — Albert Einstein.
 Les meilleurs leaders sont ceux qui s’adaptent au niveau de maturité de l’individu ou du groupe qu’ils dirigent. Le style de management doit être adapté non seulement aux personnes/groupes, mais également à la tâche/fonction qui doit être réalisée.
 Hersey & Blanchard ont développé vers la fin des années 70, un modèle de leadership situationnel basé sur deux axes : la relation et l’encadrement.
 
@@ -270,36 +270,6 @@ Nous réagissons tous différemment en matière d’innovation.
 Les gens et les organisations du marché grand public sont plus prudents avec un profil d’aversion au risque plus élevé. Et d’autres sont plus réceptifs aux innovations et s’adaptent rapidement. En tant qu’innovateur et marketeur, vous devez comprendre les profils et adapter votre stratégie de communication. Ensuite, vous traverserez le fossé entre les fast adopters et les slow adopters et rejoindrez le marché grand public.
 
 Il existe cinq catégories d’adoptants : innovators, early adopters, early majority, late majority, laggards. Chaque catégorie est définie par « l’innovation » des adoptants.")
-
-Content.create(
- intel1: "Logico-Mathématique",
- intel2: "Intrapersonnelle",
- title: 'Prise de parole en public',
- chapter: 'Communication',
- format: 'Top-down',
- duration: 45,
- description: "Monter")
-
-Content.create(
- intel1: "Logico-Mathématique",
- intel2: "Intrapersonnelle",
- title: 'Prise de parole en public',
- chapter: 'Communication',
- format: 'Top-down',
- duration: 45,
- description: "Monter")
-
-Content.create(
- intel1: "Logico-Mathématique",
- intel2: "Intrapersonnelle",
- title: 'Prise de parole en public',
- chapter: 'Communication',
- format: 'Top-down',
- duration: 45,
- description: "Monter")
-
-
-
 
 
 puts "Done!"

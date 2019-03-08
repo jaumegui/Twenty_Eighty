@@ -7,7 +7,7 @@
   left: 0px;
   top: 0px;
   bottom: 0px;
-  width: 175px;
+  width: 220px;
   text-align: left;
   padding-top: 15px;
   -webkit-box-shadow: inset -2px 0px 0px 0px rgba(0,0,0,0.18);
@@ -50,7 +50,8 @@
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  margin-top: 5px;
+  margin-top: 30px;
+  margin-bottom: 38px;
 }
 
 .left-navbar-logo img {
@@ -97,6 +98,10 @@
 .left-menu-title {
   width: 70px;
   text-align: left;
+  p {
+    font-size: 20px;
+    font-weight: 400;
+  }
 }
 
 .active-menu {

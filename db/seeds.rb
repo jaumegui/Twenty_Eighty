@@ -40,7 +40,7 @@ puts "Generating database..."
 
 puts "Generating Contents..."
 
-Content.create(intel1: "Kinesthesique", intel2: "Interpersonnelle", title: 'Design Thinking', chapter: 'Innovation', format: 'Pratique', duration: 180, description: "« Quelle que soit la forme pour laquelle on opte il s’agit de penser avec les mains » — David Kelley (fondateur d’IDEO)
+Content.create(intel1: "Kinesthesique", intel2: "Interpersonnelle", title: 'Design Thinking', chapter: 'Innovation', format: 'Pratique', duration: 45, description: "« Quelle que soit la forme pour laquelle on opte il s’agit de penser avec les mains » — David Kelley (fondateur d’IDEO)
 Le Design Thinking est une méthode innovante de conduite de projet et de management qui utilise, entre autres, la génération d’idées créatives et le prototypage comme moyens concrets de réalisation de produits et de services.
 Développée dans les années 80 à l’Université de Stanford par Rolf Faste, designer américain, cette approche méthodologique offre une vision non pas linéaire de la marche à suivre pour créer un produit ou service, mais est plutôt basée sur un rythme de cycles itératifs, répétés autant de fois que nécessaire jusqu’à l’obtention du résultat optimal souhaité.
 
@@ -139,7 +139,7 @@ Content.create(intel1: "Logico-Mathématique", intel2: "Spatiale", title: "Matri
 La matrice a été développée pour aider à donner un ordre de priorité aux tâches à réaliser et apprendre ainsi à travailler de façon plus efficace. Elle est basée sur deux paramètres : l’urgence et l’importance.
 Utiliser cette classification permettra simplement d’identifier ce qui est important et/ou urgent, suivant la matrice ci-dessous :")
 
-Content.create(intel1: "Intrapersonnelle", intel2: "Kinesthesique", title: 'Mastery', chapter: 'Développement Personnel', format: 'Top-down', duration: 30, description: "N’importe qui peut devenir un génie dans un domaine.
+Content.create(intel1: "Intrapersonnelle", intel2: "Kinesthesique", title: 'Mastery', chapter: 'Développement-Personnel', format: 'Top-down', duration: 30, description: "N’importe qui peut devenir un génie dans un domaine.
 N’importe qui peut devenir un génie.
 N’importe qui peut.
 N’importe qui.
@@ -164,7 +164,7 @@ Pour Robert Greene, atteindre l’excellence suppose de passer par plusieurs pha
 Il s’agit ici de se poser des questions sur la manière dont le système fonctionne et de ce qui fait la réussite des plus grands.
 L’acquisition de savoir-faire, à savoir les 500, 1 000, 10 000 heures de travail nécessaires à la maîtrise d’un sujet. Cette étape nécessite, dans un souci de progression et de motivation, de trouver un mentor capable de vous assister dans votre progression et vous guider en déterminant les points critiques, dont la compréhension est cruciale pour atteindre l’expertise.")
 
-Content.create(intel1: "Intrapersonnelle", intel2: "Interpersonnelle", title: 'Analyse transactionnelle', chapter: 'Développement Personnel', format: 'Top-down', duration: 30, description: "Le concept de base de l’analyse transactionnelle est celui des 3 états du moi, formés au cours de la petite enfance et qui constituent la structure de toute personnalité : ce sont le Parent, l’Adulte et l’Enfant.
+Content.create(intel1: "Intrapersonnelle", intel2: "Interpersonnelle", title: 'Analyse transactionnelle', chapter: 'Développement-Personnel', format: 'Top-down', duration: 30, description: "Le concept de base de l’analyse transactionnelle est celui des 3 états du moi, formés au cours de la petite enfance et qui constituent la structure de toute personnalité : ce sont le Parent, l’Adulte et l’Enfant.
 On les représente généralement par 3 cercles superposés. Tous les 3 sont aussi importants l’un que l’autre. Ce qui se passe dans nos rapports interpersonnels et dans nos vies dépend en grande partie de l’état du moi à partir duquel nous agissons, dans telle ou telle situation.
 L’état Enfant est celui d’où provient notamment la créativité, le jeu, l’intuition, les pulsions et les sentiments. S’il peut être spontané, intuitif et créateur, l’Enfant peut aussi être capricieux, rebelle ou soumis.
 
@@ -238,6 +238,69 @@ Nous nous soumettons naturellement à l’autorité à partir du moment où nous
 
 Loi sur la rareté
 Plus une chose semble rare plus nous désirons la posséder. Technique : Il n’y en aura pas pour tout le monde.")
+
+Content.create(
+ intel1: "Intrapersonnelle",
+ intel2: "Verbo-linguistique",
+ title: 'Golden Circles',
+ chapter: 'Stratégie',
+ format: 'Top-down',
+ duration: 30,
+ description: "Chaque personne, chaque organisation cherche à motiver les gens à agir pour une raison ou pour une autre.
+Cela peut être pour pousser à une décision d’achat, pour rechercher du soutien ou des votes, ou encore pour voir leurs collaborateurs travailler plus dur, plus intelligemment, ou simplement leur faire suivre des règles.
+
+La capacité à motiver les gens n’est pas complexe en elle-même. Elle est généralement liée à des facteurs externes comme une récompense alléchante ou la menace d’une sanction.
+Bien qu’ils soient relativement peu nombreux, les leaders et organisations dotés d’une habileté naturelle à inspirer les gens autour d’eux sont d’apparences et de milieux très divers : du secteur public au privé, dans toutes les formes d’industries, en B2C comme en B2B.
+
+Peu importe où ils opèrent, le fait est qu’ils disposent d’une influence disproportionnée sur leur environnement. Plus innovants, ils sont surtout capables de maintenir leur leadership sur le long terme, c’est pourquoi nombre d’entre eux marquent leur milieu de leur empreinte et c’est pourquoi certains marquent même le monde.
+
+")
+
+Content.create(
+ intel1: "Logico-Mathématique",
+ intel2: "Interpersonnelle",
+ title: "Loi de Diffusion de l'innovation",
+ chapter: 'Stratégie',
+ format: 'Pratique',
+ duration: 30,
+ description: "Les nouvelles idées, innovations ou produits sont initialement perçus par les gens comme incertains, risqués ou encore inutiles.
+Pensez à des exemples comme les téléphones portables, les voitures électriques, les nouvelles marques de vêtements ou Internet. Il a fallu des mois ou des années pour que tous ces produits soient largement utilisés par le plus grand nombre. Pour être durables, ces innovations doivent être adoptées à un moment donné par le grand public. Pour y arriver, vous devez franchir le pas.
+
+Nous réagissons tous différemment en matière d’innovation.
+Les gens et les organisations du marché grand public sont plus prudents avec un profil d’aversion au risque plus élevé. Et d’autres sont plus réceptifs aux innovations et s’adaptent rapidement. En tant qu’innovateur et marketeur, vous devez comprendre les profils et adapter votre stratégie de communication. Ensuite, vous traverserez le fossé entre les fast adopters et les slow adopters et rejoindrez le marché grand public.
+
+Il existe cinq catégories d’adoptants : innovators, early adopters, early majority, late majority, laggards. Chaque catégorie est définie par « l’innovation » des adoptants.")
+
+Content.create(
+ intel1: "Logico-Mathématique",
+ intel2: "Intrapersonnelle",
+ title: 'Prise de parole en public',
+ chapter: 'Communication',
+ format: 'Top-down',
+ duration: 45,
+ description: "Monter")
+
+Content.create(
+ intel1: "Logico-Mathématique",
+ intel2: "Intrapersonnelle",
+ title: 'Prise de parole en public',
+ chapter: 'Communication',
+ format: 'Top-down',
+ duration: 45,
+ description: "Monter")
+
+Content.create(
+ intel1: "Logico-Mathématique",
+ intel2: "Intrapersonnelle",
+ title: 'Prise de parole en public',
+ chapter: 'Communication',
+ format: 'Top-down',
+ duration: 45,
+ description: "Monter")
+
+
+
+
 
 puts "Done!"
 puts "Generating Users..."

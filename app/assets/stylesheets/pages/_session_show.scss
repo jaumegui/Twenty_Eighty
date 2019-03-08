@@ -26,19 +26,23 @@
 
 .session-header {
   padding-top: 25px;
+  width: 131%;
 }
 
 .session-header, .project-info-headers {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
-// .error {
-//   // border: 3px solid red !important;
-//   // border-radius: 10px;
-//   color: $red;
-// }
+.user-fafa {
+  border: none;
+  padding-left: 0;
+  .fa-user-plus {
+  font-size: 32px;
+  margin-top: 5px;
+  }
+}
 
 .logs-message {
   text-align: left;

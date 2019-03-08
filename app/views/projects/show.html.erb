@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container" style="padding-right: 110px;">
       <div class="project-info-headers">
         <%= link_to projects_path do %>
           <i class="fas fa-arrow-left" style="font-size: 30px";></i>
         <% end %>
-        <div style="margin-right: 120px">
+        <div>
           <%= link_to new_project_session_path(@project) do %>
           <button class="btn btn-edit">Add a session</button>
           <% end %>
@@ -11,13 +11,12 @@
       </div>
       <div class="middle-info">
         <div class='middle-info-main'>
-          <h3><%= @project.title %>    <a class="edit-btn" data-toggle='modal' data-target='#editProject'><i class="fas fa-edit"></i></a></h3>
+          <h3><%= @project.title %>    <a class="edit-fafa" data-toggle='modal' data-target='#editProject'><i class="fas fa-edit"></i></a></h3>
           <h4><%="From #{@project.start_date.strftime('%d/%m/%y')} to #{@project.end_date.strftime('%d/%m/%y')}" %> - <i class="fas fa-user"> </i> <%= "#{@project.participant_number}"%> </h4>
         </div>
-          <div style="
-    display: flex;
+          <div style="display: flex;
     align-items: center;
-    justify-content: space-between;>
+    justify-content: space-between;">
             <ul id="participant" class='list-inline'>
               <% @project.users.each do |user| %>
               <li>
@@ -27,7 +26,7 @@
               </li>
               <% end %>
             </ul>
-            <a data-toggle='modal' data-target='#newUserProject'><i class="fas fa-user-plus"></i></a>
+            <button class='user-fafa' data-toggle='modal' data-target='#newUserProject'><i class="fas fa-user-plus"></i></button>
           </div>
       </div>
 

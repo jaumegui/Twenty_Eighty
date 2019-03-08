@@ -7,14 +7,14 @@
   <% total_duration += mod.duration %>
   <% exceed << mod.position if (total_duration * 60) > (mod.session.end_time - mod.session.start_time) %>
 <% end %>
-	<div class="card card-mods" data-item-id="<%= mod.id %>">
-    <div class="card-left align-elements-in-flexbox">
+	<div class="card card-mods grabbable" data-item-id="<%= mod.id %>">
+    <div class="card-left align-elements-in-flexbox grabbable">
     	<div class="mod-time">
     		<%= start.strftime("%H:%M") %>
     	</div>
     	<div class="circle"></div>
     </div>
-    <div class="card-right">
+    <div class="card-right grabbable">
       <div class="card-category">
         <%= link_to project_session_mod_path(mod.session.project, mod.session, mod), class: 'grabbable' do %>
           <h4><%= "#{mod.title} - (#{mod.duration} min)" %></h4>
@@ -26,7 +26,7 @@
           <p class='error'>Session duration exceeded</p>
         <% end %>
       </div>
-		  <div class="card-description">
+		  <div class="card-description grabbable">
 	      <h5><%= "#{mod.description.split('.').first(2).join('.')}." %></h5>
 		  </div>
     </div>

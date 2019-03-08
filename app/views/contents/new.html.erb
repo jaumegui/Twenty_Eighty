@@ -8,7 +8,7 @@
     <%= f.input :chapter, :collection => %w[ Communication Developpement-Personnel Innovation Management Négociation Stratégie Leadership ] %>
     <%= f.input :intel1, :collection => %w( Logico-Mathématique Verbo-Linguistique Spatiale Intrapersonnelle Interpersonnelle Kinesthesique Musicale-Rythmique ) %>
     <%= f.input :intel2, :collection => %w( Logico-Mathématique Verbo-Linguistique Spatiale Intrapersonnelle Interpersonnelle Kinesthesique Musicale-Rythmique ) %>
-    <%= f.input :description %>
-    <%= f.submit %>
+    <%= f.input :description, input_html: { class: "f-description" } %>
+    <p class="center-button"> <%= f.submit class: 'btn-edit' %> </p>
   <% end %>
 </div>

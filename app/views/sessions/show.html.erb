@@ -1,6 +1,6 @@
 <div class="container-session-show">
 	<div class="container session-container">
-      <div class="session-header">
+      <div class="session-header" style="padding-right: 80px;">
         <div class="user-controls">
           <%= link_to project_path(@session.project) do %>
             <i class="fas fa-arrow-left" style="font-size: 30px";></i>
@@ -8,15 +8,15 @@
         </div>
         <div>
           <%= link_to project_session_path(@session.project, @session, format: :pdf), id: "export-btn" do %>
-            <button class="btn btn-edit btn-edit">
+            <button class="btn btn-edit">
                 Export as <i class="fas fa-file-pdf"></i>
             </button>
           <% end %>
         </div>
       </div>
       <div class="top-mods">
-        <h3><%= @session.title %>    <em style="font-size: 17px; cursor: pointer; font-style: normal;" ><%= link_to edit_project_session_path(@session.project, @session), id: "edit-btn" do %>
-          <i class="fas fa-edit"></i><% end %>
+        <h3><%= @session.title %>
+          <button class='edit-fafa' data-toggle='modal' data-target='#editSession'><i class="fas fa-edit"></i></button>
         <h4><%= @session.date.strftime("%A %e %B %Y") %>
         <%= "from #{@session.start_time.hour}:#{@session.start_time.min}0 to" if @session.start_time.min.to_s.length == 1 %>
         <%= "from #{@session.start_time.hour}:#{@session.start_time.min} to" if @session.start_time.min.to_s.length == 2 %>
@@ -24,17 +24,24 @@
         <%= "#{@session.end_time.hour}:#{@session.end_time.min}" if @session.start_time.min.to_s.length == 2 %>
         </h4>
       </div>
-      <div id="mods">
-        <%= render 'mods/index', session: @session %>
+      <div id="mods" style="height: 70%;">
+        <% if @session.mods.empty? %>
+          <div class="empty-mod">
+            <p> <i class="fas fa-plus-circle"></i> </p>
+            <p> <%= "Please add content" %> </p>
+          </div>
+        <% else %>
+          <%= render 'mods/index', session: @session %>
+        <% end %>
       </div>
 
       <%# link_to 'Select content', new_project_session_mods_path(@session.project, @session) %>
     <div class="comment-box">
       <div class="message-box">
         <h4>Add a message</h4>
-        <%= simple_form_for [@session.project, @session, @comment], html: { class: "form-inline"} do |f| %>
-          <%= f.input :message, placeholder: "Add a messsage to your collaborators", input_html: { style: "width: 500px; margin-right: 20px;"}, label: false %>
-          <%= f.submit class: 'btn btn-edit'%>
+        <%= simple_form_for [@session.project, @session, @comment], html: { class: "form"} do |f| %>
+          <%= f.input :message, placeholder: "Add a messsage to your collaborators", input_html: { style: "width: 900px; margin-right: 20px;"}, label: false %>
+          <p> <%= f.submit class: 'btn btn-edit'%> </p>
         <% end %>
         <ul>
           <% @session.comments.each do |comment| %>

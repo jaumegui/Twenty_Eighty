@@ -20,7 +20,7 @@
           <h4><%= "#{mod.title} - (#{mod.duration} min)" %></h4>
         <% end %>
         <% if @error %>
-          <i class="fas fa-exclamation-triangle error"></i>
+          <p class='error'>Add some rythm</p>
         <% end %>
         <% if exceed.include?(mod.position) %>
           <p class='error'>Session duration exceeded</p>

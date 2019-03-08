@@ -1,19 +1,17 @@
 <div class="container-session-show">
 	<div class="container session-container">
-      <div class="session-header" style="padding-right: 80px;">
-        <div class="user-controls">
+        <div class="project-info-headers">
           <%= link_to project_path(@session.project) do %>
             <i class="fas fa-arrow-left" style="font-size: 30px";></i>
           <% end %>
+          <div>
+            <%= link_to project_session_path(@session.project, @session, format: :pdf) do %>
+              <button class="btn btn-edit" id='export-btn'>
+                  Export as <i class="fas fa-file-pdf"></i>
+              </button>
+            <% end %>
+          </div>
         </div>
-        <div>
-          <%= link_to project_session_path(@session.project, @session, format: :pdf), id: "export-btn" do %>
-            <button class="btn btn-edit">
-                Export as <i class="fas fa-file-pdf"></i>
-            </button>
-          <% end %>
-        </div>
-      </div>
       <div class="top-mods">
         <h3><%= @session.title %>
           <button class='edit-fafa' data-toggle='modal' data-target='#editSession'><i class="fas fa-edit"></i></button>

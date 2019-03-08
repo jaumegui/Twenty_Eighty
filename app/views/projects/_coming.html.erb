@@ -4,7 +4,7 @@
     <% if project.start_date > Date.today %>
       <div class="col-xs-12 col-md-4" style="display: flex; justify-content: center;">
         <%= link_to project_path(project) do %>
-        <div class="card">
+        <div class="card" id="card-index">
           <div class="card-main">
             <div class='client-logo' style="background-image: url(<%= project.client.logo %>); background-size: 50px 50px; background-repeat: no-repeat;"></div>
             <h5><%= project.title %></h5>

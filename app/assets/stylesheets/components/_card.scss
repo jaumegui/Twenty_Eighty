@@ -76,10 +76,6 @@ $timeline: #115173;
   }
 }
 
-.card-footer:hover {
-  background-color: $yellow;
-}
-
 .card-lg {
   background-color: white;
   width: 80%;
@@ -183,9 +179,6 @@ $timeline: #115173;
       font-weight: 300;
       letter-spacing: 0.6px;
       line-height: 1.6;
-    }
-    &:hover {
-      box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.3);
     }
   }
   .grabbable {
@@ -319,6 +312,11 @@ duration {
     text-align: left;
     padding-bottom: 16px;
   }
+}
+
+#card-index:hover {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+  transition: 0.8s ease;
 }
 
 .card-mods {

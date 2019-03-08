@@ -2,7 +2,7 @@
   <div class="list-clients">
     <div class='client-control'>
       <h3>Users List</h3>
-      <button class="btn btn-success" data-toggle='modal' data-target='#newUser'>Add User</button>
+      <button class="btn btn-edit" data-toggle='modal' data-target='#newUser'>Add User</button>
     </div>
     <ul class='clients-list'>
       <% @users = @users.sort_by(&:expertise) %>

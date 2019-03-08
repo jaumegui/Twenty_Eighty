@@ -1,4 +1,8 @@
 function addMod(modHTML) {
+  const emptyPlaceHolder = document.querySelector('.empty-mod');
+  if (emptyPlaceHolder) {
+    emptyPlaceHolder.remove();
+  }
   const mods = document.getElementById('items');
   items.insertAdjacentHTML('beforeend', modHTML);
 };

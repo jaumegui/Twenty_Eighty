@@ -24,15 +24,8 @@
         <%= "#{@session.end_time.hour}:#{@session.end_time.min}" if @session.start_time.min.to_s.length == 2 %>
         </h4>
       </div>
-      <div id="mods" style="height: 70%;">
-        <% if @session.mods.empty? %>
-          <div class="empty-mod">
-            <p> <i class="fas fa-plus-circle"></i> </p>
-            <p> <%= "Please add content" %> </p>
-          </div>
-        <% else %>
-          <%= render 'mods/index', session: @session %>
-        <% end %>
+      <div id="mods" style="min-height: 70vh;">
+        <%= render 'mods/index', session: @session %>
       </div>
 
       <%# link_to 'Select content', new_project_session_mods_path(@session.project, @session) %>

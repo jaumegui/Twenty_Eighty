@@ -132,10 +132,6 @@ $timeline: #115173;
 }
 #mods {
   background: white;
-  padding-right: 80px;
-  padding-left: 41px;
-  padding-top: 56px;
-  padding-bottom: 50px;
 }
 
 #items {
@@ -181,7 +177,7 @@ $timeline: #115173;
     cursor: grab;
     &:hover {
       box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.3);
-    } 
+    }
     h5{
       font-size: 20px;
       font-weight: 300;

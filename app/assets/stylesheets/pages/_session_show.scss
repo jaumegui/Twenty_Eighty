@@ -1,16 +1,22 @@
 .container-session-show {
 	position: relative;
+  display: flex;
+  width: 100%;
 }
 
 .session-container {
 	padding: 20px;
-  padding-right: calc(20vw + 20px) !important;
   flex: 1 0;
+  width: calc(100% - 220px - 15vw) !important;
 }
 
 .session-controls {
   position: absolute;
   right: 13vw;
+}
+
+#export-btn {
+
 }
 
 .mods-list {

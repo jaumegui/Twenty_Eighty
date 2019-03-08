@@ -6,6 +6,7 @@ $timeline: #115173;
   margin-bottom: 40px;
   position: relative;
   background-color: rgb(244, 244, 244);
+  border: 1px solid #e0e0e0;
   font-family: 'Roboto';
   font-weight: lighter;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
@@ -60,7 +61,7 @@ $timeline: #115173;
   height: 25%;
   display: flex;
   align-items: center;
-  background-color: #facd7e7a !important;
+  background-color: $yellow !important;
   justify-content: space-around;
   // border: 1px solid rgba(115, 133, 152, 0.6);
   background: rgba(115, 133, 152, 0.15);
@@ -162,7 +163,7 @@ $timeline: #115173;
   }
   .mod-time {
     margin-left: 35%;
-    color: #facf87;
+    color: $blue;
     font-weight: 600;
     font-size: 23px;
   }
@@ -178,6 +179,9 @@ $timeline: #115173;
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: grab;
+    &:hover {
+      box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.3);
+    } 
     h5{
       font-size: 20px;
       font-weight: 300;
@@ -364,6 +368,10 @@ duration {
 #new-project {
   font-size: 20px;
   margin-right: 15px;
+}
+
+#edit-btn {
+  color: black;
 }
 
 #edit-btn:hover {

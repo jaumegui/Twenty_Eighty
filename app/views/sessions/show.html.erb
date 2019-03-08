@@ -30,9 +30,11 @@
     <div class="comment-box">
       <div class="message-box">
         <h4>Add a message</h4>
-        <%= simple_form_for [@session.project, @session, @comment], html: { class: "form"} do |f| %>
-          <%= f.input :message, placeholder: "Add a messsage to your collaborators", input_html: { style: "width: 900px; margin-right: 20px;"}, label: false %>
-          <p> <%= f.submit class: 'btn btn-edit'%> </p>
+        <%= simple_form_for [@session.project, @session, @comment] do |f| %>
+          <div style="display: flex; justify-content: space-between; align-items: center; height: 50px; width: auto;">
+            <div style="padding-top: 16px;"> <%= f.input :message, placeholder: "Add a messsage to your collaborators", input_html: { style: "width: 600px; margin-right: 20px; heigth: 50px;"}, label: false %> </div>
+            <div> <%= f.submit class: 'btn btn-edit'%> </div>
+          </div>
         <% end %>
         <ul>
           <% @session.comments.each do |comment| %>
